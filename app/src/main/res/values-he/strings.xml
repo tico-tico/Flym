@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
-    <string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">אודות spaRSS</string>
-    <string name="welcome_title">ברוך בואך spaRSS. האם ברצונך להוסיף ערוץ אחד?</string>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">אודות Home</string>
+    <string name="welcome_title">ברוך בואך Home. האם ברצונך להוסיף ערוץ אחד?</string>
     <string name="never">אף פעם</string>
     <string name="update">עדכן</string>
     <string name="colon">: </string>
     <string name="menu_settings">הגדרות</string>
     <string name="menu_refresh">רענן</string>
     <string name="menu_all_read">סמן את כולן בתור נקראו</string>
-    <string name="spaRSS_feeds">ערוצי spaRSS</string>
     <string name="error">שגיאה</string>
     <string name="network_error">הרשת אינה מוגדרת</string>
     <string name="loading">כעת טוען…</string>
@@ -80,32 +79,16 @@
     <string name="menu_open_in_browser">פתח בתוך דפדפן</string>
     <string name="menu_switch_full_original">הצג תוכן מלא</string>
     <string name="get_full_text">אחזר טקסט מלא</string>
-    <string name="original_text">הצג טקסט בסיסי</string>
-    <string name="see_link">צפה בתוך דפדפן</string>
     <string name="cant_open_link">לא נמצאה אפליקציה לקישור זה</string>
     <string name="file">קובץ</string>
     <string name="download_and_save">הורד ושמור</string>
     <string name="open_link">פתח קישור</string>
     <string name="tip_sentence">טיפ: החלק שמאלה כדי לסמן בתור נקרא והחלק ימינה כדי לסמן בתור מועדף</string>
 
-    <string name="red">אדום</string>
-    <string name="green">ירוק</string>
-    <string name="blue">כחול</string>
-    <string name="transparency">שקיפות</string>
-
     <string name="settings_category_refresh">רענון אוטומטי</string>
     <string name="settings_refresh_enabled">אפשר רענון אוטומטי</string>
     <string name="settings_refresh_enabled_description">אפשר רענון אוטומטי של ערוצים</string>
     <string name="settings_refresh_interval">תדירות רענון</string>
-    <string name="settings_category_notifications">התראות</string>
-    <string name="settings_notifications_enabled">אפשר התראות</string>
-    <string name="settings_notifications_enabled_description">אפשר התראות במקרה של רשומות חדשות</string>
-    <string name="settings_notifications_ringtone">רינגטון</string>
-    <string name="settings_notifications_ringtone_none">אין</string>
-    <string name="settings_notifications_vibrate">רטט</string>
-    <string name="settings_notifications_vibrate_description">אפשר רטט כאשר ישנן רשומות חדשות</string>
-    <string name="settings_notifications_light">אור</string>
-    <string name="settings_notifications_light_description">אפשר התראת אור כאשר ישנן רשומות חדשות</string>
     <string name="settings_light_theme">ערכת נושא בהירה</string>
     <string name="settings_light_theme_description">השתמש בערכת נושא בהירה</string>
     <string name="settings_keep_time">זמן אשר בו הרשומות תישמרנה</string>
@@ -123,10 +106,6 @@
     <string name="settings_refresh_on_open_description">רענון כל הערוצים לאחר פתיחת האפליקציה</string>
     <string name="settings_refresh_wifi_only">רענן רק על גבי Wi-Fi</string>
     <string name="settings_refresh_wifi_only_description">רענון אוטומטי יתבצע רק כאשר חיבור Wi-Fi הינו זמין</string>
-    <string name="settings_visible_feeds">ערוצים נראים</string>
-    <string name="settings_widget_background">רקע</string>
-    <string name="settings_widget_background_description">צבע ושקיפות של רקע הוידג׳ט</string>
-    <string name="all_feeds">כל הערוצים (גם עתיד)</string>
     <string name="settings_screen_proxy">פרוקסי</string>
     <string name="settings_category_network">רשת</string>
     <string name="settings_proxy_enabled">מאופשר</string>
@@ -137,10 +116,6 @@
     <string name="settings_proxy_type">טיפוס</string>
     <string name="settings_mark_as_read">הצג כפתור סמן את כולן בתור נקראו</string>
     <string name="settings_mark_as_read_description">הצג / הסתר את הכפתור (נדרשת התחלה מחדש)</string>
-    <plurals name="number_of_new_entries">
-	    <item quantity="one">רשומה חדשה אחת</item>
-	    <item quantity="other">%d רשומות חדשות</item>
-    </plurals>
 
     <string name="back_again_to_quit">לחץ חזרה פעם נוספת כדי לצאת</string>
 
@@ -164,5 +139,4 @@
     <string name="loginhttpAuth">התחבר</string>
     <string name="passwordhttpAuth">סיסמה</string>
     <string name="settings_category_content_presentation">הצגת תוכן</string>
-    <string name="settings_show_new_entries">הצג אוטומטית רשומות חדשות</string>
-    </resources>
+</resources>

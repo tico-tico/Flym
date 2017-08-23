@@ -47,14 +47,10 @@ package ahmaabdo.home.rss.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
 
 import ahmaabdo.home.rss.MainApplication;
 import ahmaabdo.home.rss.R;
@@ -69,7 +65,6 @@ public class GeneralPrefsFragment extends PreferenceFragment {
 
         addPreferencesFromResource(R.xml.general_preferences);
 
-        setRingtoneSummary();
 
         Preference preference = findPreference(PrefUtils.REFRESH_ENABLED);
         preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
@@ -106,27 +101,9 @@ public class GeneralPrefsFragment extends PreferenceFragment {
 
     @Override
     public void onResume() {
-        // The ringtone summary text should be updated using
-        // OnSharedPreferenceChangeListener(), but I can't get it to work.
-        // Updating in onResume is a very simple hack that seems to work, but is inefficient.
-        setRingtoneSummary();
 
         super.onResume();
 
     }
 
-    private void setRingtoneSummary() {
-        Preference ringtone_preference = findPreference(PrefUtils.NOTIFICATIONS_RINGTONE);
-        Uri ringtoneUri = Uri.parse(PrefUtils.getString(PrefUtils.NOTIFICATIONS_RINGTONE, ""));
-        if (TextUtils.isEmpty(ringtoneUri.toString())) {
-            ringtone_preference.setSummary(R.string.settings_notifications_ringtone_none);
-        } else {
-            Ringtone ringtone = RingtoneManager.getRingtone(MainApplication.getContext(), ringtoneUri);
-            if (ringtone == null) {
-                ringtone_preference.setSummary(R.string.settings_notifications_ringtone_none);
-            } else {
-                ringtone_preference.setSummary(ringtone.getTitle(MainApplication.getContext()));
-            }
-        }
-    }
 }

@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">Over spaRSS</string>
-    <string name="welcome_title">Welkom bij spaRSS. Wilt u een feed toevoegen?</string>
+<resources>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">Over Home</string>
+    <string name="welcome_title">Welkom bij Home. Wilt u een feed toevoegen?</string>
     <string name="never">nooit</string>
     <string name="update">Bijwerken</string>
     <string name="colon">: </string>
@@ -9,7 +10,6 @@
     <string name="menu_refresh">Verversen</string>
     <string name="menu_all_read">Alles markeren als gelezen</string>
     <string name="menu_show_new_entries">Nieuwe items weergeven</string>
-    <string name="spaRSS_feeds">spaRSS-feeds</string>
     <string name="error">Fout</string>
     <string name="network_error">Het netwerk is niet ingesteld</string>
     <string name="loading">Bezig met laden…</string>
@@ -100,12 +100,10 @@
     <string name="menu_mark_as_unread">Markeren als ongelezen</string>
     <string name="menu_open_in_browser">Openen in webbrowser</string>
     <string name="menu_switch_full_original">Volledige inhoud weergeven</string>
-    <string name="share_favorites_title">spaRSS: favoriete items</string>
+    <string name="share_favorites_title">Home: favoriete items</string>
     <string name="copied_clipboard">Link is gekopieerd</string>
     <string name="get_full_text">Volledige tekst ophalen</string>
-    <string name="original_text">Basistekst weergeven</string>
     <string name="see_enclosure">Bijlage weergeven</string>
-    <string name="see_link">Weergeven in webbrowser</string>
     <string name="cant_open_link">Geen applicatie gevonden voor deze link</string>
     <string name="open_enclosure">Bijlage openen</string>
     <string name="file">Bestand</string>
@@ -113,29 +111,13 @@
     <string name="open_link">Link openen</string>
     <string name="tip_sentence">Tip: veeg naar links om te markeren als gelezen en naar rechts om te markeren als favoriet</string>
 
-    <string name="red">Rood</string>
-    <string name="green">Groen</string>
-    <string name="blue">Blauw</string>
-    <string name="transparency">Doorzichtigheid</string>
-
     <string name="settings_category_refresh">Automatische verversing</string>
     <string name="settings_refresh_enabled">Automatisch verversen inschakelen</string>
     <string name="settings_refresh_enabled_description">Automatisch verversen van feeds inschakelen</string>
     <string name="settings_refresh_interval">Ververstussenpoze</string>
-    <string name="settings_category_notifications">Meldingen</string>
-    <string name="settings_notifications_enabled">Meldingen inschakelen</string>
-    <string name="settings_notifications_enabled_description">Meldingen inschakelen voor nieuwe items</string>
-    <string name="settings_notifications_ringtone">Meldingsgeluid</string>
-    <string name="settings_notifications_ringtone_none">Geen</string>
-    <string name="settings_notifications_vibrate">Trillen</string>
-    <string name="settings_notifications_vibrate_description">Trillen voor nieuwe items inschakelen</string>
-    <string name="settings_notifications_light">Licht</string>
-    <string name="settings_notifications_light_description">Meldingslampje inschakelen voor nieuwe items</string>
     <string name="settings_category_content_presentation">Inhoudsuiterlijk</string>
     <string name="settings_light_theme">Licht thema</string>
     <string name="settings_light_theme_description">Licht thema gebruiken</string>
-    <string name="settings_left_panel">Navigatiemenu</string>
-    <string name="settings_left_panel_description">Navigatiemenu weergeven bij opstarten van applicatie</string>
     <string name="settings_keep_time">Hoe lang de items moeten worden bewaard</string>
     <string name="settings_display_images">Afbeeldingen weergeven</string>
     <string name="settings_display_images_description">Afbeeldingen weergeven in items</string>
@@ -151,10 +133,6 @@
     <string name="settings_refresh_on_open_description">Alle feeds verversen na openen van applicatie</string>
     <string name="settings_refresh_wifi_only">Alleen verversen over WiFi-verbinding</string>
     <string name="settings_refresh_wifi_only_description">Automatisch verversen zal alleen gebeuren als er een WiFi-verbinding beschikbaar is</string>
-    <string name="settings_visible_feeds">Zichtbare feeds</string>
-    <string name="settings_widget_background">Achtergrond</string>
-    <string name="settings_widget_background_description">Kleur en doorzichtigheid van de widgetachtergrond</string>
-    <string name="all_feeds">Alle feeds (incl. toekomstige)</string>
     <string name="settings_screen_proxy">Proxy</string>
     <string name="settings_category_network">Netwerk</string>
     <string name="settings_proxy_enabled">Ingeschakeld</string>
@@ -165,11 +143,5 @@
     <string name="settings_proxy_type">Type</string>
     <string name="settings_mark_as_read">Knop Alles markeren als gelezen weergeven</string>
     <string name="settings_mark_as_read_description">Knop weergeven/verbergen</string>
-    <string name="settings_show_new_entries">Nieuwe items automatisch weergeven</string>
-    <string name="settings_show_new_entries_description">Als u dit uitschakelt, dan moet u op de knop Nieuwe items weergeven drukken voordat nieuwe items worden weergegeven</string>
-    <plurals name="number_of_new_entries">
-	<item quantity="one">Eén nieuw item</item>
-	<item quantity="other">%d nieuwe items</item>
-</plurals>
 
-    </resources>
+</resources>

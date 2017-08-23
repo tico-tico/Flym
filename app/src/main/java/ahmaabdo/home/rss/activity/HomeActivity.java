@@ -153,9 +153,6 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
             };
             mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-            if (PrefUtils.getBoolean(PrefUtils.LEFT_PANEL, false)) {
-                mDrawerLayout.openDrawer(mLeftDrawer);
-            }
         }
 
         mDrawerHideReadButton = (FloatingActionButton) mLeftDrawer.findViewById(R.id.hide_read_button);

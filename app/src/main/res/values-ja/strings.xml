@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
-    <string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">spaRSS について</string>
-    <string name="welcome_title">spaRSS へようこそ。フィードを追加しますか?</string>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">Home について</string>
+    <string name="welcome_title">Home へようこそ。フィードを追加しますか?</string>
     <string name="never">しない</string>
     <string name="update">更新</string>
     <string name="colon">: </string>
     <string name="menu_settings">設定</string>
     <string name="menu_refresh">更新</string>
     <string name="menu_all_read">すべて既読としてマーク</string>
-    <string name="spaRSS_feeds">spaRSS フィード</string>
     <string name="error">エラー</string>
     <string name="network_error">ネットワークが設定されていません</string>
     <string name="loading">読み込んでいます…</string>
@@ -92,12 +91,10 @@
     <string name="menu_mark_as_unread">未読としてマーク</string>
     <string name="menu_open_in_browser">ブラウザーで開く</string>
     <string name="menu_switch_full_original">全文を表示</string>
-    <string name="share_favorites_title">spaRSS: スター付きエントリー</string>
+    <string name="share_favorites_title">Home: スター付きエントリー</string>
     <string name="copied_clipboard">リンクをコピーしました</string>
     <string name="get_full_text">完全なテキストを取得</string>
-    <string name="original_text">基本的なテキストを表示</string>
     <string name="see_enclosure">エンクロージャを参照</string>
-    <string name="see_link">ブラウザーで参照</string>
     <string name="cant_open_link">このリンクのアプリケーションが見つかりません</string>
     <string name="open_enclosure">エンクロージャを開く</string>
     <string name="file">ファイル</string>
@@ -105,29 +102,13 @@
     <string name="open_link">リンクを開く</string>
     <string name="tip_sentence">ヒント: 左にスライドすると既読としてマーク、右にスライドするとお気に入りとしてマークします</string>
 
-    <string name="red">赤</string>
-    <string name="green">緑</string>
-    <string name="blue">青</string>
-    <string name="transparency">透明度</string>
-
     <string name="settings_category_refresh">自動更新</string>
     <string name="settings_refresh_enabled">自動更新を有効にする</string>
     <string name="settings_refresh_enabled_description">フィードの自動更新を有効にします</string>
     <string name="settings_refresh_interval">更新間隔</string>
-    <string name="settings_category_notifications">通知</string>
-    <string name="settings_notifications_enabled">通知を有効にする</string>
-    <string name="settings_notifications_enabled_description">新しいエントリーの場合に通知を有効にします</string>
-    <string name="settings_notifications_ringtone">着信音</string>
-    <string name="settings_notifications_ringtone_none">なし</string>
-    <string name="settings_notifications_vibrate">振動</string>
-    <string name="settings_notifications_vibrate_description">新しいエントリーで振動を有効にします</string>
-    <string name="settings_notifications_light">ライト</string>
-    <string name="settings_notifications_light_description">新しいエントリーで通知のライトを有効にします</string>
     <string name="settings_category_content_presentation">コンテンツの表示</string>
     <string name="settings_light_theme">ライト テーマ</string>
     <string name="settings_light_theme_description">ライト テーマを使用します</string>
-    <string name="settings_left_panel">ナビゲーション ドロワー</string>
-    <string name="settings_left_panel_description">アプリケーションの起動時にナビゲーション ドロワーを表示します</string>
     <string name="settings_keep_time">エントリーが保持される時間</string>
     <string name="settings_display_images">画像の表示</string>
     <string name="settings_display_images_description">エントリーに画像を表示します</string>
@@ -143,10 +124,6 @@
     <string name="settings_refresh_on_open_description">アプリケーションを開始した後、すべてのフィードを更新します</string>
     <string name="settings_refresh_wifi_only">Wi-Fi 接続時のみ更新</string>
     <string name="settings_refresh_wifi_only_description">Wi-Fi 接続が利用可能な場合にのみ自動更新が行われます</string>
-    <string name="settings_visible_feeds">表示フィード</string>
-    <string name="settings_widget_background">背景</string>
-    <string name="settings_widget_background_description">ウィジェットの背景の色と透明度</string>
-    <string name="all_feeds">すべてのフィード (未来を含む)</string>
     <string name="settings_screen_proxy">プロキシ</string>
     <string name="settings_category_network">ネットワーク</string>
     <string name="settings_proxy_enabled">有効</string>
@@ -157,13 +134,8 @@
     <string name="settings_proxy_type">タイプ</string>
     <string name="settings_mark_as_read">すべて既読としてマーク ボタンを表示</string>
     <string name="settings_mark_as_read_description">ボタンを表示/非表示します</string>
-    <plurals name="number_of_new_entries">
-	    <item quantity="one">新しいエントリー 1 つ</item>
-    </plurals>
 
     <string name="menu_show_new_entries">新しいエントリーを表示</string>
-    <string name="settings_show_new_entries">自動的に新しいエントリーを表示します</string>
-    <string name="settings_show_new_entries_description">無効にした場合、新しいエントリーを表示ボタンをタップして、新しいエントリーを表示します</string>
     <string name="no_new_entries">表示する新しいエントリはありません</string>
 
     <string name="feed_httpAuth">HTTP 認証</string>

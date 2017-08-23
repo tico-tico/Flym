@@ -26,16 +26,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">O aplikácii spaRSS</string>
-    <string name="welcome_title">Vitajte v aplikácii spaRSS. Chcete pridať nový zdroj?</string>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">O aplikácii Home</string>
+    <string name="welcome_title">Vitajte v aplikácii Home. Chcete pridať nový zdroj?</string>
     <string name="never">nikdy</string>
     <string name="update">Aktualizované</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Nastavenia</string>
     <string name="menu_refresh">Obnoviť</string>
     <string name="menu_all_read">Označiť všetko ako prečítané</string>
-    <string name="spaRSS_feeds">spaRSS zdroje</string>
     <string name="error">Chyba</string>
     <string name="network_error">Sieť nie je nastavená</string>
     <string name="loading">Načítavanie…</string>
@@ -114,12 +113,10 @@
     <string name="menu_full_screen">Na celú obrazovku</string>
     <string name="menu_copy_clipboard">Skopírovať odkaz</string>
     <string name="menu_mark_as_unread">Označiť ako neprečítané</string>
-    <string name="share_favorites_title">spaRSS: články s hviezdičkou</string>
+    <string name="share_favorites_title">Home: články s hviezdičkou</string>
     <string name="copied_clipboard">Link skopírovaný</string>
     <string name="get_full_text">Stiahnuť celý text</string>
-    <string name="original_text">Zobraziť originálny text</string>
     <string name="see_enclosure">Zobraziť prílohu</string>
-    <string name="see_link">Zobraziť v prehliadači</string>
     <string name="cant_open_link">Pre tento odkaz nebola nájdená žiadna aplikácia</string>
     <string name="open_enclosure">Otvoriť prílohu</string>
     <string name="file">Súbor</string>
@@ -128,25 +125,12 @@
     <string name="tip_sentence">Tip: Posunutím doľava označíte článok ako prečítaný, posunutím doprava ako obľúbený</string>
 
     <!-- WIDGET -->
-    <string name="red">Červená</string>
-    <string name="green">Zelená</string>
-    <string name="blue">Modrá</string>
-    <string name="transparency">Priehľadnosť</string>
 
     <!-- SETTINGS -->
     <string name="settings_category_refresh">Automatické obnovenie</string>
     <string name="settings_refresh_enabled">Povoliť automatické obnovenie</string>
     <string name="settings_refresh_enabled_description">Povoliť automatické obnovenie článkov</string>
     <string name="settings_refresh_interval">Interval obnovenia</string>
-    <string name="settings_category_notifications">Oznámenia</string>
-    <string name="settings_notifications_enabled">Povoliť oznámenia</string>
-    <string name="settings_notifications_enabled_description">Povolí oznámenia v prípade nových článkov</string>
-    <string name="settings_notifications_ringtone">Tón oznámenia</string>
-    <string name="settings_notifications_ringtone_none">Žiadny</string>
-    <string name="settings_notifications_vibrate">Vibrovať</string>
-    <string name="settings_notifications_vibrate_description">Povoliť vibrácie pri prijatí nových článkov</string>
-    <string name="settings_notifications_light">Svetelné LED oznámenia</string>
-    <string name="settings_notifications_light_description">Povoliť blikanie pri prijatí nových článkov</string>
     <string name="settings_category_content_presentation">Prezentácia obsahu</string>
     <string name="settings_light_theme">Svetlý vzhľad</string>
     <string name="settings_light_theme_description">Použiť svetlý vzhľad</string>
@@ -163,10 +147,6 @@
     <string name="settings_refresh_on_open_description">Obnoviť články pri spustení aplikácie</string>
     <string name="settings_refresh_wifi_only">Obnovovať len cez Wi-Fi pripojenie</string>
     <string name="settings_refresh_wifi_only_description">Automatické obnovovanie bude spustené len pri dostupnom Wi-Fi pripojení</string>
-    <string name="settings_visible_feeds">Viditeľné zdroje</string>
-    <string name="settings_widget_background">Pozadie</string>
-    <string name="settings_widget_background_description">Farba a priehľadnosť pozadia widgetu</string>
-    <string name="all_feeds">Všetky zdroje (vrátane budúcich)</string>
     <string name="settings_screen_proxy">Proxy</string>
     <string name="settings_category_network">Sieť</string>
     <string name="settings_proxy_enabled">Povoliť</string>
@@ -175,12 +155,6 @@
     <string name="settings_proxy_host">Host</string>
     <string name="settings_proxy_port">Port</string>
     <string name="settings_proxy_type">Typ</string>
-
-    <plurals name="number_of_new_entries">
-	<item quantity="one">Jeden nový článok</item>
-	<item quantity="few">%d nové články</item>
-	<item quantity="other">%d nových článkov</item>
-</plurals>
 
     <string-array name="settings_intervals">
         <item>1 minúta</item>
@@ -236,14 +210,10 @@
     <string name="filter_help">Nápoveda pre filtre</string>
     <string name="menu_open_in_browser">Otvoriť v prehliadači</string>
     <string name="menu_switch_full_original">Zobraziť celý obsah</string>
-    <string name="settings_left_panel">Navigačná lišta</string>
-    <string name="settings_left_panel_description">Zobraziť navigačnú lištu pri spustení aplikácie</string>
     <string name="settings_font_serif">Použiť pätkové písmo</string>
     <string name="settings_font_serif_description">Použiť pätkové písmo v článkoch</string>
     <string name="settings_mark_as_read">Zobraziť tlačidlo „Označiť všetko ako prečítané“</string>
     <string name="settings_mark_as_read_description">Zobraziť / skryť tlačidlo</string>
-    <string name="settings_show_new_entries">Automaticky zobraziť nové články</string>
-    <string name="settings_show_new_entries_description">Ak je vypnuté, tlačidlo „Zobraziť nové články“ bude potrebné pre zobrazenie nových článkov</string>
     <string name="storage_request_explanation">Pre import a export zdrojov je potrebné povoliť prístup aplikácie k úložnému priestoru.</string>
     <string name="google_news_custom_topic">Vlastná téma</string>
 

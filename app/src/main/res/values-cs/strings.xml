@@ -26,16 +26,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">O aplikaci spaRSS</string>
-    <string name="welcome_title">Vítejte v aplikaci spaRSS. Chcete přidat nový zdroj?</string>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">O aplikaci Home</string>
+    <string name="welcome_title">Vítejte v aplikaci Home. Chcete přidat nový zdroj?</string>
     <string name="never">nikdy</string>
     <string name="update">aktualizováno</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Nastavení</string>
     <string name="menu_refresh">Obnovit</string>
     <string name="menu_all_read">Označit vše jako přečtené</string>
-    <string name="spaRSS_feeds">spaRSS zdroje</string>
     <string name="error">Chyba</string>
     <string name="network_error">Síť není nastavena</string>
     <string name="loading">Načítám…</string>
@@ -116,12 +115,10 @@
     <string name="menu_full_screen">Na celou obrazovku</string>
     <string name="menu_copy_clipboard">Kopírovat odkaz</string>
     <string name="menu_mark_as_unread">Označit jako nepřečtené</string>
-    <string name="share_favorites_title">spaRSS: označené články</string>
+    <string name="share_favorites_title">Home: označené články</string>
     <string name="copied_clipboard">Link zkopírován</string>
     <string name="get_full_text">Stáhnout celý text</string>
-    <string name="original_text">Zobrazit originální text</string>
     <string name="see_enclosure">Zobrazit přílohu</string>
-    <string name="see_link">Zobrazit v prohlížeči</string>
     <string name="cant_open_link">Pro tento odkaz nebyla nalezena žádná aplikace</string>
     <string name="open_enclosure">Otevřít přílohu</string>
     <string name="file">Soubor</string>
@@ -130,10 +127,6 @@
     <string name="tip_sentence">Tip: posunutím doleva označit jako přečtené a posunutím doprava jako oblíbené</string>
 
     <!-- WIDGET -->
-    <string name="red">Červená</string>
-    <string name="green">Zelená</string>
-    <string name="blue">Modrá</string>
-    <string name="transparency">Průhlednost</string>
 
     <!-- SETTINGS -->
     <string name="settings_category_refresh">Automatické načítání</string>
@@ -141,18 +134,6 @@
     <string name="settings_refresh_enabled_description">Povolí automatické načítání zdrojů
     </string>
     <string name="settings_refresh_interval">Interval načítání</string>
-    <string name="settings_category_notifications">Oznámení</string>
-    <string name="settings_notifications_enabled">Povolit oznámení</string>
-    <string name="settings_notifications_enabled_description">Povolí oznámení v případě nových
-        článků
-    </string>
-    <string name="settings_notifications_ringtone">Tón oznámení</string>
-    <string name="settings_notifications_ringtone_none">Žádný</string>
-    <string name="settings_notifications_vibrate">Vibrovat</string>
-    <string name="settings_notifications_vibrate_description">Povolit vibrace při přijetí nových článků
-    </string>
-    <string name="settings_notifications_light">LED oznámení</string>
-    <string name="settings_notifications_light_description">Povolit oznamování blikáním při přijetí nových článků</string>
     <string name="settings_category_content_presentation">Prezentace obsahu</string>
     <string name="settings_light_theme">Světlý vzhled</string>
     <string name="settings_light_theme_description">Použít světlý vzhled</string>
@@ -172,12 +153,6 @@
     <string name="settings_refresh_wifi_only">Obnovovat pouze přes Wi-Fi</string>
     <string name="settings_refresh_wifi_only_description">Automatické obnovení bude spuštěno pouze při dostupném Wi-Fi připojení
     </string>
-    <string name="settings_visible_feeds">Viditelné zdroje</string>
-    <string name="settings_widget_background">Pozadí</string>
-    <string name="settings_widget_background_description">Barva a průhlednost pozadí
-        widgetu
-    </string>
-    <string name="all_feeds">Všechny zdroje (včetně budoucích)</string>
     <string name="settings_screen_proxy">Proxy</string>
     <string name="settings_category_network">Síť</string>
     <string name="settings_proxy_enabled">Povolit</string>
@@ -186,12 +161,6 @@
     <string name="settings_proxy_host">Host</string>
     <string name="settings_proxy_port">Port</string>
     <string name="settings_proxy_type">Typ</string>
-
-    <plurals name="number_of_new_entries">
-        <item quantity="one">Jeden nový článek</item>
-        <item quantity="few">%d nové články</item>
-        <item quantity="other">%d nových článků</item>
-    </plurals>
 
     <string-array name="settings_intervals">
         <item>1 minuta</item>
@@ -238,14 +207,10 @@
     <string name="cookiename">Jméno</string>
     <string name="cookievalue">Hodnota</string>
     <string name="menu_switch_full_original">Zobrazit celý článek</string>
-    <string name="settings_left_panel">Navigační lišta</string>
-    <string name="settings_left_panel_description">Zobrazit navigační lištu při spuštění aplikace</string>
     <string name="settings_font_serif">Použít písmo Serif</string>
     <string name="settings_font_serif_description">Použít pro text článků písmo Serif místo Sans-Serif</string>
     <string name="settings_mark_as_read">Zobrazit tlačítko Označit vše jako přečtené</string>
     <string name="settings_mark_as_read_description">Zobrazit / Skrýt tlačítko</string>
-    <string name="settings_show_new_entries">Automaticky zobrazovat nové články</string>
-    <string name="settings_show_new_entries_description">Pokud je vypnuto, je pro zobrazení nových článků třeba ťuknout na tlačítko Zobrazit nové články</string>
     <string name="no_new_entries">Žádné nové příspěvky k zobrazení</string>
 
     </resources>

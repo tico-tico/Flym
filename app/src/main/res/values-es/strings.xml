@@ -23,16 +23,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">Acerca de spaRSS</string>
-    <string name="welcome_title">Bienvenido a spaRSS. ¿Le gustaría agregar una fuente de contenidos?</string>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">Acerca de Home</string>
+    <string name="welcome_title">Bienvenido a Home. ¿Le gustaría agregar una fuente de contenidos?</string>
     <string name="never">nunca</string>
     <string name="update">Actualizar</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Configuración</string>
     <string name="menu_refresh">Actualizar</string>
     <string name="menu_all_read">Marcar todo como leído</string>
-    <string name="spaRSS_feeds">Fuentes de spaRSS</string>
     <string name="error">Error</string>
     <string name="network_error">No se ha configurado la red</string>
     <string name="loading">Cargando…</string>
@@ -111,12 +110,10 @@
     <string name="menu_full_screen">Pantalla completa</string>
     <string name="menu_copy_clipboard">Copiar enlace</string>
     <string name="menu_mark_as_unread">Marcar como no leído</string>
-    <string name="share_favorites_title">spaRSS: Entradas destacadas</string>
+    <string name="share_favorites_title">Home: Entradas destacadas</string>
     <string name="copied_clipboard">Enlace copiado</string>
     <string name="get_full_text">Descargar el texto completo</string>
-    <string name="original_text">Mostrar el texto original</string>
     <string name="see_enclosure">Ver el adjunto</string>
-    <string name="see_link">Ver en el navegador</string>
     <string name="cant_open_link">No se ha encontrado una aplicación para este enlace</string>
     <string name="open_enclosure">Abrir el adjunto</string>
     <string name="file">Archivo</string>
@@ -125,25 +122,12 @@
     <string name="tip_sentence">Tip: deslizar a la izquierda marca como leido y a la derecha para destacar</string>
 
     <!-- WIDGET -->
-    <string name="red">Rojo</string>
-    <string name="green">Verde</string>
-    <string name="blue">Azul</string>
-    <string name="transparency">Transparencia</string>
 
     <!-- SETTINGS -->
     <string name="settings_category_refresh">Actualizaciones automáticas</string>
     <string name="settings_refresh_enabled">Habilitar actualizaciones automáticas</string>
     <string name="settings_refresh_enabled_description">Activa las actualizaciones automáticas de las fuentes</string>
     <string name="settings_refresh_interval">Intervalo entre actualizaciones</string>
-    <string name="settings_category_notifications">Notificaciones</string>
-    <string name="settings_notifications_enabled">Habilitar notificaciones</string>
-    <string name="settings_notifications_enabled_description">Habilita las notificaciones de nuevas entradas</string>
-    <string name="settings_notifications_ringtone">Tono</string>
-    <string name="settings_notifications_ringtone_none">Ninguno</string>
-    <string name="settings_notifications_vibrate">Vibración</string>
-    <string name="settings_notifications_vibrate_description">Hará vibrar el terminal al recibir nuevas entradas</string>
-    <string name="settings_notifications_light">Luz</string>
-    <string name="settings_notifications_light_description">Mostrar notificación luminosa al encontrar nuevas entradas</string>
     <string name="settings_category_content_presentation">Modo de presentación</string>
     <string name="settings_light_theme">Tema claro</string>
     <string name="settings_light_theme_description">Usar el tema claro</string>
@@ -160,10 +144,6 @@
     <string name="settings_refresh_on_open_description">Actualiza las fuentes al iniciar la aplicación</string>
     <string name="settings_refresh_wifi_only">Actualizar solo en Wi-Fi</string>
     <string name="settings_refresh_wifi_only_description">Solo se actualizarán las entradas cuando se esté conectado a una red Wi-Fi</string>
-    <string name="settings_visible_feeds">Visibilidad de las fuentes</string>
-    <string name="settings_widget_background">Fondo</string>
-    <string name="settings_widget_background_description">Color y transparencia del fondo del widget</string>
-    <string name="all_feeds">Todas las fuentes (incl. futuras)</string>
     <string name="settings_screen_proxy">Proxy</string>
     <string name="settings_category_network">Red</string>
     <string name="settings_proxy_enabled">Habilitado</string>
@@ -174,11 +154,6 @@
     <string name="settings_proxy_host">Máquina</string>
     <string name="settings_proxy_port">Puerto</string>
     <string name="settings_proxy_type">Tipo</string>
-
-    <plurals name="number_of_new_entries">
-	<item quantity="one">Una entrada nueva</item>
-	<item quantity="other">%d entradas nuevas</item>
-</plurals>
 
     <string-array name="settings_intervals">
         <item>1 minuto</item>
@@ -224,11 +199,7 @@
     <string name="menu_open_in_browser">Abrir en el navegador</string>
     <string name="settings_mark_as_read">Mostrar botón Marcar todo como leído</string>
     <string name="settings_mark_as_read_description">Mostrar / Ocultar el botón</string>
-    <string name="settings_show_new_entries">Mostrar entradas nuevas automáticamente</string>
-    <string name="settings_show_new_entries_description">Desactivar para requerir tocar el botón Mostrar nuevas entradas para mostrar nuevas entradas</string>
     <string name="menu_switch_full_original">Mostrar contenido completo</string>
-    <string name="settings_left_panel">Panel de navegación</string>
-    <string name="settings_left_panel_description">Mostrar el panel de navegación al iniciar la aplicación</string>
     <string name="cookiename">Nombre</string>
     <string name="cookievalue">Valor</string>
     <string name="settings_font_serif">Usar fuente Serif</string>

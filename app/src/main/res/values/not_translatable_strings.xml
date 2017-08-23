@@ -2,11 +2,14 @@
 <resources>
     <string name="about_us_copyright" translatable="false">Copyright 2015–2016 Arnaud Renaud-Goud</string>
     <string name="about_us_content" translatable="false"><![CDATA[
-    Project Website : https://github.com/Etuldan/spaRSS <br /><br />
+    Project Website : https://github.com/ahmaabdo/HomeRSS <br /><br />
+
+    <b>HomeRSS Developer</b><br/>
+    • Ahmad Abdo<br/><br/>
     <b>Community</b><br/>
     • Ildar Mulyukov<br/><br/>
 
-    <b>Developers</b><br/>
+    <b>spaRSS Developers</b><br/>
     • Arnaud Renaud-Goud<br/>
     • equiem<br/>
     • Frédéric Julian<br/>

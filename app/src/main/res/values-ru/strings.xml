@@ -23,9 +23,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">Про spaRSS</string>
-    <string name="welcome_title">Добро пожаловать в spaRSS! Хотите добавить новую ленту?</string>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">Про Home</string>
+    <string name="welcome_title">Добро пожаловать в Home! Хотите добавить новую ленту?</string>
     <string name="never">никогда</string>
     <string name="update">Обновление</string>
     <string name="colon">:\u00A0</string>
@@ -33,7 +33,6 @@
     <string name="menu_refresh">Обновить</string>
     <string name="menu_all_read">Пометить все как прочтённые</string>
     <string name="menu_show_new_entries">Показать новые записи</string>
-    <string name="spaRSS_feeds">spaRSS ленты</string>
     <string name="error">Ошибка</string>
     <string name="network_error">Нет подключения к сети</string>
     <string name="loading">Загрузка…</string>
@@ -113,12 +112,10 @@
     <string name="menu_full_screen">Полный экран</string>
     <string name="menu_copy_clipboard">Скопировать ссылку</string>
     <string name="menu_mark_as_unread">Пометить как непрочитанное</string>
-    <string name="share_favorites_title">spaRSS: избранные новости</string>
+    <string name="share_favorites_title">Home: избранные новости</string>
     <string name="copied_clipboard">Ссылка скопирована</string>
     <string name="get_full_text">Загрузить весь текст</string>
-    <string name="original_text">Показать оригинальный текст</string>
     <string name="see_enclosure">Показать вложение</string>
-    <string name="see_link">Открыть в браузере</string>
     <string name="cant_open_link">Нет приложения, чтобы открыть ссылку</string>
     <string name="open_enclosure">Открыть вложение</string>
     <string name="file">Файл</string>
@@ -127,25 +124,12 @@
     <string name="tip_sentence">Совет: проведите пальцем влево, чтобы отметить как прочитанное, или вправо, чтобы добавить в избранное</string>
 
     <!-- WIDGET -->
-    <string name="red">Красный</string>
-    <string name="green">Зеленый</string>
-    <string name="blue">Синий</string>
-    <string name="transparency">Прозрачный</string>
 
     <!-- SETTINGS -->
     <string name="settings_category_refresh">Автоматическое обновление</string>
     <string name="settings_refresh_enabled">Включить автоматическое обновление</string>
     <string name="settings_refresh_enabled_description">Включить автоматическое обновление лент</string>
     <string name="settings_refresh_interval">Интервал обновления</string>
-    <string name="settings_category_notifications">Уведомления</string>
-    <string name="settings_notifications_enabled">Включить уведомления</string>
-    <string name="settings_notifications_enabled_description">Включить уведомления о новых записях</string>
-    <string name="settings_notifications_ringtone">Звук</string>
-    <string name="settings_notifications_ringtone_none">Нет</string>
-    <string name="settings_notifications_vibrate">Вибрация</string>
-    <string name="settings_notifications_vibrate_description">Включить вибрацию, если есть новые записи</string>
-    <string name="settings_notifications_light">Свет</string>
-    <string name="settings_notifications_light_description">Включить световое оповещение о новых записях</string>
     <string name="settings_category_content_presentation">Представление содержания</string>
     <string name="settings_light_theme">Светлая тема</string>
     <string name="settings_light_theme_description">Использовать светлую тему</string>
@@ -162,10 +146,6 @@
     <string name="settings_refresh_on_open_description">Обновлять все ленты пии запуске приложения</string>
     <string name="settings_refresh_wifi_only">Обновлять только по WiFi</string>
     <string name="settings_refresh_wifi_only_description">Автоматическое обновление будет выполняться только при включённом WiFi</string>
-    <string name="settings_visible_feeds">Видимые ленты</string>
-    <string name="settings_widget_background">Фон</string>
-    <string name="settings_widget_background_description">Цвет и прозрачность фона виджета</string>
-    <string name="all_feeds">Все ленты (включая будущие)</string>
     <string name="settings_screen_proxy">Прокси-сервер</string>
     <string name="settings_category_network">Сеть</string>
     <string name="settings_proxy_enabled">Включено</string>
@@ -175,13 +155,6 @@
     <string name="settings_proxy_host">Адрес сервера</string>
     <string name="settings_proxy_port">Порт</string>
     <string name="settings_proxy_type">Тип соединения</string>
-
-    <plurals name="number_of_new_entries">
-	<item quantity="one">Одна новая запись</item>
-	<item quantity="few">%d новых записи</item>
-	<item quantity="many">%d новых записей</item>
-	<item quantity="other"/>
-</plurals>
 
     <string-array name="settings_intervals">
         <item>1 минута</item>
@@ -238,14 +211,10 @@
     <string name="feed_httpAuth">HTTP-аутентификация</string>
     <string name="loginhttpAuth">Имя пользователя</string>
     <string name="passwordhttpAuth">Пароль</string>
-    <string name="settings_left_panel">Меню навигации</string>
-    <string name="settings_left_panel_description">Показывать меню навигации при запуске приложения</string>
     <string name="settings_font_serif">Шрифт с засечками</string>
     <string name="settings_font_serif_description">Использовать шрифт с засечками для отображения новостей</string>
     <string name="settings_mark_as_read">Показывать кнопку «Отметить все как прочтённые»</string>
     <string name="settings_mark_as_read_description">Показать/скрыть кнопку</string>
-    <string name="settings_show_new_entries">Автоматически показывать новые записи</string>
-    <string name="settings_show_new_entries_description">Если отключено, для показа новых записей потребуется нажать «Показать новые записи»</string>
     <string name="menu_open_in_browser">Открыть в браузере</string>
     <string name="menu_switch_full_original">Показать всё содержимое</string>
     <string name="filter_help">Помощь по фильтрам</string>

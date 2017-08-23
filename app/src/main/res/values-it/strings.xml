@@ -23,16 +23,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">A proposito di spaRSS</string>
-    <string name="welcome_title">Benvenuto su spaRSS. Vorresti aggiungere un feed?</string>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">A proposito di Home</string>
+    <string name="welcome_title">Benvenuto su Home. Vorresti aggiungere un feed?</string>
     <string name="never">mai</string>
     <string name="update">Aggiornamento</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Impostazioni</string>
     <string name="menu_refresh">Aggiorna</string>
     <string name="menu_all_read">Segna tutti come letti</string>
-    <string name="spaRSS_feeds">Feed di spaRSS</string>
     <string name="error">Errore</string>
     <string name="network_error">Nessuna connessione disponibile</string>
     <string name="loading">Caricamento in corso…</string>
@@ -123,12 +122,10 @@
     <string name="menu_mark_as_unread">Segna come non letto</string>
     <string name="menu_open_in_browser">Apri nel browser</string>
     <string name="menu_switch_full_original">Mostra testo originale</string>
-    <string name="share_favorites_title">spaRSS: articoli preferiti</string>
+    <string name="share_favorites_title">Home: articoli preferiti</string>
     <string name="copied_clipboard">Link copiato</string>
     <string name="get_full_text">Recupera il testo completo</string>
-    <string name="original_text">Mostra testo originale</string>
     <string name="see_enclosure">Vedi allegati</string>
-    <string name="see_link">Vedi nel browser</string>
     <string name="cant_open_link">Nessuna applicazione trovata per questo link</string>
     <string name="open_enclosure">Apri allegato</string>
     <string name="file">File</string>
@@ -137,10 +134,6 @@
     <string name="tip_sentence">Suggerimento: fai scorrere a sinistra per segnare come letto e a destra per segnare come preferito</string>
 
     <!-- WIDGET -->
-    <string name="red">Rosso</string>
-    <string name="green">Verde</string>
-    <string name="blue">Blu</string>
-    <string name="transparency">Trasparenza</string>
 
     <!-- SETTINGS -->
     <string name="settings_category_refresh">Aggiornamento automatico</string>
@@ -148,24 +141,9 @@
     <string name="settings_refresh_enabled_description">Attiva l\'aggiornamento automatico dei feed
     </string>
     <string name="settings_refresh_interval">Intervallo</string>
-    <string name="settings_category_notifications">Notifiche</string>
-    <string name="settings_notifications_enabled">Attiva notifiche</string>
-    <string name="settings_notifications_enabled_description">Attiva le notifiche all\'arrivo di nuovi
-        articoli
-    </string>
-    <string name="settings_notifications_ringtone">Suoneria</string>
-    <string name="settings_notifications_ringtone_none">Nessuna</string>
-    <string name="settings_notifications_vibrate">Vibrazione</string>
-    <string name="settings_notifications_vibrate_description">Attiva la vibrazione all\'arrivo di
-        nuovi articoli
-    </string>
-    <string name="settings_notifications_light">LED</string>
-    <string name="settings_notifications_light_description">Accendi il LED di notifica all\'arrivo di nuovi articoli</string>
     <string name="settings_category_content_presentation">Aspetto e contenuti</string>
     <string name="settings_light_theme">Tema chiaro</string>
     <string name="settings_light_theme_description">Utilizza il tema chiaro</string>
-    <string name="settings_left_panel">Pannello laterale</string>
-    <string name="settings_left_panel_description">Mostra il pannello laterale all\'avvio dell\'applicazione</string>
     <string name="settings_keep_time">Tempo di archiviazione</string>
     <string name="settings_display_images">Mostra immagini</string>
     <string name="settings_display_images_description">Mostra le immagini degli articoli</string>
@@ -183,11 +161,6 @@
     </string>
     <string name="settings_refresh_wifi_only">Aggiorna solo in Wi-Fi</string>
     <string name="settings_refresh_wifi_only_description">"L\'aggiornamento automatico viene eseguito solo quando si è connessi ad una rete Wi-Fi "</string>
-    <string name="settings_visible_feeds">Feed visibili</string>
-    <string name="settings_widget_background">Sfondo</string>
-    <string name="settings_widget_background_description">Colore e trasparenza dello sfondo del widget
-    </string>
-    <string name="all_feeds">Tutti i feed (inclusi futuri)</string>
     <string name="settings_screen_proxy">Proxy</string>
     <string name="settings_category_network">Rete</string>
     <string name="settings_proxy_enabled">Attivato</string>
@@ -198,11 +171,6 @@
     <string name="settings_proxy_type">Tipo</string>
     <string name="settings_mark_as_read">Mostra bottone "Segna tutti come letti"</string>
     <string name="settings_mark_as_read_description">Mostra/nascondi il bottone</string>
-
-    <plurals name="number_of_new_entries">
-        <item quantity="one">Un nuovo articolo</item>
-        <item quantity="other">%d nuovi articoli</item>
-    </plurals>
 
     <string-array name="settings_intervals">
         <item>1 minuto</item>
@@ -254,6 +222,4 @@
     </string-array>
 
 <string name="menu_show_new_entries">Mostra nuovi articoli</string>
-    <string name="settings_show_new_entries">Mostra automaticamente nuovi articoli</string>
-    <string name="settings_show_new_entries_description">Se disabilitato, bisogna premere sul bottone Mostra nuovi articoli per mostrare i nuovi articoli</string>
-    </resources>
+</resources>

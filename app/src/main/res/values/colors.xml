@@ -4,26 +4,25 @@
     <color name="green">@android:color/holo_green_dark</color>
 
 
-    <color name="Indigo_900">#1a237e</color>
-    <color name="Indigo_800">#283593</color>
-    <color name="Indigo_700">#303f9f</color>
-    <color name="Indigo_500">#3F51B5</color>
-    <color name="Indigo_400">#5c6bc0</color>
-    <color name="Indigo_300">#7986cb</color>
-    <color name="Indigo_100">#C5CAE9</color>
-    <color name="Indigo_50">#e8eaf6</color>
-    <color name="light_A100">#b388ff</color>
-    <color name="dark_A700">#aa00ff</color>
+    <color name="Indigo_900">#004D40</color>
+    <color name="Indigo_800">#00695C</color>
+    <color name="Indigo_700">#00796B</color>
+    <color name="Indigo_500">#009688</color>
+    <color name="Indigo_400">#26A69A</color>
+    <color name="Indigo_300">#4DB6AC</color>
+    <color name="Indigo_50">#E0F2F1</color>
+    <color name="light_A100">#FF5722</color>
+    <color name="dark_A700">#5C97F5</color>
 
 
-    <color name="dark_background">@android:color/black</color>
+    <color name="dark_background">#131B1D</color>
     <color name="dark_base_text">#DEFFFFFF</color>
     <color name="dark_secondary_text">#8AFFFFFF</color>
     <color name="dark_disabled">#61FFFFFF</color>
     <color name="dark_dividers">#1FFFFFFF</color>
-    <color name="dark_primary_color_dark">@color/Indigo_900</color>
-    <color name="dark_primary_color">@color/Indigo_700</color>
-    <color name="dark_primary_color_light">@android:color/black</color>
+    <color name="dark_primary_color_dark">#0C1011</color>
+    <color name="dark_primary_color">@color/dark_background</color>
+    <color name="dark_primary_color_light">#283032</color>
     <color name="dark_accent_color">@color/dark_A700</color>
 
     <color name="light_background">@android:color/white</color>

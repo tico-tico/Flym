@@ -24,16 +24,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">spaRSS 정보</string>
-    <string name="welcome_title">spaRSS 사용을 환영합니다. 피드를 추가하시겠습니까?</string>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">Home 정보</string>
+    <string name="welcome_title">Home 사용을 환영합니다. 피드를 추가하시겠습니까?</string>
     <string name="never">하지 않음</string>
     <string name="update">업데이트</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">설정</string>
     <string name="menu_refresh">새로 고침</string>
     <string name="menu_all_read">모두 읽은 것으로 표시</string>
-    <string name="spaRSS_feeds">spaRSS 피드</string>
     <string name="error">오류</string>
     <string name="network_error">네트워크가 준비되지 않았습니다</string>
     <string name="loading">읽어들이는 중…</string>
@@ -112,12 +111,10 @@
     <string name="menu_full_screen">전체 화면</string>
     <string name="menu_copy_clipboard">링크 복사</string>
     <string name="menu_mark_as_unread">읽은 것으로 표시</string>
-    <string name="share_favorites_title">spaRSS: 별표 항목</string>
+    <string name="share_favorites_title">Home: 별표 항목</string>
     <string name="copied_clipboard">링크 복사함</string>
     <string name="get_full_text">전체 텍스트 가져오기</string>
-    <string name="original_text">원래 텍스트 가져오기</string>
     <string name="see_enclosure">내장 미디어 보기</string>
-    <string name="see_link">브라우저에서 보기</string>
     <string name="cant_open_link">이 링크에 대한 프로그램이 없습니다</string>
     <string name="open_enclosure">내장 미디어 열기</string>
     <string name="file">파일</string>
@@ -126,25 +123,12 @@
     <string name="tip_sentence">팁: 항목을 왼쪽으로 당기면 읽은 항목으로 설정할 수 있고 오른쪽으로 당기면 즐겨찾기로 설정할 수 있습니다</string>
 
     <!-- WIDGET -->
-    <string name="red">빨강</string>
-    <string name="green">녹색</string>
-    <string name="blue">파랑</string>
-    <string name="transparency">투명도</string>
 
     <!-- SETTINGS -->
     <string name="settings_category_refresh">자동 새로 고침</string>
     <string name="settings_refresh_enabled">자동 새로 고침 사용</string>
     <string name="settings_refresh_enabled_description">피드 자동 새로 고침 기능을 사용</string>
     <string name="settings_refresh_interval">새로 고침 간격</string>
-    <string name="settings_category_notifications">알림</string>
-    <string name="settings_notifications_enabled">알림 사용</string>
-    <string name="settings_notifications_enabled_description">새 항목에 대한 알림을 사용</string>
-    <string name="settings_notifications_ringtone">벨소리</string>
-    <string name="settings_notifications_ringtone_none">없음</string>
-    <string name="settings_notifications_vibrate">진동</string>
-    <string name="settings_notifications_vibrate_description">새 항목이 있을 때 진동 사용</string>
-    <string name="settings_notifications_light">LED 알림</string>
-    <string name="settings_notifications_light_description">새 항목을 알릴 때 LED 알림 사용</string>
     <string name="settings_category_content_presentation">내용 표시</string>
     <string name="settings_light_theme">밝은 테마</string>
     <string name="settings_light_theme_description">밝은 테마를 사용</string>
@@ -161,10 +145,6 @@
     <string name="settings_refresh_on_open_description">앱을 열면 모든 피드 새로 고침</string>
     <string name="settings_refresh_wifi_only">Wi-Fi에서만 새로 고침</string>
     <string name="settings_refresh_wifi_only_description">Wi-Fi를 사용할 때만 자동으로 새로 고침</string>
-    <string name="settings_visible_feeds">피드 모양</string>
-    <string name="settings_widget_background">배경</string>
-    <string name="settings_widget_background_description">위젯 배경의 색 및 투명도</string>
-    <string name="all_feeds">모든 피드(앞으로의 피드 포함)</string>
     <string name="settings_screen_proxy">프록시</string>
     <string name="settings_category_network">네트워크</string>
     <string name="settings_proxy_enabled">사용</string>
@@ -173,10 +153,6 @@
     <string name="settings_proxy_host">호스트</string>
     <string name="settings_proxy_port">포트</string>
     <string name="settings_proxy_type">종류</string>
-
-    <plurals name="number_of_new_entries">
-        <item quantity="other">새 항목 %d개</item>
-    </plurals>
 
     <string-array name="settings_intervals">
         <item>1분</item>
@@ -228,12 +204,8 @@
     <string name="filter_help">필터 도움말</string>
     <string name="menu_open_in_browser">브라우저에서 열기</string>
     <string name="menu_switch_full_original">모든 내용 표시</string>
-    <string name="settings_left_panel">탐색 서랍</string>
-    <string name="settings_left_panel_description">앱이 시작될 때 탐색 서랍을 표시합니다</string>
     <string name="settings_font_serif">세리프 글꼴 사용</string>
     <string name="settings_font_serif_description">내용을 표시할 때 산세리프 대신 세리프 글꼴을 사용합니다</string>
     <string name="settings_mark_as_read">\'모두 읽음으로 표시\' 버튼 표시</string>
     <string name="settings_mark_as_read_description">버튼을 표시하거나 숨깁니다</string>
-    <string name="settings_show_new_entries">새 항목 자동으로 표시</string>
-    <string name="settings_show_new_entries_description">만약 해제되었을 경우 \'새 항목 표시\' 버튼을 눌러야만 새로운 항목이 표시됩니다</string>
-    </resources>
+</resources>

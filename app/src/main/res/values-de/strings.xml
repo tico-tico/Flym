@@ -24,9 +24,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">Über spaRSS</string>
-    <string name="welcome_title">Wilkommen in spaRSS. Willst du einen Feed hinzufügen?</string>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">Über Home</string>
+    <string name="welcome_title">Wilkommen in Home. Willst du einen Feed hinzufügen?</string>
     <string name="never">nie</string>
     <string name="update">aktualisiert</string>
     <string name="colon">:\u00A0</string>
@@ -34,7 +34,6 @@
     <string name="menu_refresh">Aktualisieren</string>
     <string name="menu_all_read">Alle als gelesen markieren</string>
     <string name="menu_show_new_entries">Neue Einträge zeigen</string>
-    <string name="spaRSS_feeds">spaRSS-Feeds</string>
     <string name="error">Fehler</string>
     <string name="network_error">Kein Internet</string>
     <string name="loading">Laden…</string>
@@ -123,12 +122,10 @@
     <string name="menu_mark_as_unread">Als ungelesen markieren</string>
     <string name="menu_open_in_browser">Im Browser öffnen</string>
     <string name="menu_switch_full_original">Zeige vollständigen Inhalt</string>
-    <string name="share_favorites_title">spaRSS: favorisierte Einträge</string>
+    <string name="share_favorites_title">Home: favorisierte Einträge</string>
     <string name="copied_clipboard">Link kopiert</string>
     <string name="get_full_text">Vollen Text abrufen</string>
-    <string name="original_text">Ursprünglichen Text anzeigen</string>
     <string name="see_enclosure">Anhang ansehen</string>
-    <string name="see_link">Im Browser ansehen</string>
     <string name="cant_open_link">Keine Anwendung für diesen Link gefunden</string>
     <string name="open_enclosure">Öffne Anhang</string>
     <string name="file">Datei</string>
@@ -137,30 +134,15 @@
     <string name="tip_sentence">Tipp: Nach links wischen um Artikel als gelesen zu markieren und nach rechts wischen um Artikel zu favorisieren</string>
 
     <!-- WIDGET -->
-    <string name="red">Rot</string>
-    <string name="green">Grün</string>
-    <string name="blue">Blau</string>
-    <string name="transparency">Transparenz</string>
 
     <!-- SETTINGS -->
     <string name="settings_category_refresh">Automatisches Aktualisieren</string>
     <string name="settings_refresh_enabled">Automatisches Aktualisieren</string>
     <string name="settings_refresh_enabled_description">Aktiviert das automatische Aktualisieren aller Feeds</string>
     <string name="settings_refresh_interval">Aktualisierungsintervall</string>
-    <string name="settings_category_notifications">Benachrichtigungen</string>
-    <string name="settings_notifications_enabled">Benachrichtigungen aktivieren</string>
-    <string name="settings_notifications_enabled_description">Aktiviert Benachrichtigungen bei neuen Einträgen</string>
-    <string name="settings_notifications_ringtone">Klingelton</string>
-    <string name="settings_notifications_ringtone_none">Keiner</string>
-    <string name="settings_notifications_vibrate">Vibration</string>
-    <string name="settings_notifications_vibrate_description">Aktiviert Vibration bei neuen Einträgen</string>
-    <string name="settings_notifications_light">Licht</string>
-    <string name="settings_notifications_light_description">Aktiviert das Benachrichtungslicht bei neuen Einträgen</string>
     <string name="settings_category_content_presentation">Anzeige der Inhalte</string>
     <string name="settings_light_theme">Helles Thema</string>
     <string name="settings_light_theme_description">Helles Thema nutzen</string>
-    <string name="settings_left_panel">Navigationsleiste</string>
-    <string name="settings_left_panel_description">Zeige die Navigationsleiste beim Start der App</string>
     <string name="settings_keep_time">Zeit nach der Einträge gelöscht werden</string>
     <string name="settings_display_images">Bilder anzeigen</string>
     <string name="settings_display_images_description">Bilder in den Einträgen anzeigen</string>
@@ -176,10 +158,6 @@
     <string name="settings_refresh_on_open_description">Aktualisiert alle Feeds beim Öffnen der Anwendung</string>
     <string name="settings_refresh_wifi_only">Nur über WLAN aktualisieren</string>
     <string name="settings_refresh_wifi_only_description">Die automatische Aktualisierung wird nur bei aktiver WLAN-Verbindung durchgeführt</string>
-    <string name="settings_visible_feeds">Sichtbare Feeds</string>
-    <string name="settings_widget_background">Hintergrund</string>
-    <string name="settings_widget_background_description">Farbe und Transparenz des Widget-Hintergrundes</string>
-    <string name="all_feeds">Alle Feeds (auch zukünftige)</string>
     <string name="settings_screen_proxy">Proxy</string>
     <string name="settings_category_network">Netzwerk</string>
     <string name="settings_proxy_enabled">aktiviert</string>
@@ -190,10 +168,6 @@
     <string name="settings_proxy_type">Typ</string>
     <string name="settings_mark_as_read">Zeige den Button \"Alle als gelesen markieren\"</string>
     <string name="settings_mark_as_read_description">Zeige / verstecke den Button</string>
-    <plurals name="number_of_new_entries">
-        <item quantity="one">Ein neuer Eintrag</item>
-        <item quantity="other">%d neue Einträge</item>
-    </plurals>
 
     <string-array name="settings_intervals">
         <item>1 Minute</item>
@@ -244,9 +218,7 @@
         <item>Immer</item>
     </string-array>
 
-<string name="settings_show_new_entries">Automatisch neue Einträge anzeigen</string>
     <string name="filter_help">Filter Hilfe</string>
-    <string name="settings_show_new_entries_description">Wenn deaktiviert, ist das Antippen des Buttons Neue Einträge erforderlich, um neue Einträge zu sehen</string>
     <string name="google_news_custom_topic">Eigenes Thema</string>
 <string name="storage_request_explanation">Um Feeds aus einer Datei importieren oder in eine Datei exportieren zu können, benötigt die App Zugriffsrechte auf die SD-Karte.</string>
     <string name="feed_no_summary">&lt;Keine Zusammenfassung verfügbar&gt;</string>

@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
-    <string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">Tentang spaRSS</string>
-    <string name="welcome_title">Selamat datang di spaRSS. Apakah anda ingin menambahkan satu umpan?</string>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">Tentang Home</string>
+    <string name="welcome_title">Selamat datang di Home. Apakah anda ingin menambahkan satu umpan?</string>
     <string name="never">tidak pernah</string>
     <string name="update">Perbarui</string>
     <string name="colon">: </string>
@@ -10,7 +10,6 @@
     <string name="menu_refresh">Segarkan</string>
     <string name="menu_all_read">Tandai semua sudah terbaca</string>
     <string name="menu_show_new_entries">Tampilkan entri baru</string>
-    <string name="spaRSS_feeds">umpan spaRSS</string>
     <string name="error">Galat</string>
     <string name="network_error">Jaringan belum diatur</string>
     <string name="loading">Memuat…</string>
@@ -98,12 +97,10 @@
     <string name="menu_mark_as_unread">Tandai belum dibaca</string>
     <string name="menu_open_in_browser">Buka diperamban</string>
     <string name="menu_switch_full_original">Tampilkan konten penuh</string>
-    <string name="share_favorites_title">spaRSS: entri berbintang</string>
+    <string name="share_favorites_title">Home: entri berbintang</string>
     <string name="copied_clipboard">Tautan tersalin</string>
     <string name="get_full_text">Ambil teks penuh</string>
-    <string name="original_text">Tampilkan teks dasar</string>
     <string name="see_enclosure">Lihat lampiran</string>
-    <string name="see_link">Lihat diperamban</string>
     <string name="cant_open_link">Tidak ditemukan aplikasi untuk tautan ini</string>
     <string name="open_enclosure">Buka lampiran</string>
     <string name="file">Berkas</string>
@@ -111,29 +108,13 @@
     <string name="open_link">Buka tautan</string>
     <string name="tip_sentence">Tip: geser kekiri untuk menandakan telah terbaca dan kekanan untuk menandakan sebagai favorit</string>
 
-    <string name="red">Merah</string>
-    <string name="green">Hijau</string>
-    <string name="blue">Biru</string>
-    <string name="transparency">Transparansi</string>
-
     <string name="settings_category_refresh">Segarkan otomatis</string>
     <string name="settings_refresh_enabled">Aktifkan segarkan otomatis</string>
     <string name="settings_refresh_enabled_description">Aktifkan penyegaran otomatis umpan</string>
     <string name="settings_refresh_interval">Segarkan interval</string>
-    <string name="settings_category_notifications">Notifikasi</string>
-    <string name="settings_notifications_enabled">Aktifkan notifikasi</string>
-    <string name="settings_notifications_enabled_description">Aktifkan notifikasi jika ada entri baru</string>
-    <string name="settings_notifications_ringtone">Nada dering</string>
-    <string name="settings_notifications_ringtone_none">Tidak ada</string>
-    <string name="settings_notifications_vibrate">Getar</string>
-    <string name="settings_notifications_vibrate_description">Aktifkan getar untuk entri baru</string>
-    <string name="settings_notifications_light">Cahaya</string>
-    <string name="settings_notifications_light_description">Aktifkan notifikasi cahaya di entri baru</string>
     <string name="settings_category_content_presentation">Presentasi konten</string>
     <string name="settings_light_theme">Tema terang</string>
     <string name="settings_light_theme_description">Gunakan tema terang</string>
-    <string name="settings_left_panel">Navigasi Panel Samping</string>
-    <string name="settings_left_panel_description">Tampilkan Navigasi Panel Samping saat memulai aplikasi</string>
     <string name="settings_keep_time">Waktu entri akan tetap disimpan</string>
     <string name="settings_display_images">Tampilkan gambar</string>
     <string name="settings_display_images_description">Tampilkan gambar di entri</string>
@@ -149,10 +130,6 @@
     <string name="settings_refresh_on_open_description">Segarkan semua umpan ketika membuka aplikasi</string>
     <string name="settings_refresh_wifi_only">Segarkan hanya lewat Wi-Fi</string>
     <string name="settings_refresh_wifi_only_description">Segarkan otomatis hanya dilakukan jika koneksi Wi-Fi tersedia</string>
-    <string name="settings_visible_feeds">Umpan terlihat</string>
-    <string name="settings_widget_background">Latar belakang</string>
-    <string name="settings_widget_background_description">Warna dan transparansi widget latar belakang</string>
-    <string name="all_feeds">Semua umpan (termasuk kedepannya)</string>
     <string name="settings_screen_proxy">Proksi</string>
     <string name="settings_category_network">Jaringan</string>
     <string name="settings_proxy_enabled">Aktif</string>
@@ -163,12 +140,6 @@
     <string name="settings_proxy_type">Tipe</string>
     <string name="settings_mark_as_read">Tampilkan tombol Tandai semua terbaca</string>
     <string name="settings_mark_as_read_description">Tampil / Sembunyi tombol</string>
-    <string name="settings_show_new_entries">Secara otomatis menampilkan entri baru</string>
-    <string name="settings_show_new_entries_description">Jika non-aktif, sentuk ditombol Tampilkan entri baru dibutuhkan untuk menampilkan entri baru</string>
-    <plurals name="number_of_new_entries">
-	<item quantity="one">Satu entri baru</item>
-	<item quantity="other"/>
-</plurals>
 
     <string name="storage_request_explanation">Agar bisa mengimpor atau mengekspor umpan dari atau ke berkas, anda harus mengijinkan aplikasi mengakses media penyimpanan.</string>
     <string name="google_news_custom_topic">Masukkan topik khusus</string>

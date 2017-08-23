@@ -22,16 +22,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">Om spaRSS</string>
-    <string name="welcome_title">Välkommen till spaRSS. Skulle du vilja lägga till en feed?</string>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">Om Home</string>
+    <string name="welcome_title">Välkommen till Home. Skulle du vilja lägga till en feed?</string>
     <string name="never">aldrig</string>
     <string name="update">Uppdaterad</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Inställningar</string>
     <string name="menu_refresh">Uppdatera</string>
     <string name="menu_all_read">Mark som läst</string>
-    <string name="spaRSS_feeds">spaRSS feeds</string>
     <string name="error">Fel</string>
     <string name="network_error">Nätverket är inte tillgängligt</string>
     <string name="loading">Laddar…</string>
@@ -116,12 +115,10 @@
     <string name="menu_mark_as_unread">Markera som oläst</string>
     <string name="menu_open_in_browser">Öppna i webbläsare</string>
     <string name="menu_switch_full_original">Show full content</string>
-    <string name="share_favorites_title">spaRSS: favoriter</string>
+    <string name="share_favorites_title">Home: favoriter</string>
     <string name="copied_clipboard">Länk kopierad</string>
     <string name="get_full_text">Hämta hela texten</string>
-    <string name="original_text">Visa originaltexten</string>
     <string name="see_enclosure">Visa bifogad mediafil</string>
-    <string name="see_link">Öppna i webläsare</string>
     <string name="cant_open_link">Inget lämpligt program hittades för denna länk</string>
     <string name="open_enclosure">Öppna bifogad fil</string>
     <string name="file">Fil</string>
@@ -130,30 +127,15 @@
     <string name="tip_sentence">Tips: svepa åt vänster för att markera som läst, svepa åt höger för att markera som favorit.</string>
 
     <!-- WIDGET -->
-    <string name="red">Röd</string>
-    <string name="green">Grön</string>
-    <string name="blue">Blå</string>
-    <string name="transparency">Transparens</string>
 
     <!-- SETTINGS -->
     <string name="settings_category_refresh">Automatisk uppdatering</string>
     <string name="settings_refresh_enabled">Uppdatera automatiskt</string>
     <string name="settings_refresh_enabled_description">Uppdatera alla feeds automatiskt</string>
     <string name="settings_refresh_interval">Uppdateringsintervall</string>
-    <string name="settings_category_notifications">Påminnelser</string>
-    <string name="settings_notifications_enabled">Visa påminnelser</string>
-    <string name="settings_notifications_enabled_description">Visa påminnelser då nytt feed innehåll finns</string>
-    <string name="settings_notifications_ringtone">Ringsignal</string>
-    <string name="settings_notifications_ringtone_none">Ingen</string>
-    <string name="settings_notifications_vibrate">Vibrera</string>
-    <string name="settings_notifications_vibrate_description">Vibrera vid nytt feed innehåll</string>
-    <string name="settings_notifications_light">Ljus</string>
-    <string name="settings_notifications_light_description">Tända lysdioden vid nytt feed innehåll</string>
     <string name="settings_category_content_presentation">Innehållspresentation</string>
     <string name="settings_light_theme">Ljust tema</string>
     <string name="settings_light_theme_description">Använd det ljusa temat</string>
-    <string name="settings_left_panel">Navigeringsmenu</string>
-    <string name="settings_left_panel_description">Visa navigeringsmenun vid start</string>
     <string name="settings_keep_time">Tid som inläggen behållas</string>
     <string name="settings_display_images">Visa bilder</string>
     <string name="settings_display_images_description">Visa bilder i inlägg</string>
@@ -169,10 +151,6 @@
     <string name="settings_refresh_on_open_description">Uppdatera alla feeds när applikationen öppnas</string>
     <string name="settings_refresh_wifi_only">Uppdatera endast via Wi-Fi</string>
     <string name="settings_refresh_wifi_only_description">Uppdatera automatisk endast när ett Wi-Fi-nätverk är tillgänglig</string>
-    <string name="settings_visible_feeds">Synliga feeds</string>
-    <string name="settings_widget_background">Bakgrund</string>
-    <string name="settings_widget_background_description">Färg och transparens för widgetens bakgrund</string>
-    <string name="all_feeds">Alla feeds (inkl. kommande)</string>
     <string name="settings_screen_proxy">Proxy</string>
     <string name="settings_category_network">Nätverk</string>
     <string name="settings_proxy_enabled">Använd proxyserver</string>
@@ -184,10 +162,6 @@
     <string name="settings_mark_as_read">Visa knappen "Mark som läst"</string>
     <string name="settings_mark_as_read_description">Visa knappen "Mark som läst"</string>
 
-    <plurals name="number_of_new_entries">
-        <item quantity="one">Ett nytt inlägg</item>
-        <item quantity="other">%d nya inlägg</item>
-    </plurals>
     <string-array name="settings_keep_times_per_feed">
         <item>1 dag</item>
         <item>2 dagar</item>

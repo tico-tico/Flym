@@ -46,15 +46,12 @@
 package ahmaabdo.home.rss.service;
 
 import android.app.IntentService;
-import android.app.Notification;
-import android.app.PendingIntent;
 import android.content.ContentProviderOperation;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -89,7 +86,6 @@ import java.util.regex.Pattern;
 import ahmaabdo.home.rss.Constants;
 import ahmaabdo.home.rss.MainApplication;
 import ahmaabdo.home.rss.R;
-import ahmaabdo.home.rss.activity.HomeActivity;
 import ahmaabdo.home.rss.parser.RssAtomParser;
 import ahmaabdo.home.rss.provider.FeedData;
 import ahmaabdo.home.rss.provider.FeedData.EntryColumns;
@@ -217,51 +213,13 @@ public class FetcherService extends IntentService {
             int newCount = (feedId == null ? refreshFeeds(keepDateBorderTime) : refreshFeed(feedId, keepDateBorderTime));
 
             if (newCount > 0) {
-                if (PrefUtils.getBoolean(PrefUtils.NOTIFICATIONS_ENABLED, true)) {
-                    Cursor cursor = getContentResolver().query(EntryColumns.CONTENT_URI, new String[]{Constants.DB_COUNT}, EntryColumns.WHERE_UNREAD, null, null);
 
-                    cursor.moveToFirst();
-                    newCount = cursor.getInt(0); // The number has possibly changed
-                    cursor.close();
+                Cursor cursor = getContentResolver().query(EntryColumns.CONTENT_URI, new String[]{Constants.DB_COUNT}, EntryColumns.WHERE_UNREAD, null, null);
 
-                    if (newCount > 0) {
-                        String text = getResources().getQuantityString(R.plurals.number_of_new_entries, newCount, newCount);
+                cursor.moveToFirst();
+                cursor.close();
 
-                        Intent notificationIntent = new Intent(FetcherService.this, HomeActivity.class);
-                        PendingIntent contentIntent = PendingIntent.getActivity(FetcherService.this, 0, notificationIntent,
-                                PendingIntent.FLAG_UPDATE_CURRENT);
 
-                        Notification.Builder notifBuilder = new Notification.Builder(MainApplication.getContext()) //
-                                .setContentIntent(contentIntent) //
-                                .setSmallIcon(R.drawable.ic_statusbar_rss) //
-                                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher)) //
-                                .setTicker(text) //
-                                .setWhen(System.currentTimeMillis()) //
-                                .setAutoCancel(true) //
-                                .setContentTitle(getString(R.string.spaRSS_feeds)) //
-                                .setContentText(text) //
-                                .setLights(0xffffffff, 0, 0);
-
-                        if (PrefUtils.getBoolean(PrefUtils.NOTIFICATIONS_VIBRATE, false)) {
-                            notifBuilder.setVibrate(new long[]{0, 1000});
-                        }
-
-                        String ringtone = PrefUtils.getString(PrefUtils.NOTIFICATIONS_RINGTONE, null);
-                        if (ringtone != null && ringtone.length() > 0) {
-                            notifBuilder.setSound(Uri.parse(ringtone));
-                        }
-
-                        if (PrefUtils.getBoolean(PrefUtils.NOTIFICATIONS_LIGHT, false)) {
-                            notifBuilder.setLights(0xffffffff, 300, 1000);
-                        }
-
-                        if (Constants.NOTIF_MGR != null) {
-                            Constants.NOTIF_MGR.notify(0, notifBuilder.getNotification());
-                        }
-                    }
-                } else if (Constants.NOTIF_MGR != null) {
-                    Constants.NOTIF_MGR.cancel(0);
-                }
             }
 
             mobilizeAllEntries();

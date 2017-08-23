@@ -141,7 +141,6 @@
                     android:layout_height="fill_parent">
 
                     <ScrollView
-                        android:id="@+id/scrollView_advanced_tab"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent">
 

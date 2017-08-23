@@ -23,16 +23,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">spaRSS</string>
+    <string name="app_name">Home</string>
     <string name="about_spaRSS">Tietoja spaRSSista</string>
-    <string name="welcome_title">Tervetuloa spaRSS:iin. Haluaisitko lisätä syötteen?</string>
+    <string name="welcome_title">Tervetuloa Home:iin. Haluaisitko lisätä syötteen?</string>
     <string name="never">ei koskaan</string>
     <string name="update">Päivitetty</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Asetukset</string>
     <string name="menu_refresh">Päivitä</string>
     <string name="menu_all_read">Merkitse kaikki luetuiksi</string>
-    <string name="spaRSS_feeds">spaRSS-syötteet</string>
     <string name="error">Virhe</string>
     <string name="network_error">Ei verkkoyhteyttä</string>
     <string name="loading">Lataa…</string>
@@ -118,12 +117,10 @@
     <string name="menu_mark_as_unread">Merkitse lukemattomaksi</string>
     <string name="menu_open_in_browser">Avaa selaimessa</string>
     <string name="menu_switch_full_original">Näytä koko sisältö</string>
-    <string name="share_favorites_title">spaRSS: tähdellä merkityt</string>
+    <string name="share_favorites_title">Home: tähdellä merkityt</string>
     <string name="copied_clipboard">Linkki kopioitu</string>
     <string name="get_full_text">Hae koko teksti</string>
-    <string name="original_text">Näytä alkuperäinen teksti</string>
     <string name="see_enclosure">Avaa liite</string>
-    <string name="see_link">Avaa selaimessa</string>
     <string name="cant_open_link">Linkin avaamiseen kykenevää sovellusta ei löydy</string>
     <string name="open_enclosure">Avaa liite</string>
     <string name="file">Tiedosto</string>
@@ -132,31 +129,15 @@
     <string name="tip_sentence">Vihje: Pyyhkäise vasemmalle merkitäksesi artikkeli luetuksi. Pyyhkäise oikealle merkitäksesi artikkeli tähdellä.</string>
 
     <!-- WIDGET -->
-    <string name="red">Punainen</string>
-    <string name="green">Vihreä</string>
-    <string name="blue">Sininen</string>
-    <string name="transparency">Läpinäkyvyys</string>
 
     <!-- SETTINGS -->
     <string name="settings_category_refresh">Automaattinen päivitys</string>
     <string name="settings_refresh_enabled">Päivitä automaattisesti</string>
     <string name="settings_refresh_enabled_description">Päivitä kaikki syötteet automaattisesti</string>
     <string name="settings_refresh_interval">Päivitysväli</string>
-    <string name="settings_category_notifications">Ilmoitukset</string>
-    <string name="settings_notifications_enabled">Näytä ilmoitukset</string>
-    <string name="settings_notifications_enabled_description">Näytä ilmoitus kun syötteissä on uusia artikkeleita</string>
-    <string name="settings_notifications_ringtone">Soittoääni</string>
-    <string name="settings_notifications_ringtone_none">Ei mitään
-    </string>
-    <string name="settings_notifications_vibrate">Värinä</string>
-    <string name="settings_notifications_vibrate_description">Aseta uusista artikkeleista ilmoittava värinähälytys</string>
-    <string name="settings_notifications_light">Merkkivalo</string>
-    <string name="settings_notifications_light_description">Ilmoita merkkivalolla uusista artikkeleista</string>
     <string name="settings_category_content_presentation">Sisällön esittäminen</string>
     <string name="settings_light_theme">Vaalea teema</string>
     <string name="settings_light_theme_description">Käytä vaaleaa teemaa</string>
-    <string name="settings_left_panel">Navigointivalikko</string>
-    <string name="settings_left_panel_description">Näytä navigointivalikko käynnistettäessä</string>
     <string name="settings_keep_time">Artikkelien säilyttämisaika</string>
     <string name="settings_display_images">Näytä kuvat</string>
     <string name="settings_display_images_description">Näytä kuvat artikkeleissa</string>
@@ -172,10 +153,6 @@
     <string name="settings_refresh_on_open_description">Päivitä kaikki syötteet sovelluksen käynnistyessä</string>
     <string name="settings_refresh_wifi_only">Vain Wi-Fi -yhteyden kautta</string>
     <string name="settings_refresh_wifi_only_description">Syötteet päivitetään automaattisesti ainoastaan kun Wi-Fi -yhteys on käytettävissä</string>
-    <string name="settings_visible_feeds">Näytettävät syötteet</string>
-    <string name="settings_widget_background">Tausta</string>
-    <string name="settings_widget_background_description">Widgetin taustan väri ja läpinäkyvyys</string>
-    <string name="all_feeds">Kaikki syötteet (myös tulevat)</string>
     <string name="settings_screen_proxy">Välityspalvelin</string>
     <string name="settings_category_network">Verkko</string>
     <string name="settings_proxy_enabled">Päällä</string>
@@ -186,10 +163,6 @@
     <string name="settings_proxy_type">Tyyppi</string>
     <string name="settings_mark_as_read">Näytä "Merkitse luetuksi" -nappi</string>
     <string name="settings_mark_as_read_description">Näytä "Merkitse luetuksi" -nappi</string>
-    <plurals name="number_of_new_entries">
-        <item quantity="one">Yksi uusi artikkeli</item>
-        <item quantity="other">%d uutta artikkelia</item>
-    </plurals>
     <string-array name="settings_keep_times_per_feed">
         <item>1 päivä</item>
         <item>2 päivää</item>
@@ -250,6 +223,4 @@
     <string name="filter_help">Suodattimien ohjeet</string>
     <string name="google_news_custom_topic">Syötä oma otsikko</string>
 
-    <string name="settings_show_new_entries">Näytä uudet kohteet automaattisesti</string>
-    <string name="settings_show_new_entries_description">Jos tämä poistetaan käytöstä, uusien tulosten näyttämiseksi vaaditaan Näytä uudet tulokset -napin kosketus</string>
-    </resources>
+</resources>

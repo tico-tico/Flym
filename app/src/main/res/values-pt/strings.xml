@@ -25,16 +25,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">Sobre o spaRSS</string>
-    <string name="welcome_title">Bem vindo ao spaRSS. Gostaria de adicionar um feed?</string>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">Sobre o Home</string>
+    <string name="welcome_title">Bem vindo ao Home. Gostaria de adicionar um feed?</string>
     <string name="never">nunca</string>
     <string name="update">Atualizar</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Opções</string>
     <string name="menu_refresh">Atualizar</string>
     <string name="menu_all_read">Marcar todos como lido</string>
-    <string name="spaRSS_feeds">spaRSS feeds</string>
     <string name="error">Erro</string>
     <string name="network_error">A rede não está configurada</string>
     <string name="loading">Carregando…</string>
@@ -117,12 +116,10 @@
     <string name="menu_full_screen">Tela cheia</string>
     <string name="menu_copy_clipboard">Copiar link</string>
     <string name="menu_mark_as_unread">Marcar como lido</string>
-    <string name="share_favorites_title">spaRSS: artigos favoritos</string>
+    <string name="share_favorites_title">Home: artigos favoritos</string>
     <string name="copied_clipboard">Link copiado</string>
     <string name="get_full_text">Download do texto completo</string>
-    <string name="original_text">Mostrar texto básico</string>
     <string name="see_enclosure">Listar anexos</string>
-    <string name="see_link">Abrir no browser</string>
     <string name="cant_open_link">Nenhum aplicativo encontrado para este link</string>
     <string name="open_enclosure">Abrir anexo</string>
     <string name="file">Arquivo</string>
@@ -131,30 +128,15 @@
     <string name="tip_sentence">Dica: deslize para a esquerda para marcar como lido e deslize para a direita para marcar como favorito</string>
 
     <!-- WIDGET -->
-    <string name="red">Vermelho</string>
-    <string name="green">Verde</string>
-    <string name="blue">Azul</string>
-    <string name="transparency">Transparente</string>
 
     <!-- SETTINGS -->
     <string name="settings_category_refresh">Atualização automática</string>
     <string name="settings_refresh_enabled">Habilitar atualização automática</string>
     <string name="settings_refresh_enabled_description">Activar a atualização automática de feeds</string>
     <string name="settings_refresh_interval">Intervalo de atualização</string>
-    <string name="settings_category_notifications">Notificações</string>
-    <string name="settings_notifications_enabled">Habilitar notificações</string>
-    <string name="settings_notifications_enabled_description">Activar notificações para novas entradas</string>
-    <string name="settings_notifications_ringtone">Toque</string>
-    <string name="settings_notifications_ringtone_none">Nenhum</string>
-    <string name="settings_notifications_vibrate">Vibrar</string>
-    <string name="settings_notifications_vibrate_description">Activar vibração para novas entradas</string>
-    <string name="settings_notifications_light">Light</string>
-    <string name="settings_notifications_light_description">Ativar led de notificação para novos artigos</string>
     <string name="settings_category_content_presentation">Apresentação de conteúdo</string>
     <string name="settings_light_theme">Tema Claro</string>
     <string name="settings_light_theme_description">Usar o tema claro</string>
-    <string name="settings_left_panel">Painel esquerdo</string>
-    <string name="settings_left_panel_description">Mostrar o painel esquerdo ao iniciar a aplicação</string>
     <string name="settings_keep_time">Período que os artigos serão mantidos</string>
     <string name="settings_display_images">Mostrar imagens</string>
     <string name="settings_display_images_description">Mostrar imagens nos artigos</string>
@@ -170,10 +152,6 @@
     <string name="settings_refresh_on_open_description">Atualiza todos os feeds ao iniciar a aplicação</string>
     <string name="settings_refresh_wifi_only">Atualizar somente em Wi-Fi</string>
     <string name="settings_refresh_wifi_only_description">Atualização automática apenas se ligação Wi-Fi estiver disponível</string>
-    <string name="settings_visible_feeds">Feeds visíveis</string>
-    <string name="settings_widget_background">Fundo</string>
-    <string name="settings_widget_background_description">Cor de fundo e transparência do widget</string>
-    <string name="all_feeds">Todos os feeds (inc. futuros)</string>
     <string name="settings_screen_proxy">Proxy</string>
     <string name="settings_category_network">Rede</string>
     <string name="settings_proxy_enabled">Habilitar</string>
@@ -184,10 +162,6 @@
     <string name="settings_proxy_type">Tipo</string>
     <string name="settings_mark_as_read">Botão "Marcar todos como lido"</string>
     <string name="settings_mark_as_read_description">Mostrar / Esconder o botão</string>
-    <plurals name="number_of_new_entries">
-        <item quantity="one">Um artigo novo</item>
-        <item quantity="other">%d novos artigos</item>
-    </plurals>
 
     <string-array name="settings_intervals">
         <item>1 minuto</item>
@@ -247,8 +221,6 @@
 
     <string name="feed_httpAuth">Atenticação HTTP</string>
     <string name="menu_open_in_browser">Abrir no navegador</string>
-    <string name="settings_show_new_entries">Mostrar novas entradas automaticamente</string>
-    <string name="settings_show_new_entries_description">Se desactivado, será preciso um toque no botão Mostrar novas entradas para mostrar novas entradas</string>
     <string name="filter_help">Filtrar Ajuda</string>
     <string name="menu_switch_full_original">Mostrar conteúdo completo</string>
     </resources>

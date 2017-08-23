@@ -23,16 +23,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">关于spaRSS</string>
-    <string name="welcome_title">欢迎使用spaRSS。需要添加一个源吗？</string>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">关于Home</string>
+    <string name="welcome_title">欢迎使用Home。需要添加一个源吗？</string>
     <string name="never">从未</string>
     <string name="update">更新</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">设置</string>
     <string name="menu_refresh">刷新</string>
     <string name="menu_all_read">标记全部为已读</string>
-    <string name="spaRSS_feeds">spaRSS源</string>
     <string name="error">错误</string>
     <string name="network_error">网络不可用</string>
     <string name="loading">加载中…</string>
@@ -114,9 +113,7 @@
     <string name="share_favorites_title">这条消息加星</string>
     <string name="copied_clipboard">链接复制成功</string>
     <string name="get_full_text">接收全文</string>
-    <string name="original_text">显示原始文本</string>
     <string name="see_enclosure">显示附件</string>
-    <string name="see_link">浏览器打开</string>
     <string name="cant_open_link">没有应用可以打开这个链接</string>
     <string name="open_enclosure">打开附件</string>
     <string name="file">文件</string>
@@ -125,25 +122,12 @@
     <string name="tip_sentence">提示：左划标记已读，右划添加到收藏</string>
 
     <!-- WIDGET -->
-    <string name="red">红色</string>
-    <string name="green">绿色</string>
-    <string name="blue">蓝色</string>
-    <string name="transparency">透明</string>
 
     <!-- SETTINGS -->
     <string name="settings_category_refresh">自动刷新</string>
     <string name="settings_refresh_enabled">开启自动刷新</string>
     <string name="settings_refresh_enabled_description">开启自动刷新</string>
     <string name="settings_refresh_interval">刷新间隔</string>
-    <string name="settings_category_notifications">通知</string>
-    <string name="settings_notifications_enabled">启用通知</string>
-    <string name="settings_notifications_enabled_description">启用新消息通知</string>
-    <string name="settings_notifications_ringtone">铃声</string>
-    <string name="settings_notifications_ringtone_none">无</string>
-    <string name="settings_notifications_vibrate">震动提醒</string>
-    <string name="settings_notifications_vibrate_description">有新消息时震动</string>
-    <string name="settings_notifications_light">LED</string>
-    <string name="settings_notifications_light_description">当有新的消息时，点亮通知灯</string>
     <string name="settings_category_content_presentation">内容介绍</string>
     <string name="settings_light_theme">高亮主题</string>
     <string name="settings_light_theme_description">使用『高亮主题』</string>
@@ -160,10 +144,6 @@
     <string name="settings_refresh_on_open_description">进入应用时刷新所有订阅</string>
     <string name="settings_refresh_wifi_only">Wi-Fi环境才自动刷新</string>
     <string name="settings_refresh_wifi_only_description">仅Wi-Fi环境自动刷新</string>
-    <string name="settings_visible_feeds">可见源</string>
-    <string name="settings_widget_background">背景色</string>
-    <string name="settings_widget_background_description">挂件背景的颜色和透明度</string>
-    <string name="all_feeds">全部订阅（包括未来的）</string>
     <string name="settings_screen_proxy">代理</string>
     <string name="settings_category_network">网络</string>
     <string name="settings_proxy_enabled">启用</string>
@@ -172,10 +152,6 @@
     <string name="settings_proxy_host">主机地址</string>
     <string name="settings_proxy_port">端口</string>
     <string name="settings_proxy_type">类型</string>
-
-    <plurals name="number_of_new_entries">
-        <item quantity="other">%d 条新消息</item>
-    </plurals>
 
     <string-array name="settings_intervals">
         <item>1 分钟</item>
@@ -228,14 +204,10 @@
     <string name="filter_help">关于过滤</string>
     <string name="menu_open_in_browser">用浏览器打开</string>
     <string name="menu_switch_full_original">显示全文</string>
-    <string name="settings_left_panel">导航抽屉</string>
-    <string name="settings_left_panel_description">应用启动时打开导航抽屉</string>
     <string name="settings_font_serif">使用衬线体</string>
     <string name="settings_font_serif_description">使用衬线体显示文章而非黑体</string>
     <string name="settings_mark_as_read">显示用来标记全部文章为已读的按钮</string>
     <string name="settings_mark_as_read_description">显示/隐藏按钮</string>
-    <string name="settings_show_new_entries">自动显示新文章</string>
-    <string name="settings_show_new_entries_description">如果禁用，需要点击一下显示按钮才能显示新文章</string>
     <string name="storage_request_explanation">为了把订阅导入或导出为文件，必须允许应用访问sd卡。</string>
     <string name="google_news_custom_topic">自定义主题</string>
 

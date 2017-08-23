@@ -25,7 +25,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">spaRSS</string>
+    <string name="app_name">Home</string>
     <string name="about_spaRSS">spaRSSi buruz</string>
     <string name="welcome_title">Ongi etorri spaRSSera. Jario bat gehitu nahiko al zenuke?</string>
     <string name="never">inoiz</string>
@@ -34,7 +34,6 @@
     <string name="menu_settings">Ezarpenak</string>
     <string name="menu_refresh">Freskatu</string>
     <string name="menu_all_read">Markatu dena irakurrita bezala</string>
-    <string name="spaRSS_feeds">spaRSS jarioak</string>
     <string name="error">Akatsa</string>
     <string name="network_error">Sarea ez dago konfiguratuta</string>
     <string name="loading">Kargatzen…</string>
@@ -121,12 +120,10 @@
     <string name="menu_full_screen">Pantaila osoa</string>
     <string name="menu_copy_clipboard">Esteka kopiatu</string>
     <string name="menu_mark_as_unread">Ez irakurrita bezala markatu</string>
-    <string name="share_favorites_title">spaRSS: sarrera gogokoenak</string>
+    <string name="share_favorites_title">Home: sarrera gogokoenak</string>
     <string name="copied_clipboard">Esteka kopiatu da</string>
     <string name="get_full_text">Testu osoa eskuratu</string>
-    <string name="original_text">Jatorrizko testua erakutsi</string>
     <string name="see_enclosure">Ingurua ikusi</string>
-    <string name="see_link">Nabigatzailean ikusi</string>
     <string name="cant_open_link">Ez da aplikaziorik aurkitu esteka honetarako</string>
     <string name="open_enclosure">Ingurua ireki</string>
     <string name="file">Fitxategia</string>
@@ -135,10 +132,6 @@
     <string name="tip_sentence">Aholkua: mugitu ezkerrera irakurrita bezala markatzeko eta eskuinera gogokoen bezala markatzeko</string>
 
     <!-- WIDGET -->
-    <string name="red">Gorria</string>
-    <string name="green">Berdea</string>
-    <string name="blue">Urdina</string>
-    <string name="transparency">Gardentasuna</string>
 
     <!-- SETTINGS -->
     <string name="settings_category_refresh">Freskatze automatikoa</string>
@@ -146,18 +139,6 @@
     <string name="settings_refresh_enabled_description">Jarioen freskatze automatikoa gaitu
     </string>
     <string name="settings_refresh_interval">Freskatze tartea</string>
-    <string name="settings_category_notifications">Jakinarazpenak</string>
-    <string name="settings_notifications_enabled">Jakinarazpenak gaitu</string>
-    <string name="settings_notifications_enabled_description">Jakinarazpenak gaitu sarrera berriak 
-        badaude
-    </string>
-    <string name="settings_notifications_ringtone">Dei-tonua</string>
-    <string name="settings_notifications_ringtone_none">None</string>
-    <string name="settings_notifications_vibrate">Dardaratu</string>
-    <string name="settings_notifications_vibrate_description">Gaitu dardara sarrera berriak daudenean
-    </string>
-    <string name="settings_notifications_light">Argia</string>
-    <string name="settings_notifications_light_description">Gaitu argi jakinarazpenak sarrera berriak daudenean</string>
     <string name="settings_category_content_presentation">Eduki aurkezpena</string>
     <string name="settings_light_theme">Gai argia</string>
     <string name="settings_light_theme_description">Gai argia erabili</string>
@@ -177,12 +158,6 @@
     <string name="settings_refresh_wifi_only">Freskatu soilik Wi-Fipean</string>
     <string name="settings_refresh_wifi_only_description">Freskatze automatikoa soilik Wi-Fi konexioa eskuragarri badago egingo da
     </string>
-    <string name="settings_visible_feeds">Jarioak ikusgai</string>
-    <string name="settings_widget_background">Atzeko planoa</string>
-    <string name="settings_widget_background_description">Widgetaren atzeko planoaren kolore eta
-        gardentasuna
-    </string>
-    <string name="all_feeds">Jario guztiak (etorkizunekoak barne)</string>
     <string name="settings_screen_proxy">Proxya</string>
     <string name="settings_category_network">Sarea</string>
     <string name="settings_proxy_enabled">Gaituta</string>
@@ -191,11 +166,6 @@
     <string name="settings_proxy_host">Ostalaria</string>
     <string name="settings_proxy_port">Ataka</string>
     <string name="settings_proxy_type">Mota</string>
-
-    <plurals name="number_of_new_entries">
-        <item quantity="one">Sarrera berri bat</item>
-        <item quantity="other">%d sarrera berri</item>
-    </plurals>
 
     <string-array name="settings_intervals">
         <item>Minutu 1</item>
@@ -244,14 +214,10 @@
     <string name="tab_advanced_title">Aurreratua</string>
     <string name="menu_open_in_browser">Nabigatzailean ireki</string>
     <string name="menu_switch_full_original">Eduki guztia erakutsi</string>
-    <string name="settings_left_panel">Nabigazio tiradera</string>
-    <string name="settings_left_panel_description">Nabigazio tiradera erakutsi aplikazioa abiarazterakoan</string>
     <string name="settings_font_serif">Serif letra mota erabili</string>
     <string name="settings_font_serif_description">Serif letra mota erabili artikuluetan Sans-Serif erabili beharrean</string>
     <string name="settings_mark_as_read">Guztia irakurrita bezala markatzeko botoia erakutsi</string>
     <string name="settings_mark_as_read_description">Erakutsi / Ezkutatu botoia</string>
-    <string name="settings_show_new_entries">Automatikoki sarrera berriak erakutsi</string>
-    <string name="settings_show_new_entries_description">Ezgaituta badago, Sarrera berriak erakutsi botoia sakatu beharko da sarrera berriak ikusteko</string>
     <string name="storage_request_explanation">Jarioak fitxategi batetik inportatu edo fitxategi batera esportatu ahal izateko, biltegirako baimena eman behar diozu aplikazioari.</string>
     <string name="feed_httpAuth">HTTP autentikazioa</string>
     <string name="loginhttpAuth">Erabiltzailearen izena</string>

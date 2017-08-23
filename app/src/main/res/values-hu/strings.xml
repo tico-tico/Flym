@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">A spaRSS névjegye</string>
-    <string name="welcome_title">Üdvözli a spaRSS. Szeretne hozzáadni egy hírforrást?</string>
+<resources>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">A Home névjegye</string>
+    <string name="welcome_title">Üdvözli a Home. Szeretne hozzáadni egy hírforrást?</string>
     <string name="never">soha</string>
     <string name="update">Frissítés</string>
     <string name="colon">: </string>
@@ -9,7 +10,6 @@
     <string name="menu_refresh">Frissítés</string>
     <string name="menu_all_read">Összes megjelölése olvasottként</string>
     <string name="menu_show_new_entries">Új bejegyzések megjelenítése</string>
-    <string name="spaRSS_feeds">spaRSS hírforrások</string>
     <string name="error">Hiba</string>
     <string name="network_error">A hálózat nincs beállítva</string>
     <string name="loading">Betöltés…</string>

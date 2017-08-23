@@ -3,13 +3,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <PreferenceScreen
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:title="@string/about_spaRSS">
-        <intent android:action="about_activity_intent" />
-    </PreferenceScreen>
-
     <PreferenceCategory
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,14 +58,6 @@
             android:summary="@string/settings_light_theme_description"
             android:title="@string/settings_light_theme" />
 
-        <CheckBoxPreference
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:defaultValue="false"
-            android:disableDependentsState="true"
-            android:key="leftpanel"
-            android:summary="@string/settings_left_panel_description"
-            android:title="@string/settings_left_panel" />
 
         <ahmaabdo.home.rss.view.AutoSummaryListPreference
             android:layout_width="wrap_content"
@@ -145,54 +130,8 @@
             android:summary="@string/settings_mark_as_read_description"
             android:title="@string/settings_mark_as_read" />
 
-        <!--CheckBoxPreference
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:defaultValue="true"
-            android:key="display_show_new_entries"
-            android:summary="@string/settings_show_new_entries_description"
-            android:title="@string/settings_show_new_entries"/-->
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:title="@string/settings_category_notifications">
-
-        <CheckBoxPreference
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:defaultValue="true"
-            android:key="notifications.enabled"
-            android:summary="@string/settings_notifications_enabled_description"
-            android:title="@string/settings_notifications_enabled" />
-
-        <RingtonePreference
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:dependency="notifications.enabled"
-            android:key="notifications.ringtone"
-            android:ringtoneType="notification"
-            android:title="@string/settings_notifications_ringtone" />
-
-        <CheckBoxPreference
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:dependency="notifications.enabled"
-            android:key="notifications.vibrate"
-            android:summary="@string/settings_notifications_vibrate_description"
-            android:title="@string/settings_notifications_vibrate" />
-
-        <CheckBoxPreference
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:defaultValue="true"
-            android:dependency="notifications.enabled"
-            android:key="notifications.light"
-            android:summary="@string/settings_notifications_light_description"
-            android:title="@string/settings_notifications_light" />
-
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:layout_width="wrap_content"
@@ -243,6 +182,19 @@
                 android:inputType="number"
                 android:key="proxy.type"
                 android:title="@string/settings_proxy_type" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="About">
+
+        <PreferenceScreen
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:title="@string/about_spaRSS">
+            <intent android:action="about_activity_intent" />
         </PreferenceScreen>
     </PreferenceCategory>
 

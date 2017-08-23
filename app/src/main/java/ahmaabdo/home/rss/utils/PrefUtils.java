@@ -40,19 +40,13 @@ public class PrefUtils {
     public static final String REFRESH_ON_OPEN_ENABLED = "refreshonopen.enabled";
     public static final String REFRESH_WIFI_ONLY = "refreshwifionly.enabled";
 
-    public static final String NOTIFICATIONS_ENABLED = "notifications.enabled";
-    public static final String NOTIFICATIONS_RINGTONE = "notifications.ringtone";
-    public static final String NOTIFICATIONS_VIBRATE = "notifications.vibrate";
-    public static final String NOTIFICATIONS_LIGHT = "notifications.light";
 
     public static final String LIGHT_THEME = "lighttheme";
-    public static final String LEFT_PANEL = "leftpanel";
     public static final String DISPLAY_IMAGES = "display_images";
     public static final String PRELOAD_IMAGE_MODE = "preload_image_mode";
     public static final String DISPLAY_OLDEST_FIRST = "display_oldest_first";
     public static final String DISPLAY_ENTRIES_FULLSCREEN = "display_entries_fullscreen";
     public static final String MARK_AS_READ = "display_mark_as_read";
-    public static final String SHOW_NEW_ENTRIES = "display_show_new_entries";
 
     public static final String PROXY_ENABLED = "proxy.enabled";
     public static final String PROXY_PORT = "proxy.port";

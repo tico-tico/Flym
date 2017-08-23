@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
-    <string name="app_name">spaRSS</string>
+    <string name="app_name">Home</string>
     <string name="about_spaRSS">عن التطبيق</string>
-    <string name="welcome_title">مرحبا بك في spaRSS. هل ترغب في إضافة خلاصة جديدة؟</string>
+    <string name="welcome_title">مرحبا بك في Home. هل ترغب في إضافة خلاصة جديدة؟</string>
     <string name="never">أبدا</string>
     <string name="update">تحديث</string>
     <string name="colon">: </string>
@@ -10,7 +10,6 @@
     <string name="menu_refresh">إعادة التحميل</string>
     <string name="menu_all_read">تم قراءة كل شيء</string>
     <string name="menu_show_new_entries">أظهر المدخلات الجديدة</string>
-    <string name="spaRSS_feeds">خلاصات spaRSS</string>
     <string name="error">خطأ</string>
     <string name="network_error">الشبكة غير معدة</string>
     <string name="loading">تحميل…</string>
@@ -94,12 +93,10 @@
     <string name="menu_mark_as_unread">علم كغير مقروء</string>
     <string name="menu_open_in_browser">افتح في المتصفح</string>
     <string name="menu_switch_full_original">أظهر كل المحتوى</string>
-    <string name="share_favorites_title">spaRSS: المقالات المفضلة</string>
+    <string name="share_favorites_title">Home: المقالات المفضلة</string>
     <string name="copied_clipboard">لقد تم نسخ الوصلة</string>
     <string name="get_full_text">استخرج النص كاملا</string>
-    <string name="original_text">أظهر النص الأساسي</string>
     <string name="see_enclosure">رؤية المرفقات</string>
-    <string name="see_link">انظر في المتصفح</string>
     <string name="cant_open_link">لا يوجد أي تطبيق لفتح هذه الوصلة</string>
     <string name="open_enclosure">افتح المرفقات</string>
     <string name="file">ملف</string>
@@ -107,29 +104,13 @@
     <string name="open_link">افتح الوصلة</string>
     <string name="tip_sentence">تلميح: اسحب لليسار لتعليمه كمقروء و اسحب لليمين لاضافته للمفضلة</string>
 
-    <string name="red">أحمر</string>
-    <string name="green">أخضر</string>
-    <string name="blue">أزرق</string>
-    <string name="transparency">شفافية</string>
-
     <string name="settings_category_refresh">إعادة تحميل تلقائي</string>
     <string name="settings_refresh_enabled">تفعيل إعادة التحميل التلقائي</string>
     <string name="settings_refresh_enabled_description">تفعيل إعادة التحميل التلقائي للخلاصات</string>
     <string name="settings_refresh_interval">فترة إعادة التحميل</string>
-    <string name="settings_category_notifications">تنبيهات</string>
-    <string name="settings_notifications_enabled">تفعيل التنبيهات</string>
-    <string name="settings_notifications_enabled_description">تفعيل التنبيهات في حالة مقالات جديدة</string>
-    <string name="settings_notifications_ringtone">نغمة</string>
-    <string name="settings_notifications_ringtone_none">لا أحد</string>
-    <string name="settings_notifications_vibrate">إهتزاز</string>
-    <string name="settings_notifications_vibrate_description">تفعيل الإهتزاز للمقالات الجديدة</string>
-    <string name="settings_notifications_light">ضوء التنبيهات</string>
-    <string name="settings_notifications_light_description">تفعيل ضوء التنبيهات للمقالات الجديدة</string>
     <string name="settings_category_content_presentation">تقديم المحتوى</string>
     <string name="settings_light_theme">ثيم مضيء</string>
     <string name="settings_light_theme_description">استعمال الثيم المضيء</string>
-    <string name="settings_left_panel">درج الإنتقال</string>
-    <string name="settings_left_panel_description">إظهار درج الإنتقال عند بدأ تشغيل التطبيق</string>
     <string name="settings_keep_time">فترة الاحتفاظ بالمقالات</string>
     <string name="settings_display_images">إظهار الصور</string>
     <string name="settings_display_images_description">إظهار الصور في المقالات</string>
@@ -145,10 +126,6 @@
     <string name="settings_refresh_on_open_description">تحيين جميع الخلاصات بعد تشغيل التطبيق</string>
     <string name="settings_refresh_wifi_only">إعادة التحميل فقط على Wi-Fi</string>
     <string name="settings_refresh_wifi_only_description">التحيين التلقائي يتم فقط في حالة وجود اتصال Wi-Fi</string>
-    <string name="settings_visible_feeds">الخلاصات الظاهرة</string>
-    <string name="settings_widget_background">الخلفية</string>
-    <string name="settings_widget_background_description">لون و شفافية خلفية الـ widget</string>
-    <string name="all_feeds">كل الخلاصات (بما فيها المستقبلية)</string>
     <string name="settings_screen_proxy">Proxy</string>
     <string name="settings_category_network">شبكة</string>
     <string name="settings_proxy_enabled">مفعلة</string>
@@ -159,16 +136,6 @@
     <string name="settings_proxy_type">نوع (Type)</string>
     <string name="settings_mark_as_read">إظهار الزر تعليم الكل كمقروء</string>
     <string name="settings_mark_as_read_description">إظهار / إخفاء الزر</string>
-    <string name="settings_show_new_entries">إظهار المقالات الجديدة تلقائيا</string>
-    <string name="settings_show_new_entries_description">إذا كانت غير مفعلة، فان الضغط على زر إظهار المقالات الجديدة ضروري لإظهارها</string>
-    <plurals name="number_of_new_entries">
-	<item quantity="zero">لا توجد مقالات جديدة</item>
-	<item quantity="one">مقالة واحدة جديدة</item>
-	<item quantity="two">مقالتان جديدتان</item>
-	<item quantity="few">d% مقالات جديدة</item>
-	<item quantity="many">d% مقالات جديدة</item>
-	<item quantity="other">d% مقالة جديدة</item>
-</plurals>
 
     <string name="storage_request_explanation">لكي تستطيع استيراد أو تصدير المستخلصات من أو إلى ملف، يجب عليك السماح للتطبيق الدخول لوحدة التخزين.</string>
     <string name="feed_no_summary">&lt; ملخص غير متوفر. &gt;</string>

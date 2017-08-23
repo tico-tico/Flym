@@ -25,16 +25,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">spaRSS</string>
-    <string name="about_spaRSS">À propos de spaRSS</string>
-    <string name="welcome_title">Bienvenue sur spaRSS. Voulez-vous ajouter un flux ?</string>
+    <string name="app_name">Home</string>
+    <string name="about_spaRSS">À propos de Home</string>
+    <string name="welcome_title">Bienvenue sur Home. Voulez-vous ajouter un flux ?</string>
     <string name="never">jamais</string>
     <string name="update">Mise à jour</string>
     <string name="colon">: </string>
     <string name="menu_settings">Paramètres</string>
     <string name="menu_refresh">Actualiser</string>
     <string name="menu_all_read">Marquer tout comme lu</string>
-    <string name="spaRSS_feeds">Flux spaRSS</string>
     <string name="error">Erreur</string>
     <string name="network_error">Pas de connexion disponible</string>
     <string name="loading">Chargement en cours…</string>
@@ -114,12 +113,10 @@
     <string name="menu_full_screen">Plein écran</string>
     <string name="menu_copy_clipboard">Copier le lien</string>
     <string name="menu_mark_as_unread">Marquer comme non lu</string>
-    <string name="share_favorites_title">spaRSS : articles favoris</string>
+    <string name="share_favorites_title">Home : articles favoris</string>
     <string name="copied_clipboard">Lien copié</string>
     <string name="get_full_text">Récupérer le texte complet</string>
-    <string name="original_text">Afficher le texte de base</string>
     <string name="see_enclosure">Voir la pièce-jointe</string>
-    <string name="see_link">Consulter dans le navigateur</string>
     <string name="cant_open_link">Aucune application trouvée pour ce lien</string>
     <string name="open_enclosure">Ouvrir la pièce-jointe</string>
     <string name="file">Fichier</string>
@@ -128,25 +125,12 @@
     <string name="tip_sentence">Astuce : glisser vers la gauche pour marquer comme lu et vers la droite pour ajouter aux favoris</string>
 
     <!-- WIDGET -->
-    <string name="red">Rouge</string>
-    <string name="green">Vert</string>
-    <string name="blue">Bleu</string>
-    <string name="transparency">Transparence</string>
 
     <!-- SETTINGS -->
     <string name="settings_category_refresh">Mise à jour automatique</string>
     <string name="settings_refresh_enabled">Activer la mise à jour automatique</string>
     <string name="settings_refresh_enabled_description">Activer la mise à jour automatique des flux</string>
     <string name="settings_refresh_interval">Intervalle de mise à jour</string>
-    <string name="settings_category_notifications">Notifications</string>
-    <string name="settings_notifications_enabled">Activer les notifications</string>
-    <string name="settings_notifications_enabled_description">Activer les notifications s’il y a de nouveaux articles</string>
-    <string name="settings_notifications_ringtone">Sonnerie</string>
-    <string name="settings_notifications_ringtone_none">Aucune</string>
-    <string name="settings_notifications_vibrate">Vibrer</string>
-    <string name="settings_notifications_vibrate_description">Activer la vibration s’il y a de nouveaux articles</string>
-    <string name="settings_notifications_light">DEL</string>
-    <string name="settings_notifications_light_description">Active les notifications DEL pour les nouveaux articles</string>
     <string name="settings_category_content_presentation">Présentation des contenus</string>
     <string name="settings_light_theme">Thème clair</string>
     <string name="settings_light_theme_description">Utilise le thème clair</string>
@@ -163,10 +147,6 @@
     <string name="settings_refresh_on_open_description">Met à jour tous les flux au lancement de l’application</string>
     <string name="settings_refresh_wifi_only">Mettre à jour en Wi-Fi uniquement</string>
     <string name="settings_refresh_wifi_only_description">La mise à jour automatique ne se fera que si une connexion Wi-Fi est activée</string>
-    <string name="settings_visible_feeds">Flux visibles</string>
-    <string name="settings_widget_background">Arrière-plan</string>
-    <string name="settings_widget_background_description">Couleur et transparence de l\'arrière-plan du widget</string>
-    <string name="all_feeds">Tous les flux (y compris ceux à venir)</string>
     <string name="settings_screen_proxy">Mandataire</string>
     <string name="settings_category_network">Réseau</string>
     <string name="settings_proxy_enabled">Activé</string>
@@ -177,10 +157,6 @@
     <string name="settings_proxy_type">Type</string>
     <string name="settings_mark_as_read">Afficher le bouton "Marquer tout comme lu"</string>
     <string name="settings_mark_as_read_description">Affiche/Masque le bouton</string>
-    <plurals name="number_of_new_entries">
-	<item quantity="one">1 nouvel article</item>
-	<item quantity="other">%d nouveaux articles</item>
-</plurals>
 
     <string-array name="settings_intervals">
         <item>1 minute</item>
@@ -222,8 +198,6 @@
     <string name="cookiename">Nom</string>
     <string name="cookievalue">Valeur</string>
     <string name="feed_cookie">Cookie d’authentification</string>
-    <string name="settings_left_panel">Panneau de navigation</string>
-    <string name="settings_left_panel_description">Affiche le panneau de navigation au démarrage de l’application</string>
     <string name="tab_advanced_title">Avancé</string>
 
     <string name="menu_open_in_browser">Ouvrir dans le navigateur</string>
@@ -231,11 +205,9 @@
     <string name="settings_font_serif">Utiliser une police à empattement (serif)</string>
     <string name="settings_font_serif_description">Utilise une police à empattement au lieu de sans empattement dans les articles</string>
 <string name="menu_show_new_entries">Afficher les nouveaux articles</string>
-    <string name="settings_show_new_entries">Afficher automatiquement les nouveaux articles</string>
     <string name="feed_httpAuth">Authentification HTTP</string>
     <string name="loginhttpAuth">Identifiant</string>
     <string name="passwordhttpAuth">Mot de passe</string>
-<string name="settings_show_new_entries_description">Si désactivé, un appui sur le bouton Afficher nouveaux articles sera requis pour les afficher</string>
     <string name="filter_help">Aide à propos des filtres</string>
     <string name="storage_request_explanation">Pour pouvoir importer ou exporter les flux depuis ou vers un fichier, vous devez autoriser l\'application à accéder au stockage interne.</string>
     <string name="feed_no_summary">&lt; Aucun résumé disponible. &gt;</string>
