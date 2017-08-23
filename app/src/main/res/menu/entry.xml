@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/menu_star"
+        android:icon="@drawable/ic_star_border"
+        android:title="@string/menu_star"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+    <item
+        android:id="@+id/menu_share"
+        android:icon="@drawable/ic_share"
+        android:title="@string/menu_share"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+    <item
+        android:id="@+id/menu_full_screen"
+        android:icon="@drawable/ic_fullscreen"
+        android:title="@string/menu_full_screen"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+    <item
+        android:id="@+id/menu_copy_clipboard"
+        android:icon="@drawable/ic_content_copy"
+        android:title="@string/menu_copy_clipboard" />
+    <item
+        android:id="@+id/menu_mark_as_unread"
+        android:title="@string/menu_mark_as_unread" />
+
+    <item
+        android:id="@+id/menu_open_in_browser"
+        android:icon="@drawable/ic_open_in_browser"
+        android:title="@string/menu_open_in_browser" />
+    <item
+        android:id="@+id/menu_switch_full_original"
+        android:checkable="true"
+        android:title="@string/menu_switch_full_original" />
+</menu>
