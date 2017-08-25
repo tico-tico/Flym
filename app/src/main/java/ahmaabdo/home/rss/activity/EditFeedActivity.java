@@ -102,6 +102,7 @@ import ahmaabdo.home.rss.utils.NetworkUtils;
 import ahmaabdo.home.rss.utils.UiUtils;
 
 public class EditFeedActivity extends BaseActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+    String urlOrSearch;
     static final String FEED_SEARCH_TITLE = "title";
     static final String FEED_SEARCH_URL = "url";
     static final String FEED_SEARCH_DESC = "contentSnippet";
@@ -477,7 +478,7 @@ public class EditFeedActivity extends BaseActivity implements LoaderManager.Load
         // only in insert mode
 
         final String name = mNameEditText.getText().toString().trim();
-        final String urlOrSearch = "http://" + mUrlEditText.getText().toString().trim();
+        urlOrSearch = "http://" + mUrlEditText.getText().toString().trim();
         final String cookieName = mCookieNameEditText.getText().toString();
         final String cookieValue = mCookieValueEditText.getText().toString();
         final TypedArray selectedValues = getResources().obtainTypedArray(R.array.settings_keep_time_values);
@@ -486,9 +487,13 @@ public class EditFeedActivity extends BaseActivity implements LoaderManager.Load
         if (urlOrSearch.isEmpty()) {
             Toast.makeText(this, R.string.error_feed_error, Toast.LENGTH_SHORT).show();
         }
-        if (urlOrSearch.contains("http://http") || urlOrSearch.contains("http://https")) {
-            Toast.makeText(this, "Please remove http://", Toast.LENGTH_LONG).show();
-            return;
+
+        if (urlOrSearch.contains("http://http://")) {
+            urlOrSearch = urlOrSearch.replace("http://http://", "http://");
+
+        }
+        if (urlOrSearch.contains("http://https://")) {
+            urlOrSearch = urlOrSearch.replace("http://https://", "https://");
         }
 
         if (!urlOrSearch.contains(".") || !urlOrSearch.contains("/") || urlOrSearch.contains(" ")) {
