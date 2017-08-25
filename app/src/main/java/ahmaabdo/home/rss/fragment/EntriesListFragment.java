@@ -20,20 +20,21 @@
 
 package ahmaabdo.home.rss.fragment;
 
+import android.app.AlertDialog;
 import android.app.LoaderManager;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.CursorLoader;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.database.Cursor;
-import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.SearchView;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.Gravity;
@@ -45,19 +46,20 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
+import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.melnykov.fab.FloatingActionButton;
 
-import java.util.Arrays;
 import java.util.Date;
 
 import ahmaabdo.home.rss.Constants;
 import ahmaabdo.home.rss.R;
-import ahmaabdo.home.rss.activity.HomeActivity;
+import ahmaabdo.home.rss.activity.AddGoogleNewsActivity;
+import ahmaabdo.home.rss.activity.EditFeedsListActivity;
+import ahmaabdo.home.rss.activity.GeneralPrefsActivity;
 import ahmaabdo.home.rss.adapter.EntriesCursorAdapter;
 import ahmaabdo.home.rss.provider.FeedData;
 import ahmaabdo.home.rss.provider.FeedData.EntryColumns;
@@ -66,7 +68,7 @@ import ahmaabdo.home.rss.service.FetcherService;
 import ahmaabdo.home.rss.utils.PrefUtils;
 import ahmaabdo.home.rss.utils.UiUtils;
 
-public class EntriesListFragment extends SwipeRefreshListFragment {
+public class EntriesListFragment extends SwipeRefreshListFragment implements ViewTreeObserver.OnScrollChangedListener {
 
     private static final String STATE_URI = "STATE_URI";
     private static final String STATE_SHOW_FEED_INFO = "STATE_SHOW_FEED_INFO";
@@ -75,11 +77,12 @@ public class EntriesListFragment extends SwipeRefreshListFragment {
     private static final int ENTRIES_LOADER_ID = 1;
     private static final int NEW_ENTRIES_NUMBER_LOADER_ID = 2;
 
+    SwipeRefreshLayout mySwipeRefreshLayout;
+    private Button mRefreshListBtn;
     private Uri mUri;
     private boolean mShowFeedInfo = false;
     private EntriesCursorAdapter mEntriesCursorAdapter;
     private ListView mListView;
-    private SearchView mSearchView;
     private FloatingActionButton mHideReadButton;
     private long mListDisplayDate = new Date().getTime();
     private Menu menu;
@@ -107,6 +110,7 @@ public class EntriesListFragment extends SwipeRefreshListFragment {
             mEntriesCursorAdapter.swapCursor(Constants.EMPTY_CURSOR);
         }
     };
+
     private final OnSharedPreferenceChangeListener mPrefListener = new OnSharedPreferenceChangeListener() {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
@@ -141,11 +145,6 @@ public class EntriesListFragment extends SwipeRefreshListFragment {
                 refreshUI();
             }
 
-            ((HomeActivity) getActivity()).refreshTitle(mNewEntriesNumber);
-            if (mNewEntriesNumber != 0 && mListView != null) {
-                menu.findItem(R.id.menu_show_new_entries).getIcon().setColorFilter(ContextCompat.getColor(mListView.getContext(), PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_accent_color : R.color.dark_accent_color), PorterDuff.Mode.MULTIPLY);
-            }
-
 
             mAutoRefreshDisplayDate = false;
         }
@@ -160,6 +159,7 @@ public class EntriesListFragment extends SwipeRefreshListFragment {
         setHasOptionsMenu(true);
         super.onCreate(savedInstanceState);
 
+
         if (savedInstanceState != null) {
             mUri = savedInstanceState.getParcelable(STATE_URI);
             mShowFeedInfo = savedInstanceState.getBoolean(STATE_SHOW_FEED_INFO);
@@ -172,6 +172,7 @@ public class EntriesListFragment extends SwipeRefreshListFragment {
     @Override
     public void onStart() {
         super.onStart();
+        mListView.getViewTreeObserver().addOnScrollChangedListener(this);
         refreshSwipeProgress();
         PrefUtils.registerOnPrefChangeListener(mPrefListener);
 
@@ -188,12 +189,38 @@ public class EntriesListFragment extends SwipeRefreshListFragment {
     }
 
     @Override
+    public void onScrollChanged() {
+        if (mListView.getFirstVisiblePosition() == 0) {
+            mySwipeRefreshLayout.setEnabled(true);
+        } else {
+            mySwipeRefreshLayout.setEnabled(false);
+        }
+    }
+
+    @Override
     public View inflateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_entry_list, container, true);
 
         if (mEntriesCursorAdapter != null) {
             setListAdapter(mEntriesCursorAdapter);
         }
+
+        mySwipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_refresh);
+        mySwipeRefreshLayout.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        startRefresh();
+                        if (mySwipeRefreshLayout.isRefreshing())
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    mySwipeRefreshLayout.setRefreshing(false);
+                                }
+                            }, 1505);
+
+                    }
+                });
 
         mListView = (ListView) rootView.findViewById(android.R.id.list);
         mListView.setOnTouchListener(new SwipeGestureListener(mListView.getContext()));
@@ -220,6 +247,20 @@ public class EntriesListFragment extends SwipeRefreshListFragment {
 
         UiUtils.addEmptyFooterView(mListView, 90);
 
+        mRefreshListBtn = (Button) rootView.findViewById(R.id.refreshListBtn);
+        mRefreshListBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mNewEntriesNumber = 0;
+                mListDisplayDate = new Date().getTime();
+
+                refreshUI();
+                if (mUri != null) {
+                    restartLoaders();
+                }
+            }
+        });
+
         mHideReadButton = (FloatingActionButton) rootView.findViewById(R.id.hide_read_button);
         mHideReadButton.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -230,30 +271,10 @@ public class EntriesListFragment extends SwipeRefreshListFragment {
         });
         UiUtils.updateHideReadButton(mHideReadButton);
 
-        mSearchView = (SearchView) rootView.findViewById(R.id.searchView);
         if (savedInstanceState != null) {
             refreshUI(); // To hide/show the search bar
         }
 
-        mSearchView.post(new Runnable() { // Do this AFTER the text has been restored from saveInstanceState
-            @Override
-            public void run() {
-                mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                    @Override
-                    public boolean onQueryTextSubmit(String s) {
-                        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                        imm.hideSoftInputFromWindow(mSearchView.getWindowToken(), 0);
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onQueryTextChange(String s) {
-                        setData(EntryColumns.SEARCH_URI(s), true);
-                        return false;
-                    }
-                });
-            }
-        });
 
         disableSwipe();
 
@@ -265,6 +286,7 @@ public class EntriesListFragment extends SwipeRefreshListFragment {
         PrefUtils.unregisterOnPrefChangeListener(mPrefListener);
         refreshUI();
         super.onStop();
+        mListView.getViewTreeObserver().removeOnScrollChangedListener(this);
     }
 
     @Override
@@ -301,13 +323,9 @@ public class EntriesListFragment extends SwipeRefreshListFragment {
         this.menu = menu;
         menu.clear(); // This is needed to remove a bug on Android 4.0.3
         inflater.inflate(R.menu.entry_list, menu);
+
         if (!PrefUtils.getBoolean(PrefUtils.MARK_AS_READ, false)) {
             menu.findItem(R.id.menu_all_read).setVisible(false);
-        }
-        if (EntryColumns.FAVORITES_CONTENT_URI.equals(mUri)) {
-            menu.findItem(R.id.menu_refresh).setVisible(false);
-        } else {
-            menu.findItem(R.id.menu_share_starred).setVisible(false);
         }
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -315,28 +333,32 @@ public class EntriesListFragment extends SwipeRefreshListFragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_share_starred: {
-                if (mEntriesCursorAdapter != null) {
-                    String starredList = "";
-                    Cursor cursor = mEntriesCursorAdapter.getCursor();
-                    if (cursor != null && !cursor.isClosed()) {
-                        int titlePos = cursor.getColumnIndex(EntryColumns.TITLE);
-                        int linkPos = cursor.getColumnIndex(EntryColumns.LINK);
-                        if (cursor.moveToFirst()) {
-                            do {
-                                starredList += cursor.getString(titlePos) + "\n" + cursor.getString(linkPos) + "\n\n";
-                            } while (cursor.moveToNext());
-                        }
-                        startActivity(Intent.createChooser(
-                                new Intent(Intent.ACTION_SEND).putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_favorites_title))
-                                        .putExtra(Intent.EXTRA_TEXT, starredList).setType(Constants.MIMETYPE_TEXT_PLAIN), getString(R.string.menu_share)
-                        ));
-                    }
-                }
+            case R.id.menu_add_new_feed: {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle(R.string.menu_add_feed)
+                        .setItems(new CharSequence[]{getString(R.string.add_custom_feed), getString(R.string.google_news_title)}, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (which == 0) {
+                                    startActivity(new Intent(Intent.ACTION_INSERT).setData(FeedData.FeedColumns.CONTENT_URI));
+                                } else {
+                                    startActivity(new Intent(getActivity(), AddGoogleNewsActivity.class));
+                                }
+                            }
+                        });
+                builder.show();
                 return true;
             }
+
+            case R.id.edit_feeds: {
+                startActivity(new Intent(getActivity(), EditFeedsListActivity.class));
+                return true;
+            }
+            case R.id.settings: {
+                startActivity(new Intent(getActivity(), GeneralPrefsActivity.class));
+                return true;
+            }
+
             case R.id.menu_refresh: {
-                downloadUnmobilitedEntries();
                 startRefresh();
                 return true;
             }
@@ -351,49 +373,11 @@ public class EntriesListFragment extends SwipeRefreshListFragment {
                 }
                 return true;
             }
-            case R.id.menu_show_new_entries: {
-                if (mNewEntriesNumber == 0) {
-                    Toast.makeText(mListView.getContext(), R.string.no_new_entries, Toast.LENGTH_LONG).show();
-                }
-                menu.findItem(R.id.menu_show_new_entries).getIcon().setColorFilter(null);
-                mNewEntriesNumber = 0;
-                mListDisplayDate = new Date().getTime();
 
-                refreshUI();
-                if (mUri != null) {
-                    restartLoaders();
-                }
-            }
         }
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * Schedules all entries which are not mobilized yet, for download.
-     * Then invokes download by calling FetcherService.
-     */
-    private void downloadUnmobilitedEntries() {
-        Cursor cursor = mEntriesCursorAdapter.getCursor();
-        if (cursor != null && !cursor.isClosed()) {
-            int mobilizedPos = cursor.getColumnIndex(EntryColumns.MOBILIZED_HTML);
-            long[] entries = new long[cursor.getCount()];
-            int i = 0;
-            if (cursor.moveToFirst()) {
-                do {
-                    if (cursor.isNull(mobilizedPos)) {
-                        entries[i++] = cursor.getLong(0);
-                        //not mobilized, yet
-//                        entries[i++] = (Long.valueOf(cursor.getPosition()));
-                    }
-                } while (cursor.moveToNext());
-            }
-            if (i > 0) {
-                entries = Arrays.copyOf(entries, i);
-                FetcherService.addEntriesToMobilize(entries);
-                getActivity().startService(new Intent(getActivity(), FetcherService.class).setAction(FetcherService.ACTION_MOBILIZE_FEEDS));
-            }
-        }
-    }
 
     private void startRefresh() {
         if (!PrefUtils.getBoolean(PrefUtils.IS_REFRESHING, false)) {
@@ -411,9 +395,6 @@ public class EntriesListFragment extends SwipeRefreshListFragment {
         return mUri;
     }
 
-    public String getCurrentSearch() {
-        return mSearchView == null ? null : mSearchView.getQuery().toString();
-    }
 
     public void setData(Uri uri, boolean showFeedInfo) {
         mUri = uri;
@@ -436,10 +417,11 @@ public class EntriesListFragment extends SwipeRefreshListFragment {
     }
 
     private void refreshUI() {
-        if (mUri != null && FeedDataContentProvider.URI_MATCHER.match(mUri) == FeedDataContentProvider.URI_SEARCH) {
-            mSearchView.setVisibility(View.VISIBLE);
+        if (mNewEntriesNumber > 0) {
+            mRefreshListBtn.setText(getResources().getQuantityString(R.plurals.number_of_new_entries, mNewEntriesNumber, mNewEntriesNumber));
+            mRefreshListBtn.setVisibility(View.VISIBLE);
         } else {
-            mSearchView.setVisibility(View.GONE);
+            mRefreshListBtn.setVisibility(View.GONE);
         }
     }
 
@@ -450,6 +432,7 @@ public class EntriesListFragment extends SwipeRefreshListFragment {
             hideSwipeProgress();
         }
     }
+
 
     private class SwipeGestureListener extends SimpleOnGestureListener implements OnTouchListener {
         static final int SWIPE_MIN_DISTANCE = 120;

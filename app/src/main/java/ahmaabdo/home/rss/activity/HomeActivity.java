@@ -35,7 +35,6 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
@@ -46,7 +45,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.melnykov.fab.FloatingActionButton;
 
@@ -79,7 +77,6 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
             ") > 0)";
 
     private static final int LOADER_ID = 0;
-    private static final int SEARCH_DRAWER_POSITION = -1;
     private static final int PERMISSIONS_REQUEST_IMPORT_FROM_OPML = 1;
 
     private EntriesListFragment mEntriesFragment;
@@ -198,7 +195,9 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSIONS_REQUEST_IMPORT_FROM_OPML);
             }
         }
+
     }
+
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -226,20 +225,9 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
                 return;
             }
         }
+        super.finish();
+        return;
 
-        if (mCanQuit) {
-            super.finish();
-            return;
-        }
-
-        Toast.makeText(this, R.string.back_again_to_quit, Toast.LENGTH_SHORT).show();
-        mCanQuit = true;
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mCanQuit = false;
-            }
-        }, 3000);
     }
 
     @Override
@@ -271,17 +259,6 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
         startActivity(new Intent(this, EditFeedsListActivity.class));
     }
 
-    public void onClickSearch(View view) {
-        selectDrawerItem(SEARCH_DRAWER_POSITION);
-        if (mDrawerLayout != null) {
-            mDrawerLayout.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    mDrawerLayout.closeDrawer(mLeftDrawer);
-                }
-            }, 50);
-        }
-    }
 
     public void onClickSettings(View view) {
         startActivity(new Intent(this, GeneralPrefsActivity.class));
@@ -350,9 +327,6 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
         boolean showFeedInfo = true;
 
         switch (position) {
-            case SEARCH_DRAWER_POSITION:
-                newUri = EntryColumns.SEARCH_URI(mEntriesFragment.getCurrentSearch());
-                break;
             case 0:
                 newUri = EntryColumns.ALL_ENTRIES_CONTENT_URI;
                 break;
@@ -414,25 +388,14 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
 
     public void refreshTitle(int mNewEntriesNumber) {
         switch (mCurrentDrawerPos) {
-            case SEARCH_DRAWER_POSITION:
-                getSupportActionBar().setTitle(android.R.string.search_go);
-                getSupportActionBar().setIcon(R.drawable.ic_search);
-                break;
             case 0:
                 getSupportActionBar().setTitle(R.string.all);
-                getSupportActionBar().setIcon(R.drawable.ic_statusbar_rss);
                 break;
             case 1:
                 getSupportActionBar().setTitle(R.string.favorites);
-                getSupportActionBar().setIcon(R.drawable.ic_star);
                 break;
             default:
                 getSupportActionBar().setTitle(mTitle);
-                if (mIcon != null) {
-                    getSupportActionBar().setIcon(mIcon);
-                } else {
-                    getSupportActionBar().setIcon(null);
-                }
                 break;
         }
         if (mNewEntriesNumber != 0) {

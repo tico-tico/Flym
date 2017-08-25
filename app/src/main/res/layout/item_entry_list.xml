@@ -31,6 +31,7 @@
             android:gravity="top"
             android:maxLines="4"
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="?attr/colorReadState"
             android:textIsSelectable="false" />
 
         <TextView
@@ -39,8 +40,9 @@
             android:layout_height="wrap_content"
             android:alpha="0.7"
             android:drawablePadding="3dp"
-            android:singleLine="true"
+            android:maxLines="1"
             android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="?attr/colorReadState"
             android:textIsSelectable="false" />
 
         <TextView
@@ -49,7 +51,7 @@
             android:layout_height="wrap_content"
             android:alpha="0.7"
             android:drawablePadding="3dp"
-            android:singleLine="true"
+            android:maxLines="1"
             android:text="placeholder feed item author"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textIsSelectable="false" />

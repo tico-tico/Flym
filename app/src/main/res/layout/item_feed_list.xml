@@ -24,7 +24,7 @@
         android:drawablePadding="3dp"
         android:gravity="center_vertical"
         android:minHeight="30dp"
-        android:singleLine="true"
+        android:maxLines="1"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textIsSelectable="false" />
 

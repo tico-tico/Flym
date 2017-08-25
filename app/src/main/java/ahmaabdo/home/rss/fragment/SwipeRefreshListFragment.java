@@ -60,9 +60,9 @@ public abstract class SwipeRefreshListFragment extends ListFragment implements S
         super.onViewCreated(view, savedInstanceState);
 
         mRefreshLayout.setColorScheme(R.color.Indigo_300,
-                R.color.Indigo_400,
+                R.color.Indigo_700,
                 R.color.Indigo_300,
-                R.color.Indigo_400);
+                R.color.Indigo_700);
         mRefreshLayout.setOnRefreshListener(this);
     }
 

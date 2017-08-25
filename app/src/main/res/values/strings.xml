@@ -43,6 +43,10 @@
     <string name="back_again_to_quit">Press back once more to exit</string>
     <string name="no_new_entries">No new entries to display</string>
 
+    <plurals name="number_of_new_entries">
+        <item quantity="one">One new entry</item>
+        <item quantity="other">%d new entries</item>
+    </plurals>
     <!-- FEEDS -->
     <string name="feeds">Feeds</string>
     <string name="menu_add_feed">Add feed</string>
@@ -170,7 +174,7 @@
     <string name="settings_proxy_host">Host</string>
     <string name="settings_proxy_port">Port</string>
     <string name="settings_proxy_type">Type</string>
-    <string name="settings_mark_as_read">Display button "Mark all as read"</string>
+    <string name="settings_mark_as_read">Display "Mark all as read"</string>
     <string name="settings_mark_as_read_description">Show / Hide the button</string>
 
     <string-array name="settings_intervals">

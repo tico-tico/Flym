@@ -9,6 +9,7 @@
         <item name="colorPrimary">@color/light_primary_color</item>
         <item name="colorPrimaryDark">@color/light_primary_color_dark</item>
         <item name="colorAccent">@color/light_accent_color</item>
+        <item name="colorReadState">@color/light_read_state</item>
         <item name="android:colorBackground">@color/light_background</item>
         <item name="android:windowBackground">@color/light_background</item>
         <item name="android:activatedBackgroundIndicator">
@@ -24,6 +25,7 @@
         <item name="colorPrimary">@color/dark_primary_color</item>
         <item name="colorPrimaryDark">@color/dark_primary_color_dark</item>
         <item name="colorAccent">@color/dark_accent_color</item>
+        <item name="colorReadState">@color/dark_read_state</item>
         <item name="android:colorBackground">@color/dark_background</item>
         <item name="android:windowBackground">@color/dark_background</item>
         <item name="android:activatedBackgroundIndicator">@drawable/list_activated_background_dark

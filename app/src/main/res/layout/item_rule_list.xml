@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawablePadding="3dp"
-        android:singleLine="true"
+        android:maxLines="1"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@android:color/holo_red_dark"
         android:textIsSelectable="false" />
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawablePadding="3dp"
-        android:singleLine="true"
+        android:maxLines="1"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textIsSelectable="false" />
 

@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     tools:ignore="InconsistentLayout">
 
-    <include layout="@layout/view_home" />
+
+        <include layout="@layout/view_home" />
 
     <include layout="@layout/view_left_drawer" />
 
