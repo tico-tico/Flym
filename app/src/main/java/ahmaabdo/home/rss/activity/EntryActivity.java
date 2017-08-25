@@ -21,6 +21,8 @@
 package ahmaabdo.home.rss.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -34,6 +36,7 @@ import ahmaabdo.home.rss.utils.UiUtils;
 public class EntryActivity extends BaseActivity {
 
     private EntryFragment mEntryFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,11 @@ public class EntryActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationIcon(R.drawable.ic_clear);
+        toolbar.setBackgroundColor(Color.BLACK);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(Color.BLACK);
+        }
 
         if (PrefUtils.getBoolean(PrefUtils.DISPLAY_ENTRIES_FULLSCREEN, false)) {
             setImmersiveFullScreen(true);
@@ -70,6 +78,7 @@ public class EntryActivity extends BaseActivity {
 
         return false;
     }
+
 
     @Override
     protected void onNewIntent(Intent intent) {

@@ -90,7 +90,7 @@
     </string>
     <string name="to_group_above">Situa a sobre del grup</string>
     <string name="to_group_into">Afegeix al grup</string>
-    <string name="add_custom_feed">Add a custom feed or search for one</string>
+    <string name="add_custom_feed">Custom feed</string>
     <string name="google_news_title">Google News topics</string>
     <string name="google_news_indicator">Select one or several topics to add. Some of them may not be provided by Google for your language.</string>
     <string name="google_news_top_stories">Top Stories</string>

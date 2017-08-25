@@ -24,7 +24,7 @@
     <string name="no_feeds">لا توجد خلاصات</string>
     <string name="no_filters">لا توجد قواعد</string>
     <string name="context_menu_delete">حذف</string>
-    <string name="edit_feed_title">تعديل خلاصة</string>
+    <string name="edit_feed_title">تعديل الخلاصات</string>
     <string name="new_feed_title">خلاصة جديدة</string>
     <string name="context_menu_edit">تعديل</string>
     <string name="menu_add_group">أضف مجموعة</string>
@@ -70,7 +70,7 @@
     <string name="to_group_message">بامكانك وضع هذه الخلاصة في هذه المجموعة أو فوقها. أين تريد وضعها؟</string>
     <string name="to_group_above">فوق المجموعة</string>
     <string name="to_group_into">في المجموعة</string>
-    <string name="add_custom_feed">أضف خلاصة يدويا أو ابحث عنها</string>
+    <string name="add_custom_feed">أضف خلاصة يدويا</string>
     <string name="google_news_title">مواضيع أخبار قوقل</string>
     <string name="google_news_indicator">حدد موضوع أو عدة مواضيع لإضافتها. بعضها قد لا تكون مقدمة من قوقل بلغتك.</string>
     <string name="google_news_top_stories">أهم الأخبار</string>

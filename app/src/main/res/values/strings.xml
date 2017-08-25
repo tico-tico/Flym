@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!--
+<?xml version='1.0' encoding='UTF-8'?><!--
  Copyright (c) 2015-2016 Arnaud Renaud-Goud
  Copyright (c) 2012-2015 Frederic Julian
  Copyright (c) 2010-2012 Stefan Handschuh
@@ -50,7 +49,7 @@
     <string name="no_feeds">No feeds</string>
     <string name="no_filters">No rules</string>
     <string name="context_menu_delete">Delete</string>
-    <string name="edit_feed_title">Edit feed</string>
+    <string name="edit_feed_title">Edit feeds</string>
     <string name="new_feed_title">New feed</string>
     <string name="context_menu_edit">Edit</string>
     <string name="menu_add_group">Add group</string>
@@ -99,7 +98,7 @@
     <string name="to_group_message">You can either put this feed into or above this group. What do you want to do?</string>
     <string name="to_group_above">Above the group</string>
     <string name="to_group_into">Into the group</string>
-    <string name="add_custom_feed">Add a custom feed or search for one</string>
+    <string name="add_custom_feed">Custom feed</string>
     <string name="google_news_title">Google News topics</string>
     <string name="google_news_indicator">Select one or several topics to add. Some of them may not be provided by Google for your language.</string>
     <string name="google_news_top_stories">Top Stories</string>
@@ -222,5 +221,6 @@
         <item>Only over Wi-Fi</item>
         <item>Always</item>
     </string-array>
+
 
 </resources>

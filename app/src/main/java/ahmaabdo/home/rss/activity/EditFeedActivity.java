@@ -67,6 +67,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.CheckBox;
@@ -76,6 +77,7 @@ import android.widget.RadioButton;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TabHost;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -221,6 +223,7 @@ public class EditFeedActivity extends BaseActivity implements LoaderManager.Load
         }
     };
     private TabHost mTabHost;
+    private TextView mNameTextView;
     private EditText mNameEditText, mUrlEditText;
     private EditText mCookieNameEditText, mCookieValueEditText;
     private EditText mLoginHTTPAuthEditText, mPasswordHTTPAuthEditText;
@@ -246,6 +249,7 @@ public class EditFeedActivity extends BaseActivity implements LoaderManager.Load
 
         mTabHost = (TabHost) findViewById(R.id.tabHost);
         mNameEditText = (EditText) findViewById(R.id.feed_title);
+        mNameTextView = (TextView) findViewById(R.id.name_textview);
         mUrlEditText = (EditText) findViewById(R.id.feed_url);
         mCookieNameEditText = (EditText) findViewById(R.id.feed_cookiename);
         mCookieValueEditText = (EditText) findViewById(R.id.feed_cookievalue);
@@ -276,7 +280,14 @@ public class EditFeedActivity extends BaseActivity implements LoaderManager.Load
         if (intent.getAction().equals(Intent.ACTION_INSERT) || intent.getAction().equals(Intent.ACTION_SEND)) {
             setTitle(R.string.new_feed_title);
 
+            //Forcing the keyboard to appear
+            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+
             tabWidget.setVisibility(View.GONE);
+            mNameEditText.setVisibility(View.INVISIBLE);
+            mRetrieveFulltextCb.setVisibility(View.INVISIBLE);
+            mNameTextView.setVisibility(View.INVISIBLE);
+
 
             if (intent.hasExtra(Intent.EXTRA_TEXT)) {
                 mUrlEditText.setText(intent.getStringExtra(Intent.EXTRA_TEXT));
@@ -466,7 +477,7 @@ public class EditFeedActivity extends BaseActivity implements LoaderManager.Load
         // only in insert mode
 
         final String name = mNameEditText.getText().toString().trim();
-        final String urlOrSearch = mUrlEditText.getText().toString().trim();
+        final String urlOrSearch = "http://" + mUrlEditText.getText().toString().trim();
         final String cookieName = mCookieNameEditText.getText().toString();
         final String cookieValue = mCookieValueEditText.getText().toString();
         final TypedArray selectedValues = getResources().obtainTypedArray(R.array.settings_keep_time_values);
@@ -474,6 +485,10 @@ public class EditFeedActivity extends BaseActivity implements LoaderManager.Load
 
         if (urlOrSearch.isEmpty()) {
             Toast.makeText(this, R.string.error_feed_error, Toast.LENGTH_SHORT).show();
+        }
+        if (urlOrSearch.contains("http://http") || urlOrSearch.contains("http://https")) {
+            Toast.makeText(this, "Please remove http://", Toast.LENGTH_LONG).show();
+            return;
         }
 
         if (!urlOrSearch.contains(".") || !urlOrSearch.contains("/") || urlOrSearch.contains(" ")) {

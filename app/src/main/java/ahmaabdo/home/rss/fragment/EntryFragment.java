@@ -36,8 +36,6 @@ import android.content.Intent;
 import android.content.Loader;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -56,6 +54,8 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.itsronald.widget.ViewPagerIndicator;
+
 import ahmaabdo.home.rss.Constants;
 import ahmaabdo.home.rss.MainApplication;
 import ahmaabdo.home.rss.R;
@@ -65,10 +65,12 @@ import ahmaabdo.home.rss.provider.FeedData.EntryColumns;
 import ahmaabdo.home.rss.provider.FeedData.FeedColumns;
 import ahmaabdo.home.rss.service.FetcherService;
 import ahmaabdo.home.rss.utils.PrefUtils;
-import ahmaabdo.home.rss.utils.UiUtils;
 import ahmaabdo.home.rss.view.EntryView;
 
-public class EntryFragment extends SwipeRefreshFragment implements BaseActivity.OnFullScreenListener, LoaderManager.LoaderCallbacks<Cursor>, EntryView.EntryViewManager {
+public class EntryFragment extends SwipeRefreshFragment implements
+        BaseActivity.OnFullScreenListener,
+        LoaderManager.LoaderCallbacks<Cursor>,
+        EntryView.EntryViewManager {
     private static final String TAG = "EntryFragment";
 
     private static final String STATE_BASE_URI = "STATE_BASE_URI";
@@ -87,6 +89,7 @@ public class EntryFragment extends SwipeRefreshFragment implements BaseActivity.
 
     private ViewPager mEntryPager;
     private EntryPagerAdapter mEntryPagerAdapter;
+    private ViewPagerIndicator mViewPagerIndicator;
 
     private View mCancelFullscreenBtn;
     private MenuItem mShowFullContentItem;
@@ -113,6 +116,7 @@ public class EntryFragment extends SwipeRefreshFragment implements BaseActivity.
         });
 
         mEntryPager = (ViewPager) rootView.findViewById(R.id.pager);
+        mViewPagerIndicator = (ViewPagerIndicator) rootView.findViewById(R.id.view_pager_indicator);
         //mEntryPager.setPageTransformer(true, new DepthPageTransformer());
         mEntryPager.setAdapter(mEntryPagerAdapter);
 
@@ -126,6 +130,7 @@ public class EntryFragment extends SwipeRefreshFragment implements BaseActivity.
         }
 
         mEntryPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
             @Override
             public void onPageScrolled(int i, float v, int i2) {
             }
@@ -145,7 +150,6 @@ public class EntryFragment extends SwipeRefreshFragment implements BaseActivity.
         });
 
         disableSwipe();
-
         return rootView;
     }
 
@@ -206,6 +210,7 @@ public class EntryFragment extends SwipeRefreshFragment implements BaseActivity.
 
         super.onCreateOptionsMenu(menu, inflater);
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -388,6 +393,10 @@ public class EntryFragment extends SwipeRefreshFragment implements BaseActivity.
         }
 
         mEntryPagerAdapter.notifyDataSetChanged();
+        if (mEntryPager.getAdapter().getCount() < 15) {
+            mViewPagerIndicator.setVisibility(View.VISIBLE);
+        }
+        //mEntryPager.invalidateBullets();
         if (mCurrentPagerPos != -1) {
             mEntryPager.setCurrentItem(mCurrentPagerPos);
         }
@@ -399,14 +408,6 @@ public class EntryFragment extends SwipeRefreshFragment implements BaseActivity.
             String feedTitle = entryCursor.isNull(mFeedNamePos) ? entryCursor.getString(mFeedUrlPos) : entryCursor.getString(mFeedNamePos);
             BaseActivity activity = (BaseActivity) getActivity();
             activity.setTitle(feedTitle);
-
-            byte[] iconBytes = entryCursor.getBlob(mFeedIconPos);
-            Bitmap bitmap = UiUtils.getScaledBitmap(iconBytes, 24);
-            if (bitmap != null) {
-                activity.getSupportActionBar().setIcon(new BitmapDrawable(getResources(), bitmap));
-            } else {
-                activity.getSupportActionBar().setIcon(null);
-            }
 
             mFavorite = entryCursor.getInt(mIsFavoritePos) == 1;
             activity.invalidateOptionsMenu();
