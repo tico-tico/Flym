@@ -9,15 +9,12 @@
     <string name="menu_settings">Beállítások</string>
     <string name="menu_refresh">Frissítés</string>
     <string name="menu_all_read">Összes megjelölése olvasottként</string>
-    <string name="menu_show_new_entries">Új bejegyzések megjelenítése</string>
     <string name="error">Hiba</string>
     <string name="network_error">A hálózat nincs beállítva</string>
     <string name="loading">Betöltés…</string>
     <string name="no_result">Nincs találat</string>
     <string name="drawer_open">Navigációs panel megnyitása</string>
     <string name="drawer_close">Navigációs panel bezárása</string>
-    <string name="back_again_to_quit">Nyomja meg még egyszer a vissza gombot a kilépéshez</string>
-    <string name="no_new_entries">Nincsenek új megjelenítendő bejegyzések</string>
 
     <string name="feeds">Hírforrások</string>
     <string name="menu_add_feed">Hírforrás hozzáadása</string>
@@ -40,7 +37,6 @@
     <string name="feed_no_summary">&lt; Nem érhető el összegzés. &gt;</string>
     <string name="feed_url">URL</string>
     <string name="optional">(nem kötelező)</string>
-    <string name="website_or_feed">(weboldal vagy hírforrás)</string>
     <string name="feed_cookie">Hitelesítési süti</string>
     <string name="cookiename">Név</string>
     <string name="cookievalue">Érték</string>

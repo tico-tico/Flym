@@ -9,15 +9,12 @@
     <string name="menu_settings">Pengaturan</string>
     <string name="menu_refresh">Segarkan</string>
     <string name="menu_all_read">Tandai semua sudah terbaca</string>
-    <string name="menu_show_new_entries">Tampilkan entri baru</string>
     <string name="error">Galat</string>
     <string name="network_error">Jaringan belum diatur</string>
     <string name="loading">Memuat…</string>
     <string name="no_result">Tidak ada hasil</string>
     <string name="drawer_open">Buka navigasi panel samping</string>
     <string name="drawer_close">Tutup navigasi panel samping</string>
-    <string name="back_again_to_quit">Tekan kembali sekali lagi untuk keluar</string>
-    <string name="no_new_entries">Tidak ada entri baru yg ditampilkan</string>
 
     <string name="feeds">Feeds</string>
     <string name="menu_add_feed">Tambahkan umpan</string>
@@ -38,7 +35,6 @@
     <string name="error_external_storage_not_available">Penyimpanan eksternal (contoh SD-card) tidak tersedia.</string>
     <string name="feed_url">URL</string>
     <string name="optional">(pilihan)</string>
-    <string name="website_or_feed">(situs atau umpan)</string>
     <string name="feed_cookie">Otentikasi Cookie</string>
     <string name="cookiename">Nama</string>
     <string name="cookievalue">Nilai</string>
@@ -88,7 +84,6 @@
     <string name="favorites">Berbintang</string>
     <string name="context_menu_hide_read">Sembunyikan entri yang sudah dibaca</string>
     <string name="context_menu_show_read">Tampilkan entri yang sudah dibaca</string>
-    <string name="context_menu_share_starred">Bagikan entri berbintang</string>
     <string name="menu_star">Bintang</string>
     <string name="menu_unstar">Hapus bintang</string>
     <string name="menu_share">Bagikan</string>
@@ -97,7 +92,6 @@
     <string name="menu_mark_as_unread">Tandai belum dibaca</string>
     <string name="menu_open_in_browser">Buka diperamban</string>
     <string name="menu_switch_full_original">Tampilkan konten penuh</string>
-    <string name="share_favorites_title">Home: entri berbintang</string>
     <string name="copied_clipboard">Tautan tersalin</string>
     <string name="get_full_text">Ambil teks penuh</string>
     <string name="see_enclosure">Lihat lampiran</string>

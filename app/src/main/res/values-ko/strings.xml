@@ -39,7 +39,6 @@
     <string name="no_result">결과 없음</string>
     <string name="drawer_open">탐색 서랍 열기</string>
     <string name="drawer_close">탐색 서랍 닫기</string>
-    <string name="back_again_to_quit">뒤로 가기 버튼을 한번 더 누르면 나갑니다</string>
 
     <!-- FEEDS -->
     <string name="feeds">피드</string>
@@ -61,7 +60,6 @@
     <string name="error_external_storage_not_available">외부 저장소(예를 들면 SD 카드)가 없습니다.</string>
     <string name="feed_url">URL 주소</string>
     <string name="optional">(선택 사항)</string>
-    <string name="website_or_feed">(웹페이지 또는 피드)</string>
     <string name="tab_feed_title">피드</string>
     <string name="tab_filters_title">필터</string>
     <string name="feed_title">제목</string>
@@ -104,14 +102,12 @@
     <string name="favorites">별표</string>
     <string name="context_menu_hide_read">읽은 항목 감추기</string>
     <string name="context_menu_show_read">읽은 항목 보이기</string>
-    <string name="context_menu_share_starred">별표 항목 공유</string>
     <string name="menu_star">별표</string>
     <string name="menu_unstar">별표 취소</string>
     <string name="menu_share">공유</string>
     <string name="menu_full_screen">전체 화면</string>
     <string name="menu_copy_clipboard">링크 복사</string>
     <string name="menu_mark_as_unread">읽은 것으로 표시</string>
-    <string name="share_favorites_title">Home: 별표 항목</string>
     <string name="copied_clipboard">링크 복사함</string>
     <string name="get_full_text">전체 텍스트 가져오기</string>
     <string name="see_enclosure">내장 미디어 보기</string>
@@ -191,8 +187,6 @@
         <item>Wi-Fi를 통해서만</item>
         <item>언제나</item>
     </string-array>
-<string name="menu_show_new_entries">새로운 항목 표시</string>
-    <string name="no_new_entries">표시할 새 항목이 없습니다.</string>
 
     <string name="feed_cookie">인증 쿠키</string>
     <string name="cookiename">이름</string>

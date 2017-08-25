@@ -38,7 +38,6 @@
     <string name="no_result">Sin resultados</string>
     <string name="drawer_open">Abrir el panel de navegación</string>
     <string name="drawer_close">Cerrar el panel de navegación</string>
-    <string name="back_again_to_quit">Presione atrás une vez más para salir</string>
 
     <!-- FEEDS -->
     <string name="feeds">Fuentes</string>
@@ -60,7 +59,6 @@
     <string name="error_external_storage_not_available">El almacenaje externo no está disponible.</string>
     <string name="feed_url">URL</string>
     <string name="optional">(opcional)</string>
-    <string name="website_or_feed">(página web o fuente)</string>
     <string name="tab_feed_title">Fuente</string>
     <string name="tab_filters_title">Filtros</string>
     <string name="feed_title">Título</string>
@@ -103,14 +101,12 @@
     <string name="favorites">Destacadas</string>
     <string name="context_menu_hide_read">Ocultar entradas leídas</string>
     <string name="context_menu_show_read">Mostrar entradas leídas</string>
-    <string name="context_menu_share_starred">Compartir entradas seleccionadas</string>
     <string name="menu_star">Destacar</string>
     <string name="menu_unstar">No destacar</string>
     <string name="menu_share">Compartir</string>
     <string name="menu_full_screen">Pantalla completa</string>
     <string name="menu_copy_clipboard">Copiar enlace</string>
     <string name="menu_mark_as_unread">Marcar como no leído</string>
-    <string name="share_favorites_title">Home: Entradas destacadas</string>
     <string name="copied_clipboard">Enlace copiado</string>
     <string name="get_full_text">Descargar el texto completo</string>
     <string name="see_enclosure">Ver el adjunto</string>
@@ -193,7 +189,6 @@
         <item>Always</item>
     </string-array>
 
-<string name="menu_show_new_entries">Mostrar entradas nuevas</string>
     <string name="feed_cookie">Cookie de autenticación</string>
     <string name="tab_advanced_title">Avanzado</string>
     <string name="menu_open_in_browser">Abrir en el navegador</string>
@@ -204,7 +199,6 @@
     <string name="cookievalue">Valor</string>
     <string name="settings_font_serif">Usar fuente Serif</string>
     <string name="settings_font_serif_description">Usar fuente Serif en lugar de Sans-Serif en los artículos</string>
-    <string name="no_new_entries">Nada nuevo para mostrar</string>
 
     <string name="feed_httpAuth">Autenticación HTTP</string>
     <string name="passwordhttpAuth">Contraseña</string>

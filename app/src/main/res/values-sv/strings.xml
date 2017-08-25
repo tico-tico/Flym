@@ -37,7 +37,6 @@
     <string name="no_result">Inga resultat</string>
     <string name="drawer_open">Öppna navigationspanelen</string>
     <string name="drawer_close">Stänga navigationspanelen</string>
-    <string name="back_again_to_quit">Tryck Tillbaka igen för att sluta</string>
 
     <!-- FEEDS -->
     <string name="feeds">Feeds</string>
@@ -59,7 +58,6 @@
     <string name="error_external_storage_not_available">Det externa lagringsmediet (d.v.s. SD-kort) finns ej tillgängligt.</string>
     <string name="feed_url">URL</string>
     <string name="optional">(valfritt)</string>
-    <string name="website_or_feed">(webbplats eller feed)</string>
     <string name="feed_cookie">Autentiseringskaka</string>
     <string name="cookiename">Namn</string>
     <string name="cookievalue">Innehåll</string>
@@ -106,7 +104,6 @@
     <string name="favorites">Favoriter</string>
     <string name="context_menu_hide_read">Göm lästa inlägg</string>
     <string name="context_menu_show_read">Visa lästa inlägg</string>
-    <string name="context_menu_share_starred">Dela favoriter</string>
     <string name="menu_star">Markera som favorit</string>
     <string name="menu_unstar">Avmarkera som favorit</string>
     <string name="menu_share">Dela</string>
@@ -115,7 +112,6 @@
     <string name="menu_mark_as_unread">Markera som oläst</string>
     <string name="menu_open_in_browser">Öppna i webbläsare</string>
     <string name="menu_switch_full_original">Show full content</string>
-    <string name="share_favorites_title">Home: favoriter</string>
     <string name="copied_clipboard">Länk kopierad</string>
     <string name="get_full_text">Hämta hela texten</string>
     <string name="see_enclosure">Visa bifogad mediafil</string>

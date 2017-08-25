@@ -40,7 +40,6 @@
     <string name="no_result">Não encontrado</string>
     <string name="drawer_open">Abrir a aba de navegação</string>
     <string name="drawer_close">Fechar a aba de navegação</string>
-    <string name="back_again_to_quit">Pressione novamente para sair</string>
 
     <!-- FEEDS -->
     <string name="feeds">Feeds</string>
@@ -62,7 +61,6 @@
     <string name="error_external_storage_not_available">O armazenamento externo (ex. cartão SD) não está disponível.</string>
     <string name="feed_url">URL</string>
     <string name="optional">(opcional)</string>
-    <string name="website_or_feed">(website ou feed)</string>
     <string name="feed_cookie">Cookie de autenticação</string>
     <string name="cookiename">Nome</string>
     <string name="cookievalue">Valor</string>
@@ -109,14 +107,12 @@
     <string name="favorites">Favoritos</string>
     <string name="context_menu_hide_read">Esconder artigos lidos</string>
     <string name="context_menu_show_read">Mostrar artigos lidos</string>
-    <string name="context_menu_share_starred">Compartilhar artigos favoritos</string>
     <string name="menu_star">Marcar favorito</string>
     <string name="menu_unstar">Desmarcar favorito</string>
     <string name="menu_share">Compartilhar</string>
     <string name="menu_full_screen">Tela cheia</string>
     <string name="menu_copy_clipboard">Copiar link</string>
     <string name="menu_mark_as_unread">Marcar como lido</string>
-    <string name="share_favorites_title">Home: artigos favoritos</string>
     <string name="copied_clipboard">Link copiado</string>
     <string name="get_full_text">Download do texto completo</string>
     <string name="see_enclosure">Listar anexos</string>
@@ -212,12 +208,10 @@
         <item>Sempre</item>
     </string-array>
 
-<string name="menu_show_new_entries">Mostrar novas entradas</string>
     <string name="storage_request_explanation">Para poder importar ou exportar feeds de ou para um ficheiro, tem de permitir que a aplicação aceda à memoria.</string>
     <string name="feed_no_summary">&lt; Sem resumo disponível. &gt;</string>
     <string name="loginhttpAuth">Login</string>
     <string name="passwordhttpAuth">Palavra-passe</string>
-    <string name="no_new_entries">Sem novas entradas a mostrar</string>
 
     <string name="feed_httpAuth">Atenticação HTTP</string>
     <string name="menu_open_in_browser">Abrir no navegador</string>

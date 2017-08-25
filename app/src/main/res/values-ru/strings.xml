@@ -32,15 +32,12 @@
     <string name="menu_settings">Настройки</string>
     <string name="menu_refresh">Обновить</string>
     <string name="menu_all_read">Пометить все как прочтённые</string>
-    <string name="menu_show_new_entries">Показать новые записи</string>
     <string name="error">Ошибка</string>
     <string name="network_error">Нет подключения к сети</string>
     <string name="loading">Загрузка…</string>
     <string name="no_result">Нет результатов</string>
     <string name="drawer_open">Открыть меню навигации</string>
     <string name="drawer_close">Закрыть меню навигации</string>
-    <string name="back_again_to_quit">Нажмите "Назад" еще раз, чтобы выйти</string>
-    <string name="no_new_entries">Нет новых записей</string>
 
     <!-- FEEDS -->
     <string name="feeds">Ленты</string>
@@ -62,7 +59,6 @@
     <string name="error_external_storage_not_available">Внешнее хранилище (например карта памяти) недоступно.</string>
     <string name="feed_url">URL</string>
     <string name="optional">(не обязательно)</string>
-    <string name="website_or_feed">(сайта или ленты новостей)</string>
     <string name="tab_feed_title">Ленту</string>
     <string name="tab_filters_title">Фильтры</string>
     <string name="feed_title">Название</string>
@@ -105,14 +101,12 @@
     <string name="favorites">Избранное</string>
     <string name="context_menu_hide_read">Скрыть прочитанные новости</string>
     <string name="context_menu_show_read">Показать прочитанные новости</string>
-    <string name="context_menu_share_starred">Поделиться избранными новостями</string>
     <string name="menu_star">Поместить в избранное</string>
     <string name="menu_unstar">Убрать из избранного</string>
     <string name="menu_share">Поделиться</string>
     <string name="menu_full_screen">Полный экран</string>
     <string name="menu_copy_clipboard">Скопировать ссылку</string>
     <string name="menu_mark_as_unread">Пометить как непрочитанное</string>
-    <string name="share_favorites_title">Home: избранные новости</string>
     <string name="copied_clipboard">Ссылка скопирована</string>
     <string name="get_full_text">Загрузить весь текст</string>
     <string name="see_enclosure">Показать вложение</string>

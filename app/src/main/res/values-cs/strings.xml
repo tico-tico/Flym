@@ -41,7 +41,6 @@
     <string name="no_result">Žádný výsledek</string>
     <string name="drawer_open">Otevřít navigační lištu</string>
     <string name="drawer_close">Zavřít navigační lištu</string>
-    <string name="back_again_to_quit">Opakovaný stisk tlačítka zpět ukončí aplikaci</string>
 
     <!-- FEEDS -->
     <string name="feeds">Zdroje</string>
@@ -63,7 +62,6 @@
     <string name="error_external_storage_not_available">Externí úložný prostor (např. SD karta) není dostupný.</string>
     <string name="feed_url">URL</string>
     <string name="optional">(nepovinné)</string>
-    <string name="website_or_feed">(webová stránka nebo zdroj)</string>
     <string name="tab_feed_title">Zdroj</string>
     <string name="tab_filters_title">Filtr</string>
     <string name="feed_title">NÁZEV</string>
@@ -108,14 +106,12 @@
     <string name="favorites">Označené</string>
     <string name="context_menu_hide_read">Skrýt přečtené články</string>
     <string name="context_menu_show_read">Zobrazit přečtené články</string>
-    <string name="context_menu_share_starred">Sdílet označené články</string>
     <string name="menu_star">Označit</string>
     <string name="menu_unstar">Odznačit</string>
     <string name="menu_share">Sdílet</string>
     <string name="menu_full_screen">Na celou obrazovku</string>
     <string name="menu_copy_clipboard">Kopírovat odkaz</string>
     <string name="menu_mark_as_unread">Označit jako nepřečtené</string>
-    <string name="share_favorites_title">Home: označené články</string>
     <string name="copied_clipboard">Link zkopírován</string>
     <string name="get_full_text">Stáhnout celý text</string>
     <string name="see_enclosure">Zobrazit přílohu</string>
@@ -202,7 +198,6 @@
 
     <string name="tab_advanced_title">Pokročilé</string>
     <string name="menu_open_in_browser">Otevřít v prohlížeči</string>
-<string name="menu_show_new_entries">Zobrazit nové články</string>
     <string name="feed_cookie">Ověřovací cookie</string>
     <string name="cookiename">Jméno</string>
     <string name="cookievalue">Hodnota</string>
@@ -211,6 +206,5 @@
     <string name="settings_font_serif_description">Použít pro text článků písmo Serif místo Sans-Serif</string>
     <string name="settings_mark_as_read">Zobrazit tlačítko Označit vše jako přečtené</string>
     <string name="settings_mark_as_read_description">Zobrazit / Skrýt tlačítko</string>
-    <string name="no_new_entries">Žádné nové příspěvky k zobrazení</string>
 
-    </resources>
+</resources>

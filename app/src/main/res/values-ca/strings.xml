@@ -37,7 +37,6 @@
     <string name="no_result">No hi ha resultats</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
-    <string name="back_again_to_quit">Premeu una vegada més per sortir</string>
 
     <!-- FEEDS -->
     <string name="feeds">Canals</string>
@@ -63,7 +62,6 @@
     </string>
     <string name="feed_url">Adreça URL</string>
     <string name="optional">(opcional)</string>
-    <string name="website_or_feed">(lloc web o canal)</string>
     <string name="tab_feed_title">Canal</string>
     <string name="tab_filters_title">Filtres</string>
     <string name="feed_title">TÍTOL</string>
@@ -108,14 +106,12 @@
     <string name="favorites">Destacats</string>
     <string name="context_menu_hide_read">Amaga entrades llegides</string>
     <string name="context_menu_show_read">Mostra entrades llegides</string>
-    <string name="context_menu_share_starred">Comparteix entrades destacades</string>
     <string name="menu_star">Marca</string>
     <string name="menu_unstar">Treu la marca</string>
     <string name="menu_share">Comparteix</string>
     <string name="menu_full_screen">Pantalla completa</string>
     <string name="menu_copy_clipboard">Copia l\'enllaç</string>
     <string name="menu_mark_as_unread">Marca com a no llegit</string>
-    <string name="share_favorites_title">Home: entrades destacades</string>
     <string name="copied_clipboard">S\'ha copiat l\'enllaç</string>
     <string name="get_full_text">Descarrega el text complet</string>
     <string name="see_enclosure">Mostra el fitxer adjunt</string>

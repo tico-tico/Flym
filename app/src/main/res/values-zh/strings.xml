@@ -38,7 +38,6 @@
     <string name="no_result">没有结果</string>
     <string name="drawer_open">打开导航抽屉</string>
     <string name="drawer_close">关闭导航抽屉</string>
-    <string name="back_again_to_quit">再按一次退出</string>
 
     <!-- FEEDS -->
     <string name="feeds">订阅</string>
@@ -60,7 +59,6 @@
     <string name="error_external_storage_not_available">外置存储（如SD卡）不可用。</string>
     <string name="feed_url">网址</string>
     <string name="optional">（可选）</string>
-    <string name="website_or_feed">（网站或源）</string>
     <string name="tab_feed_title">订阅</string>
     <string name="tab_filters_title">过滤器</string>
     <string name="feed_title">标题</string>
@@ -103,14 +101,12 @@
     <string name="favorites">收藏</string>
     <string name="context_menu_hide_read">隐藏已读消息</string>
     <string name="context_menu_show_read">显示已读消息</string>
-    <string name="context_menu_share_starred">分享收藏订阅</string>
     <string name="menu_star">收藏</string>
     <string name="menu_unstar">取消收藏</string>
     <string name="menu_share">分享</string>
     <string name="menu_full_screen">全屏</string>
     <string name="menu_copy_clipboard">复制链接</string>
     <string name="menu_mark_as_unread">保持未读</string>
-    <string name="share_favorites_title">这条消息加星</string>
     <string name="copied_clipboard">链接复制成功</string>
     <string name="get_full_text">接收全文</string>
     <string name="see_enclosure">显示附件</string>
@@ -190,9 +186,6 @@
         <item>仅限Wi-Fi</item>
         <item>总是</item>
     </string-array>
-
-<string name="menu_show_new_entries">显示新文章</string>
-    <string name="no_new_entries">没有新文章可显示</string>
 
     <string name="feed_cookie">验证Cookie</string>
     <string name="cookiename">名字</string>

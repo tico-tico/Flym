@@ -15,7 +15,6 @@
     <string name="no_result">結果はありません</string>
     <string name="drawer_open">ナビゲーション ドロワーを開く</string>
     <string name="drawer_close">ナビゲーション ドロワーを閉じる</string>
-    <string name="back_again_to_quit">戻るをもう一度押すと終了します</string>
 
     <string name="feeds">フィード</string>
     <string name="menu_add_feed">フィードを追加</string>
@@ -36,7 +35,6 @@
     <string name="error_external_storage_not_available">外部記憶装置 (SD カードなど) が利用できません.</string>
     <string name="feed_url">URL</string>
     <string name="optional">(省略可能)</string>
-    <string name="website_or_feed">(ウェブサイトまたはフィード)</string>
     <string name="feed_cookie">認証 Cookie</string>
     <string name="cookiename">名前</string>
     <string name="cookievalue">値</string>
@@ -82,7 +80,6 @@
     <string name="favorites">スター付き</string>
     <string name="context_menu_hide_read">既読エントリーを非表示</string>
     <string name="context_menu_show_read">既読エントリーを表示</string>
-    <string name="context_menu_share_starred">スター付きエントリーを共有</string>
     <string name="menu_star">スターを付ける</string>
     <string name="menu_unstar">スターを解除</string>
     <string name="menu_share">共有</string>
@@ -91,7 +88,6 @@
     <string name="menu_mark_as_unread">未読としてマーク</string>
     <string name="menu_open_in_browser">ブラウザーで開く</string>
     <string name="menu_switch_full_original">全文を表示</string>
-    <string name="share_favorites_title">Home: スター付きエントリー</string>
     <string name="copied_clipboard">リンクをコピーしました</string>
     <string name="get_full_text">完全なテキストを取得</string>
     <string name="see_enclosure">エンクロージャを参照</string>
@@ -134,9 +130,6 @@
     <string name="settings_proxy_type">タイプ</string>
     <string name="settings_mark_as_read">すべて既読としてマーク ボタンを表示</string>
     <string name="settings_mark_as_read_description">ボタンを表示/非表示します</string>
-
-    <string name="menu_show_new_entries">新しいエントリーを表示</string>
-    <string name="no_new_entries">表示する新しいエントリはありません</string>
 
     <string name="feed_httpAuth">HTTP 認証</string>
     <string name="loginhttpAuth">ログイン</string>

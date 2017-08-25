@@ -32,7 +32,6 @@
     <string name="error_external_storage_not_available">האחסון החיצוני (למשל כרטיס-SD) אינו זמין.</string>
     <string name="feed_url">כתובת URL</string>
     <string name="optional">(רשות)</string>
-    <string name="website_or_feed">(אתר רשת או ערוץ)</string>
     <string name="feed_cookie">עוגיית אימות</string>
     <string name="cookiename">שם</string>
     <string name="cookievalue">ערך</string>
@@ -117,23 +116,17 @@
     <string name="settings_mark_as_read">הצג כפתור סמן את כולן בתור נקראו</string>
     <string name="settings_mark_as_read_description">הצג / הסתר את הכפתור (נדרשת התחלה מחדש)</string>
 
-    <string name="back_again_to_quit">לחץ חזרה פעם נוספת כדי לצאת</string>
-
     <string name="select_file">בחר קובץ (SD-שורש)</string>
     <string name="google_news_indicator">בחר נושא או מספר נושאים להוספה. אפשרי כי חלק מהם לא יסופקו על ידי Google בשפתך.</string>
     <string name="all">רשומות</string>
     <string name="no_entries">אין רשומות</string>
     <string name="favorites">כוכב</string>
-    <string name="context_menu_share_starred">שתף רשומות כוכב</string>
     <string name="menu_star">כוכב</string>
     <string name="menu_unstar">הסר כוכב</string>
     <string name="menu_share">שתף</string>
-    <string name="share_favorites_title">‏spaRSS: רשומות כוכב</string>
     <string name="see_enclosure">ראה צירוף</string>
     <string name="open_enclosure">פתח צירוף</string>
     <string name="copied_clipboard">קישור הועתק</string>
-<string name="menu_show_new_entries">הצג רשומות חדשות</string>
-    <string name="no_new_entries">אין רשומות חדשות להצגה.</string>
 
     <string name="feed_httpAuth">אימות HTTP</string>
     <string name="loginhttpAuth">התחבר</string>

@@ -9,15 +9,12 @@
     <string name="menu_settings">إعدادات</string>
     <string name="menu_refresh">إعادة التحميل</string>
     <string name="menu_all_read">تم قراءة كل شيء</string>
-    <string name="menu_show_new_entries">أظهر المدخلات الجديدة</string>
     <string name="error">خطأ</string>
     <string name="network_error">الشبكة غير معدة</string>
     <string name="loading">تحميل…</string>
     <string name="no_result">لا توجد نتيجة</string>
     <string name="drawer_open">افتح درج الإنتقال</string>
     <string name="drawer_close">اغلق درج الإنتقال</string>
-    <string name="back_again_to_quit">اضغط عودة مرة أخرى للخروج</string>
-    <string name="no_new_entries">لا توجد مقالات جديدة لعرضها</string>
 
     <string name="feeds">خلاصات</string>
     <string name="menu_add_feed">أضف خلاصة</string>
@@ -38,7 +35,6 @@
     <string name="error_external_storage_not_available">الذاكرة الخارجية (مثال: بطاقة SD) غير متوفرة.</string>
     <string name="feed_url">URL</string>
     <string name="optional">(اختيارية)</string>
-    <string name="website_or_feed">(موقع الكتروني أو خلاصة)</string>
     <string name="feed_cookie">Cookie المصادقة</string>
     <string name="cookiename">اسم</string>
     <string name="cookievalue">قيمة</string>
@@ -84,7 +80,6 @@
     <string name="favorites">المفضلة</string>
     <string name="context_menu_hide_read">اخف المقالات المقروءة</string>
     <string name="context_menu_show_read">أظهر المقالات المقروءة</string>
-    <string name="context_menu_share_starred">أنشر المقالات المفضلة</string>
     <string name="menu_star">أضف إلى المفضلة</string>
     <string name="menu_unstar">احذف من المفضلة</string>
     <string name="menu_share">أنشر</string>
@@ -93,7 +88,6 @@
     <string name="menu_mark_as_unread">علم كغير مقروء</string>
     <string name="menu_open_in_browser">افتح في المتصفح</string>
     <string name="menu_switch_full_original">أظهر كل المحتوى</string>
-    <string name="share_favorites_title">Home: المقالات المفضلة</string>
     <string name="copied_clipboard">لقد تم نسخ الوصلة</string>
     <string name="get_full_text">استخرج النص كاملا</string>
     <string name="see_enclosure">رؤية المرفقات</string>
