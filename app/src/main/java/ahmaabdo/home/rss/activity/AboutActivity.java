@@ -24,9 +24,13 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import ahmaabdo.home.rss.R;
@@ -69,5 +73,14 @@ public class AboutActivity extends BaseActivity {
         return (super.onOptionsItemSelected(menuItem));
     }
 
-}
+    public void openSrcBtn(View view) {
+        WebView web = (WebView) LayoutInflater.from(this).inflate(R.layout.dialog_licenses, null);
+        web.loadUrl("file:///android_asset/open_source_licenses.html");
+        new AlertDialog.Builder(this, R.style.Theme_AppCompat_Light_Dialog_Alert)
+                .setTitle("Licenses")
+                .setView(web)
+                .setPositiveButton(android.R.string.ok, null)
+                .show();
+    }
 
+}

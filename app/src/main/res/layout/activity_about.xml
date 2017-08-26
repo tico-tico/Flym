@@ -8,7 +8,7 @@
     <include layout="@layout/view_toolbar" />
 
     <ImageView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dip"
         android:layout_marginTop="20dip"
@@ -30,16 +30,26 @@
         android:layout_marginTop="5dip"
         android:text="@string/about_us_copyright" />
 
-    <TextView
-        android:id="@+id/about_content"
-        android:layout_width="fill_parent"
+    <Button
+        android:layout_width="match_parent"
+        android:onClick="openSrcBtn"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dip"
-        android:layout_marginLeft="15dip"
-        android:layout_marginRight="15dip"
-        android:layout_marginTop="15dip"
-        android:autoLink="web"
-        android:lineSpacingMultiplier="1.3" />
+        android:background="@drawable/bg_refresh_list_button_selector"
+        android:text="Open source licenses"
+        android:textColor="@android:color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/about_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dip"
+            android:autoLink="web"
+            android:lineSpacingMultiplier="1.3" />
+    </ScrollView>
 
 </LinearLayout>
 

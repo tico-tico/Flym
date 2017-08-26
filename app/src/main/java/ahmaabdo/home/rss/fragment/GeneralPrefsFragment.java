@@ -97,6 +97,7 @@ public class GeneralPrefsFragment extends PreferenceFragment {
                 return true;
             }
         });
+
     }
 
     @Override
