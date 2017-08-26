@@ -50,9 +50,10 @@ public class EntryActivity extends BaseActivity {
             mEntryFragment.setData(getIntent().getData());
         }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.entry_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
         toolbar.setNavigationIcon(R.drawable.ic_clear);
         toolbar.setBackgroundColor(Color.BLACK);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

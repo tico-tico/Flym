@@ -8,4 +8,7 @@
     android:background="?attr/colorPrimary"
     support:popupTheme="@style/ThemeOverlay.AppCompat.Light"
     support:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    tools:showIn="@layout/view_home" />
+    tools:showIn="@layout/view_home">
+
+
+</android.support.v7.widget.Toolbar>

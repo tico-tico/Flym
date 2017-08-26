@@ -52,6 +52,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.itsronald.widget.ViewPagerIndicator;
@@ -407,7 +408,10 @@ public class EntryFragment extends SwipeRefreshFragment implements
             Log.d(TAG, "refreshUI() called with: " + "entryCursor = [" + entryCursor + "]");
             String feedTitle = entryCursor.isNull(mFeedNamePos) ? entryCursor.getString(mFeedUrlPos) : entryCursor.getString(mFeedNamePos);
             BaseActivity activity = (BaseActivity) getActivity();
-            activity.setTitle(feedTitle);
+            TextView toolbarTitle = (TextView) activity.findViewById(R.id.toolbar_title);
+            toolbarTitle.setText(feedTitle);
+            toolbarTitle.setVisibility(View.VISIBLE);
+            activity.setTitle(toolbarTitle.getText().toString());
 
             mFavorite = entryCursor.getInt(mIsFavoritePos) == 1;
             activity.invalidateOptionsMenu();
