@@ -127,7 +127,8 @@ public abstract class BaseActivity extends ActionBarActivity {
         if (fullScreen) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                 if (getSupportActionBar() != null) {
-                    getSupportActionBar().hide();
+                    //TODO: FIX When menu clicked; Full screen not work
+                    //getSupportActionBar().hide();
                 }
                 mDecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
                         View.SYSTEM_UI_FLAG_IMMERSIVE | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
