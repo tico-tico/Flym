@@ -35,6 +35,8 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
@@ -50,6 +52,7 @@ import com.melnykov.fab.FloatingActionButton;
 
 import java.io.File;
 
+import ahmaabdo.home.rss.BottomNavigationViewHelper;
 import ahmaabdo.home.rss.Constants;
 import ahmaabdo.home.rss.R;
 import ahmaabdo.home.rss.adapter.DrawerAdapter;
@@ -104,6 +107,24 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
 
     private boolean mCanQuit = false;
 
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_entries:
+                    return true;
+                case R.id.navigation_starred:
+                    return true;
+                case R.id.navigation_feeds:
+                    return true;
+            }
+            return false;
+        }
+
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         UiUtils.setPreferenceTheme(this);
@@ -118,6 +139,10 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableShiftMode(navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         mLeftDrawer = findViewById(R.id.left_drawer);
         mDrawerList = (ListView) findViewById(R.id.drawer_list);

@@ -327,6 +327,14 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
         if (!PrefUtils.getBoolean(PrefUtils.MARK_AS_READ, false)) {
             menu.findItem(R.id.menu_all_read).setVisible(false);
         }
+
+        if (!PrefUtils.getBoolean(PrefUtils.SHOW_READ, true)) {
+            menu.findItem(R.id.menu_unread).setIcon(R.drawable.nav_read);
+        } else {
+            menu.findItem(R.id.menu_unread).setIcon(R.drawable.nav_unread);
+        }
+
+
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -348,6 +356,19 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
                 builder.show();
                 return true;
             }
+
+            case R.id.menu_unread:
+                if (!PrefUtils.getBoolean(PrefUtils.SHOW_READ, true)) {
+                    PrefUtils.putBoolean(PrefUtils.SHOW_READ, true);
+                    menu.findItem(R.id.menu_unread).setIcon(R.drawable.nav_unread);
+                    return true;
+
+                } else {
+                    PrefUtils.putBoolean(PrefUtils.SHOW_READ, false);
+                    menu.findItem(R.id.menu_unread).setIcon(R.drawable.nav_read);
+
+                }
+                return true;
 
             case R.id.edit_feeds: {
                 startActivity(new Intent(getActivity(), EditFeedsListActivity.class));
