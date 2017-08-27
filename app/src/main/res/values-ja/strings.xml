@@ -78,7 +78,6 @@
     <string name="all">エントリー</string>
     <string name="no_entries">エントリーはありません</string>
     <string name="favorites">スター付き</string>
-    <string name="context_menu_hide_read">既読エントリーを非表示</string>
     <string name="context_menu_show_read">既読エントリーを表示</string>
     <string name="menu_star">スターを付ける</string>
     <string name="menu_unstar">スターを解除</string>

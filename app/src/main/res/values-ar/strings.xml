@@ -78,7 +78,6 @@
     <string name="all">المقالات</string>
     <string name="no_entries">لا توجد مقالات</string>
     <string name="favorites">المفضلة</string>
-    <string name="context_menu_hide_read">اخف المقالات المقروءة</string>
     <string name="context_menu_show_read">أظهر المقالات المقروءة</string>
     <string name="menu_star">أضف إلى المفضلة</string>
     <string name="menu_unstar">احذف من المفضلة</string>

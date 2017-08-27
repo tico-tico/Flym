@@ -99,7 +99,6 @@
     <string name="all">Entradas</string>
     <string name="no_entries">No hay entradas</string>
     <string name="favorites">Destacadas</string>
-    <string name="context_menu_hide_read">Ocultar entradas leídas</string>
     <string name="context_menu_show_read">Mostrar entradas leídas</string>
     <string name="menu_star">Destacar</string>
     <string name="menu_unstar">No destacar</string>

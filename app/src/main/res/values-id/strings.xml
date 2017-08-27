@@ -82,7 +82,6 @@
     <string name="all">Entri</string>
     <string name="no_entries">Tidak ada entri</string>
     <string name="favorites">Berbintang</string>
-    <string name="context_menu_hide_read">Sembunyikan entri yang sudah dibaca</string>
     <string name="context_menu_show_read">Tampilkan entri yang sudah dibaca</string>
     <string name="menu_star">Bintang</string>
     <string name="menu_unstar">Hapus bintang</string>

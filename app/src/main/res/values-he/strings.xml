@@ -70,7 +70,6 @@
     <string name="google_news_science">מדע</string>
     <string name="google_news_health">בריאות</string>
 
-    <string name="context_menu_hide_read">הסתר רשומות שנקראו</string>
     <string name="context_menu_show_read">הצג רשומות שנקראו</string>
     <string name="menu_full_screen">מסך מלא</string>
     <string name="menu_copy_clipboard">העתק קישור</string>

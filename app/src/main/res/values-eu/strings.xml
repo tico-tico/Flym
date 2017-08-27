@@ -109,7 +109,6 @@
     <string name="all">Sarrerak</string>
     <string name="no_entries">Sarrerarik ez</string>
     <string name="favorites">Gogokoenak</string>
-    <string name="context_menu_hide_read">Ezkutatu irakurritako sarrerak</string>
     <string name="context_menu_show_read">Erakutsi irakurritako sarrerak</string>
     <string name="menu_star">Gogokoenetara gehitu</string>
     <string name="menu_unstar">Gogokoenetatik kendu</string>

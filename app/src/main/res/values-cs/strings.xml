@@ -104,7 +104,6 @@
     <string name="all">Články</string>
     <string name="no_entries">Žádné články</string>
     <string name="favorites">Označené</string>
-    <string name="context_menu_hide_read">Skrýt přečtené články</string>
     <string name="context_menu_show_read">Zobrazit přečtené články</string>
     <string name="menu_star">Označit</string>
     <string name="menu_unstar">Odznačit</string>

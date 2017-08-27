@@ -85,7 +85,6 @@
     <string name="all">Items</string>
     <string name="no_entries">Geen items</string>
     <string name="favorites">Favorieten</string>
-    <string name="context_menu_hide_read">Gelezen items verbergen</string>
     <string name="context_menu_show_read">Gelezen items weergeven</string>
     <string name="menu_star">Favoriet</string>
     <string name="menu_unstar">Geen favoriet</string>

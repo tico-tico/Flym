@@ -107,7 +107,6 @@
     <string name="all">Einträge</string>
     <string name="no_entries">Keine Einträge</string>
     <string name="favorites">Favorisiert</string>
-    <string name="context_menu_hide_read">Gelesene Einträge verstecken</string>
     <string name="context_menu_show_read">Gelesene Einträge anzeigen</string>
     <string name="menu_star">Favorisieren</string>
     <string name="menu_unstar">Entfavorisieren</string>

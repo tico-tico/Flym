@@ -100,7 +100,6 @@
     <string name="all">항목</string>
     <string name="no_entries">항목 없음</string>
     <string name="favorites">별표</string>
-    <string name="context_menu_hide_read">읽은 항목 감추기</string>
     <string name="context_menu_show_read">읽은 항목 보이기</string>
     <string name="menu_star">별표</string>
     <string name="menu_unstar">별표 취소</string>

@@ -99,7 +99,6 @@
     <string name="all">Новости</string>
     <string name="no_entries">Нет новостей</string>
     <string name="favorites">Избранное</string>
-    <string name="context_menu_hide_read">Скрыть прочитанные новости</string>
     <string name="context_menu_show_read">Показать прочитанные новости</string>
     <string name="menu_star">Поместить в избранное</string>
     <string name="menu_unstar">Убрать из избранного</string>

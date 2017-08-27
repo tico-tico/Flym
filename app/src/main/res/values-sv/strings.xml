@@ -102,7 +102,6 @@
     <string name="all">Inlägg</string>
     <string name="no_entries">Inga poster</string>
     <string name="favorites">Favoriter</string>
-    <string name="context_menu_hide_read">Göm lästa inlägg</string>
     <string name="context_menu_show_read">Visa lästa inlägg</string>
     <string name="menu_star">Markera som favorit</string>
     <string name="menu_unstar">Avmarkera som favorit</string>

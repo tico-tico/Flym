@@ -101,7 +101,6 @@
     <string name="all">Tous les articles</string>
     <string name="no_entries">Aucun article</string>
     <string name="favorites">Favoris</string>
-    <string name="context_menu_hide_read">Masquer les articles lus</string>
     <string name="context_menu_show_read">Afficher les articles lus</string>
     <string name="menu_star">Ajouter aux favoris</string>
     <string name="menu_unstar">Retirer des favoris</string>

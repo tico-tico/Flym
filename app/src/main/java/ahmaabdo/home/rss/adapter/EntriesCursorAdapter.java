@@ -132,6 +132,7 @@ public class EntriesCursorAdapter extends ResourceCursorAdapter {
         holder.isFavorite = cursor.getInt(mFavoritePos) == 1;
 
         holder.starImgView.setVisibility(holder.isFavorite ? View.VISIBLE : View.INVISIBLE);
+        holder.starImgView.setImageResource(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.drawable.favorite_light : R.drawable.favorite_dark);
 
         if (mShowFeedInfo && mFeedNamePos > -1) {
             if (feedName != null) {
