@@ -51,8 +51,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.melnykov.fab.FloatingActionButton;
-
 import java.util.Date;
 
 import ahmaabdo.home.rss.Constants;
@@ -83,7 +81,6 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
     private boolean mShowFeedInfo = false;
     private EntriesCursorAdapter mEntriesCursorAdapter;
     private ListView mListView;
-    private FloatingActionButton mHideReadButton;
     private long mListDisplayDate = new Date().getTime();
     private Menu menu;
 
@@ -116,7 +113,6 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
             if (PrefUtils.SHOW_READ.equals(key)) {
                 getLoaderManager().restartLoader(ENTRIES_LOADER_ID, null, mEntriesLoader);
-                UiUtils.updateHideReadButton(mHideReadButton);
             } else if (PrefUtils.IS_REFRESHING.equals(key)) {
                 refreshSwipeProgress();
             }
@@ -261,16 +257,6 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
             }
         });
 
-        mHideReadButton = (FloatingActionButton) rootView.findViewById(R.id.hide_read_button);
-        mHideReadButton.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                UiUtils.displayHideReadButtonAction(mListView.getContext());
-                return true;
-            }
-        });
-        UiUtils.updateHideReadButton(mHideReadButton);
-
         if (savedInstanceState != null) {
             refreshUI(); // To hide/show the search bar
         }
@@ -303,13 +289,6 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
         startRefresh();
     }
 
-    public void onClickHideRead(View view) {
-        if (!PrefUtils.getBoolean(PrefUtils.SHOW_READ, true)) {
-            PrefUtils.putBoolean(PrefUtils.SHOW_READ, true);
-        } else {
-            PrefUtils.putBoolean(PrefUtils.SHOW_READ, false);
-        }
-    }
 
     @Override
     public void onListItemClick(ListView listView, View view, int position, long id) {

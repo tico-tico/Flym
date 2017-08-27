@@ -48,8 +48,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.melnykov.fab.FloatingActionButton;
-
 import java.io.File;
 
 import ahmaabdo.home.rss.BottomNavigationViewHelper;
@@ -88,16 +86,12 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
     private ListView mDrawerList;
     private DrawerAdapter mDrawerAdapter;
     private ActionBarDrawerToggle mDrawerToggle;
-    private FloatingActionButton mDrawerHideReadButton;
     private final SharedPreferences.OnSharedPreferenceChangeListener mShowReadListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
             if (PrefUtils.SHOW_READ.equals(key)) {
                 getLoaderManager().restartLoader(LOADER_ID, null, HomeActivity.this);
 
-                if (mDrawerHideReadButton != null) {
-                    UiUtils.updateHideReadButton(mDrawerHideReadButton);
-                }
             }
         }
     };
@@ -177,18 +171,6 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
 
         }
 
-        mDrawerHideReadButton = (FloatingActionButton) mLeftDrawer.findViewById(R.id.hide_read_button);
-        if (mDrawerHideReadButton != null) {
-            mDrawerHideReadButton.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View view) {
-                    UiUtils.displayHideReadButtonAction(HomeActivity.this);
-                    return true;
-                }
-            });
-            UiUtils.updateHideReadButton(mDrawerHideReadButton);
-            UiUtils.addEmptyFooterView(mDrawerList, 90);
-        }
 
         if (savedInstanceState != null) {
             mCurrentDrawerPos = savedInstanceState.getInt(STATE_CURRENT_DRAWER_POS);
@@ -272,13 +254,6 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
         return super.onOptionsItemSelected(item);
     }
 
-    public void onClickHideRead(View view) {
-        if (!PrefUtils.getBoolean(PrefUtils.SHOW_READ, true)) {
-            PrefUtils.putBoolean(PrefUtils.SHOW_READ, true);
-        } else {
-            PrefUtils.putBoolean(PrefUtils.SHOW_READ, false);
-        }
-    }
 
     public void onClickEditFeeds(View view) {
         startActivity(new Intent(this, EditFeedsListActivity.class));

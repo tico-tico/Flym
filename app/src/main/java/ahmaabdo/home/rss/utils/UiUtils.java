@@ -30,9 +30,6 @@ import android.support.v4.util.LongSparseArray;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import com.melnykov.fab.FloatingActionButton;
 
 import ahmaabdo.home.rss.MainApplication;
 import ahmaabdo.home.rss.R;
@@ -81,23 +78,6 @@ public class UiUtils {
         return null;
     }
 
-    static public void updateHideReadButton(FloatingActionButton drawerHideReadButton) {
-        if (drawerHideReadButton != null) {
-            if (PrefUtils.getBoolean(PrefUtils.SHOW_READ, true)) {
-                drawerHideReadButton.setColorNormalResId(getAttrResource(drawerHideReadButton.getContext(), R.attr.colorAccent, R.color.light_primary_color));
-            } else {
-                drawerHideReadButton.setColorNormalResId(R.color.light_disabled);
-            }
-        }
-    }
-
-    static public void displayHideReadButtonAction(Context context) {
-        if (PrefUtils.getBoolean(PrefUtils.SHOW_READ, true)) {
-            Toast.makeText(context, R.string.context_menu_hide_read, Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(context, R.string.context_menu_show_read, Toast.LENGTH_SHORT).show();
-        }
-    }
 
     static public void addEmptyFooterView(ListView listView, int dp) {
         View view = new View(listView.getContext());
