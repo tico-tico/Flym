@@ -23,6 +23,7 @@ package ahmaabdo.home.rss.activity;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.LoaderManager;
+import android.content.Context;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -30,10 +31,12 @@ import android.content.Loader;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -98,26 +101,11 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
     private CharSequence mTitle;
     private BitmapDrawable mIcon;
     private int mCurrentDrawerPos;
+    Uri newUri;
+    boolean showFeedInfo = true;
 
     private boolean mCanQuit = false;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_entries:
-                    return true;
-                case R.id.navigation_starred:
-                    return true;
-                case R.id.navigation_feeds:
-                    return true;
-            }
-            return false;
-        }
-
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,9 +122,7 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        BottomNavigationViewHelper.disableShiftMode(navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        initBottomNav();
 
         mLeftDrawer = findViewById(R.id.left_drawer);
         mDrawerList = (ListView) findViewById(R.id.drawer_list);
@@ -202,6 +188,48 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSIONS_REQUEST_IMPORT_FROM_OPML);
             }
         }
+
+    }
+
+    private void initBottomNav() {
+        Context context = this;
+        Resources resources = context.getResources();
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableShiftMode(navigation);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            navigation.setItemTextColor(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color, context.getTheme()));
+            navigation.setItemIconTintList(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color, context.getTheme()));
+
+        } else {
+            navigation.setItemTextColor(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color));
+            navigation.setItemIconTintList(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color));
+        }
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_entries:
+                        getSupportActionBar().setTitle(R.string.all);
+                        newUri = EntryColumns.ALL_ENTRIES_CONTENT_URI;
+                        if (!newUri.equals(mEntriesFragment.getUri())) {
+                            mEntriesFragment.setData(newUri, showFeedInfo);
+                        }
+                        return true;
+                    case R.id.navigation_starred:
+                        getSupportActionBar().setTitle(R.string.favorites);
+                        newUri = EntryColumns.FAVORITES_CONTENT_URI;
+                        if (!newUri.equals(mEntriesFragment.getUri())) {
+                            mEntriesFragment.setData(newUri, showFeedInfo);
+                        }
+                        return true;
+                    case R.id.navigation_feeds:
+                        getSupportActionBar().setTitle(R.string.feeds);
+                        return true;
+                }
+                return false;
+            }
+        });
 
     }
 
@@ -323,8 +351,6 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
         mDrawerAdapter.setSelectedItem(position);
         mIcon = null;
 
-        Uri newUri;
-        boolean showFeedInfo = true;
 
         switch (position) {
             case 0:
