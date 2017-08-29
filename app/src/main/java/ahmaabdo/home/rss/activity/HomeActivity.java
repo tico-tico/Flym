@@ -57,6 +57,7 @@ import ahmaabdo.home.rss.BottomNavigationViewHelper;
 import ahmaabdo.home.rss.Constants;
 import ahmaabdo.home.rss.R;
 import ahmaabdo.home.rss.adapter.DrawerAdapter;
+import ahmaabdo.home.rss.fragment.EditFeedsListFragment;
 import ahmaabdo.home.rss.fragment.EntriesListFragment;
 import ahmaabdo.home.rss.parser.OPML;
 import ahmaabdo.home.rss.provider.FeedData;
@@ -104,8 +105,6 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
     Uri newUri;
     boolean showFeedInfo = true;
 
-    private boolean mCanQuit = false;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,7 +141,7 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
             }
         });
 
-        mLeftDrawer.setBackgroundColor((ContextCompat.getColor(getApplicationContext(), PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_primary_color : R.color.dark_primary_color)));
+        mLeftDrawer.setBackgroundColor((ContextCompat.getColor(getApplicationContext(), PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_primary_color : R.color.dark_accent_color)));
         mDrawerList.setBackgroundColor((ContextCompat.getColor(getApplicationContext(), PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_background : R.color.dark_primary_color_light)));
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (mDrawerLayout != null) {
@@ -225,121 +224,15 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
                         return true;
                     case R.id.navigation_feeds:
                         getSupportActionBar().setTitle(R.string.feeds);
+
+
+
                         return true;
                 }
                 return false;
             }
         });
 
-    }
-
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        outState.putInt(STATE_CURRENT_DRAWER_POS, mCurrentDrawerPos);
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        PrefUtils.registerOnPrefChangeListener(mShowReadListener);
-    }
-
-    @Override
-    protected void onPause() {
-        PrefUtils.unregisterOnPrefChangeListener(mShowReadListener);
-        super.onPause();
-    }
-
-    @Override
-    public void finish() {
-        if (mDrawerLayout != null) {
-            if (mDrawerLayout.isDrawerOpen(mLeftDrawer)) {
-                mDrawerLayout.closeDrawer(mLeftDrawer);
-                return;
-            }
-        }
-        super.finish();
-        return;
-
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-
-        // We reset the current drawer position
-        selectDrawerItem(0);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (mDrawerToggle != null && mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-
-    public void onClickEditFeeds(View view) {
-        startActivity(new Intent(this, EditFeedsListActivity.class));
-    }
-
-
-    public void onClickSettings(View view) {
-        startActivity(new Intent(this, GeneralPrefsActivity.class));
-    }
-
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        // Sync the toggle state after onRestoreInstanceState has occurred.
-        if (mDrawerToggle != null) {
-            mDrawerToggle.syncState();
-        }
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        if (mDrawerToggle != null) {
-            mDrawerToggle.onConfigurationChanged(newConfig);
-        }
-    }
-
-    @Override
-    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
-        CursorLoader cursorLoader = new CursorLoader(this, FeedColumns.GROUPED_FEEDS_CONTENT_URI, new String[]{FeedColumns._ID, FeedColumns.URL, FeedColumns.NAME,
-                FeedColumns.IS_GROUP, FeedColumns.ICON, FeedColumns.LAST_UPDATE, FeedColumns.ERROR, FEED_UNREAD_NUMBER},
-                PrefUtils.getBoolean(PrefUtils.SHOW_READ, true) ? "" : WHERE_UNREAD_ONLY, null, null
-        );
-        cursorLoader.setUpdateThrottle(Constants.UPDATE_THROTTLE_DELAY);
-        return cursorLoader;
-    }
-
-    @Override
-    public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
-        if (mDrawerAdapter != null) {
-            mDrawerAdapter.setCursor(cursor);
-        } else {
-            mDrawerAdapter = new DrawerAdapter(this, cursor);
-            mDrawerList.post(new Runnable() {
-                public void run() {
-                    mDrawerList.setAdapter(mDrawerAdapter);
-                    selectDrawerItem(mCurrentDrawerPos);
-                }
-            });
-        }
-    }
-
-    @Override
-    public void onLoaderReset(Loader<Cursor> cursorLoader) {
-        if (mDrawerAdapter == null)
-            return;
-
-        mDrawerAdapter.setCursor(null);
     }
 
     private void selectDrawerItem(int position) {
@@ -411,6 +304,106 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
         }
         refreshTitle(0);
     }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt(STATE_CURRENT_DRAWER_POS, mCurrentDrawerPos);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        PrefUtils.registerOnPrefChangeListener(mShowReadListener);
+    }
+
+    @Override
+    protected void onPause() {
+        PrefUtils.unregisterOnPrefChangeListener(mShowReadListener);
+        super.onPause();
+    }
+
+    @Override
+    public void finish() {
+        if (mDrawerLayout != null) {
+            if (mDrawerLayout.isDrawerOpen(mLeftDrawer)) {
+                mDrawerLayout.closeDrawer(mLeftDrawer);
+                return;
+            }
+        }
+        super.finish();
+        return;
+
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+
+        // We reset the current drawer position
+        selectDrawerItem(0);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (mDrawerToggle != null && mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        // Sync the toggle state after onRestoreInstanceState has occurred.
+        if (mDrawerToggle != null) {
+            mDrawerToggle.syncState();
+        }
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (mDrawerToggle != null) {
+            mDrawerToggle.onConfigurationChanged(newConfig);
+        }
+    }
+
+    @Override
+    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
+        CursorLoader cursorLoader = new CursorLoader(this, FeedColumns.GROUPED_FEEDS_CONTENT_URI, new String[]{FeedColumns._ID, FeedColumns.URL, FeedColumns.NAME,
+                FeedColumns.IS_GROUP, FeedColumns.ICON, FeedColumns.LAST_UPDATE, FeedColumns.ERROR, FEED_UNREAD_NUMBER},
+                PrefUtils.getBoolean(PrefUtils.SHOW_READ, true) ? "" : WHERE_UNREAD_ONLY, null, null
+        );
+        cursorLoader.setUpdateThrottle(Constants.UPDATE_THROTTLE_DELAY);
+        return cursorLoader;
+    }
+
+    @Override
+    public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
+        if (mDrawerAdapter != null) {
+            mDrawerAdapter.setCursor(cursor);
+        } else {
+            mDrawerAdapter = new DrawerAdapter(this, cursor);
+            mDrawerList.post(new Runnable() {
+                public void run() {
+                    mDrawerList.setAdapter(mDrawerAdapter);
+                    selectDrawerItem(mCurrentDrawerPos);
+                }
+            });
+        }
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> cursorLoader) {
+        if (mDrawerAdapter == null)
+            return;
+
+        mDrawerAdapter.setCursor(null);
+    }
+
 
     public void refreshTitle(int mNewEntriesNumber) {
         switch (mCurrentDrawerPos) {
