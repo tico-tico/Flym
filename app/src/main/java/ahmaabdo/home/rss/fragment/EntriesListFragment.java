@@ -320,21 +320,6 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_add_new_feed: {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle(R.string.menu_add_feed)
-                        .setItems(new CharSequence[]{getString(R.string.add_custom_feed), getString(R.string.google_news_title)}, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                if (which == 0) {
-                                    startActivity(new Intent(Intent.ACTION_INSERT).setData(FeedData.FeedColumns.CONTENT_URI));
-                                } else {
-                                    startActivity(new Intent(getActivity(), AddGoogleNewsActivity.class));
-                                }
-                            }
-                        });
-                builder.show();
-                return true;
-            }
 
             case R.id.menu_unread:
                 if (!PrefUtils.getBoolean(PrefUtils.SHOW_READ, true)) {

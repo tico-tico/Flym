@@ -4,12 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <item
-        android:id="@+id/menu_add_new_feed"
-        android:icon="@drawable/ic_add"
-        android:title="@string/menu_add_feed"
-        app:showAsAction="always"
-        tools:ignore="AlwaysShowAction" />
-    <item
         android:id="@+id/menu_unread"
         android:icon="@drawable/nav_unread"
         android:title="@string/context_menu_show_read"

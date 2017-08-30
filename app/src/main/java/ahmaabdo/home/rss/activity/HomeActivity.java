@@ -23,7 +23,6 @@ package ahmaabdo.home.rss.activity;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.LoaderManager;
-import android.content.Context;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -31,15 +30,13 @@ import android.content.Loader;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
@@ -53,11 +50,9 @@ import android.widget.ListView;
 
 import java.io.File;
 
-import ahmaabdo.home.rss.BottomNavigationViewHelper;
 import ahmaabdo.home.rss.Constants;
 import ahmaabdo.home.rss.R;
 import ahmaabdo.home.rss.adapter.DrawerAdapter;
-import ahmaabdo.home.rss.fragment.EditFeedsListFragment;
 import ahmaabdo.home.rss.fragment.EntriesListFragment;
 import ahmaabdo.home.rss.parser.OPML;
 import ahmaabdo.home.rss.provider.FeedData;
@@ -105,7 +100,6 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
     Uri newUri;
     boolean showFeedInfo = true;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         UiUtils.setPreferenceTheme(this);
@@ -121,7 +115,13 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        initBottomNav();
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               addNewFeed();
+            }
+        });
 
         mLeftDrawer = findViewById(R.id.left_drawer);
         mDrawerList = (ListView) findViewById(R.id.drawer_list);
@@ -190,50 +190,52 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
 
     }
 
-    private void initBottomNav() {
-        Context context = this;
-        Resources resources = context.getResources();
-
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        BottomNavigationViewHelper.disableShiftMode(navigation);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            navigation.setItemTextColor(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color, context.getTheme()));
-            navigation.setItemIconTintList(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color, context.getTheme()));
-
-        } else {
-            navigation.setItemTextColor(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color));
-            navigation.setItemIconTintList(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color));
-        }
-        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.navigation_entries:
-                        getSupportActionBar().setTitle(R.string.all);
-                        newUri = EntryColumns.ALL_ENTRIES_CONTENT_URI;
-                        if (!newUri.equals(mEntriesFragment.getUri())) {
-                            mEntriesFragment.setData(newUri, showFeedInfo);
-                        }
-                        return true;
-                    case R.id.navigation_starred:
-                        getSupportActionBar().setTitle(R.string.favorites);
-                        newUri = EntryColumns.FAVORITES_CONTENT_URI;
-                        if (!newUri.equals(mEntriesFragment.getUri())) {
-                            mEntriesFragment.setData(newUri, showFeedInfo);
-                        }
-                        return true;
-                    case R.id.navigation_feeds:
-                        getSupportActionBar().setTitle(R.string.feeds);
-
-
-
-                        return true;
-                }
-                return false;
-            }
-        });
-
-    }
+    /**
+     * private void initBottomNav() {
+     * Context context = this;
+     * Resources resources = context.getResources();
+     * <p>
+     * BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+     * BottomNavigationViewHelper.disableShiftMode(navigation);
+     * if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+     * navigation.setItemTextColor(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color, context.getTheme()));
+     * navigation.setItemIconTintList(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color, context.getTheme()));
+     * <p>
+     * } else {
+     * navigation.setItemTextColor(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color));
+     * navigation.setItemIconTintList(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color));
+     * }
+     * navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+     *
+     * @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+     * switch (item.getItemId()) {
+     * case R.id.navigation_entries:
+     * getSupportActionBar().setTitle(R.string.all);
+     * newUri = EntryColumns.ALL_ENTRIES_CONTENT_URI;
+     * if (!newUri.equals(mEntriesFragment.getUri())) {
+     * mEntriesFragment.setData(newUri, showFeedInfo);
+     * }
+     * return true;
+     * case R.id.navigation_starred:
+     * getSupportActionBar().setTitle(R.string.favorites);
+     * newUri = EntryColumns.FAVORITES_CONTENT_URI;
+     * if (!newUri.equals(mEntriesFragment.getUri())) {
+     * mEntriesFragment.setData(newUri, showFeedInfo);
+     * }
+     * return true;
+     * case R.id.navigation_feeds:
+     * getSupportActionBar().setTitle(R.string.feeds);
+     * <p>
+     * <p>
+     * <p>
+     * return true;
+     * }
+     * return false;
+     * }
+     * });
+     * <p>
+     * }
+     */
 
     private void selectDrawerItem(int position) {
         mCurrentDrawerPos = position;
@@ -440,5 +442,20 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
                     }).start();
                 }
         }
+    }
+
+    public void addNewFeed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.menu_add_feed)
+                .setItems(new CharSequence[]{getString(R.string.add_custom_feed), getString(R.string.google_news_title)}, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (which == 0) {
+                            startActivity(new Intent(Intent.ACTION_INSERT).setData(FeedData.FeedColumns.CONTENT_URI));
+                        } else {
+                            startActivity(new Intent(HomeActivity.this, AddGoogleNewsActivity.class));
+                        }
+                    }
+                });
+        builder.show();
     }
 }
