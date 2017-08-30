@@ -24,9 +24,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">Home</string>
-    <string name="about_spaRSS">About Home</string>
-    <string name="welcome_title">Welcome to Home. Would you like to add one feed?</string>
+    <string name="app_name">Readify</string>
+    <string name="about_spaRSS">About Readify</string>
+    <string name="welcome_title">Welcome to Readify. Would you like to add one feed?</string>
     <string name="never">never</string>
     <string name="update">Update</string>
     <string name="colon">:\u00A0</string>

@@ -23,9 +23,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">Home</string>
+    <string name="app_name">Readify</string>
     <string name="about_spaRSS">Tietoja spaRSSista</string>
-    <string name="welcome_title">Tervetuloa Home:iin. Haluaisitko lisätä syötteen?</string>
+    <string name="welcome_title">Tervetuloa Readify:iin. Haluaisitko lisätä syötteen?</string>
     <string name="never">ei koskaan</string>
     <string name="update">Päivitetty</string>
     <string name="colon">:\u00A0</string>

@@ -15,7 +15,7 @@
 
         <fragment
             android:id="@+id/entries_list_fragment"
-            android:name="ahmaabdo.home.rss.fragment.EntriesListFragment"
+            android:name="ahmaabdo.readify.rss.fragment.EntriesListFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

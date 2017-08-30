@@ -26,9 +26,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">Home</string>
-    <string name="about_spaRSS">O aplikaci Home</string>
-    <string name="welcome_title">Vítejte v aplikaci Home. Chcete přidat nový zdroj?</string>
+    <string name="app_name">Readify</string>
+    <string name="about_spaRSS">O aplikaci Readify</string>
+    <string name="welcome_title">Vítejte v aplikaci Readify. Chcete přidat nový zdroj?</string>
     <string name="never">nikdy</string>
     <string name="update">aktualizováno</string>
     <string name="colon">:\u00A0</string>

@@ -22,9 +22,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
 
     <!-- GENERAL -->
-    <string name="app_name">Home</string>
-    <string name="about_spaRSS">Om Home</string>
-    <string name="welcome_title">Välkommen till Home. Skulle du vilja lägga till en feed?</string>
+    <string name="app_name">Readify</string>
+    <string name="about_spaRSS">Om Readify</string>
+    <string name="welcome_title">Välkommen till Readify. Skulle du vilja lägga till en feed?</string>
     <string name="never">aldrig</string>
     <string name="update">Uppdaterad</string>
     <string name="colon">:\u00A0</string>

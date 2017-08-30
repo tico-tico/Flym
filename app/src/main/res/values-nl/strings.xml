@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="app_name">Home</string>
-    <string name="about_spaRSS">Over Home</string>
-    <string name="welcome_title">Welkom bij Home. Wilt u een feed toevoegen?</string>
+    <string name="app_name">Readify</string>
+    <string name="about_spaRSS">Over Readify</string>
+    <string name="welcome_title">Welkom bij Readify. Wilt u een feed toevoegen?</string>
     <string name="never">nooit</string>
     <string name="update">Bijwerken</string>
     <string name="colon">: </string>
