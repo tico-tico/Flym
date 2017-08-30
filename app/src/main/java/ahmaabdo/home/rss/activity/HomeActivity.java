@@ -141,8 +141,8 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
             }
         });
 
-        mLeftDrawer.setBackgroundColor((ContextCompat.getColor(getApplicationContext(), PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_primary_color : R.color.dark_accent_color)));
-        mDrawerList.setBackgroundColor((ContextCompat.getColor(getApplicationContext(), PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_background : R.color.dark_primary_color_light)));
+        mLeftDrawer.setBackgroundColor((ContextCompat.getColor(getApplicationContext(), PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_primary_color : R.color.dark_background)));
+        mDrawerList.setBackgroundColor((ContextCompat.getColor(getApplicationContext(), PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_background : R.color.dark_primary_color_dark)));
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (mDrawerLayout != null) {
             mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
@@ -152,7 +152,7 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
                     super.onDrawerSlide(drawerView, 0);
                 }
             };
-            mDrawerLayout.setDrawerListener(mDrawerToggle);
+            mDrawerLayout.addDrawerListener(mDrawerToggle);
 
         }
 
@@ -190,52 +190,6 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
 
     }
 
-    /**
-     * private void initBottomNav() {
-     * Context context = this;
-     * Resources resources = context.getResources();
-     * <p>
-     * BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-     * BottomNavigationViewHelper.disableShiftMode(navigation);
-     * if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-     * navigation.setItemTextColor(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color, context.getTheme()));
-     * navigation.setItemIconTintList(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color, context.getTheme()));
-     * <p>
-     * } else {
-     * navigation.setItemTextColor(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color));
-     * navigation.setItemIconTintList(resources.getColorStateList(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.bottom_nav_icon_light_color : R.color.bottom_nav_icon_dark_color));
-     * }
-     * navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-     *
-     * @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-     * switch (item.getItemId()) {
-     * case R.id.navigation_entries:
-     * getSupportActionBar().setTitle(R.string.all);
-     * newUri = EntryColumns.ALL_ENTRIES_CONTENT_URI;
-     * if (!newUri.equals(mEntriesFragment.getUri())) {
-     * mEntriesFragment.setData(newUri, showFeedInfo);
-     * }
-     * return true;
-     * case R.id.navigation_starred:
-     * getSupportActionBar().setTitle(R.string.favorites);
-     * newUri = EntryColumns.FAVORITES_CONTENT_URI;
-     * if (!newUri.equals(mEntriesFragment.getUri())) {
-     * mEntriesFragment.setData(newUri, showFeedInfo);
-     * }
-     * return true;
-     * case R.id.navigation_feeds:
-     * getSupportActionBar().setTitle(R.string.feeds);
-     * <p>
-     * <p>
-     * <p>
-     * return true;
-     * }
-     * return false;
-     * }
-     * });
-     * <p>
-     * }
-     */
 
     private void selectDrawerItem(int position) {
         mCurrentDrawerPos = position;

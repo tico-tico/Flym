@@ -20,12 +20,10 @@
 
 package ahmaabdo.home.rss.fragment;
 
-import android.app.AlertDialog;
 import android.app.LoaderManager;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.CursorLoader;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
 import android.content.SharedPreferences;
@@ -55,7 +53,6 @@ import java.util.Date;
 
 import ahmaabdo.home.rss.Constants;
 import ahmaabdo.home.rss.R;
-import ahmaabdo.home.rss.activity.AddGoogleNewsActivity;
 import ahmaabdo.home.rss.activity.EditFeedsListActivity;
 import ahmaabdo.home.rss.activity.GeneralPrefsActivity;
 import ahmaabdo.home.rss.adapter.EntriesCursorAdapter;
@@ -244,6 +241,7 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
         UiUtils.addEmptyFooterView(mListView, 90);
 
         mRefreshListBtn = (Button) rootView.findViewById(R.id.refreshListBtn);
+        mRefreshListBtn.setBackgroundResource(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.drawable.bg_refresh_list_button_selector : R.drawable.bg_refresh_list_button_selector_dark);
         mRefreshListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -303,9 +301,6 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
         menu.clear(); // This is needed to remove a bug on Android 4.0.3
         inflater.inflate(R.menu.entry_list, menu);
 
-        if (!PrefUtils.getBoolean(PrefUtils.MARK_AS_READ, false)) {
-            menu.findItem(R.id.menu_all_read).setVisible(false);
-        }
 
         if (!PrefUtils.getBoolean(PrefUtils.SHOW_READ, true)) {
             menu.findItem(R.id.menu_unread).setIcon(R.drawable.nav_read);

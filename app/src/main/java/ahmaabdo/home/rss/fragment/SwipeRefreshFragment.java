@@ -26,6 +26,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import ahmaabdo.home.rss.R;
+import ahmaabdo.home.rss.utils.PrefUtils;
 import ahmaabdo.home.rss.view.SwipeRefreshLayout;
 
 public abstract class SwipeRefreshFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
@@ -46,10 +47,15 @@ public abstract class SwipeRefreshFragment extends Fragment implements SwipeRefr
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mRefreshLayout.setColorScheme(R.color.Indigo_300,
-                R.color.Indigo_400,
-                R.color.Indigo_300,
-                R.color.Indigo_400);
+        mRefreshLayout.setColorScheme(
+                PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ?
+                        R.color.Indigo_300 : R.color.dark_A300,
+                PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ?
+                        R.color.Indigo_700 : R.color.dark_A700,
+                PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ?
+                        R.color.Indigo_300 : R.color.dark_A300,
+                PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ?
+                        R.color.Indigo_700 : R.color.dark_A700);
         mRefreshLayout.setOnRefreshListener(this);
     }
 

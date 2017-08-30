@@ -46,7 +46,6 @@ public class PrefUtils {
     public static final String PRELOAD_IMAGE_MODE = "preload_image_mode";
     public static final String DISPLAY_OLDEST_FIRST = "display_oldest_first";
     public static final String DISPLAY_ENTRIES_FULLSCREEN = "display_entries_fullscreen";
-    public static final String MARK_AS_READ = "display_mark_as_read";
 
     public static final String PROXY_ENABLED = "proxy.enabled";
     public static final String PROXY_PORT = "proxy.port";
