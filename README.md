@@ -1,19 +1,18 @@
-# HomeRSS
+# ReadifyRSS
 RSS reader with all articles content in app.
 
 Table of Contents:
 * [Summary](#summary)
 * [Features](#features)
-* [Why HomeRSS?](#why-homerss)
+* [Why ReadifyRSS?](#why-readifyrss)
 * [Links](#links)
 
 ### Summary
-HomeRSS is a light, modern, free and opensource project which keeps you inform by fetching your websites/blogs and displaying them in a mobile-optimized way.
+ReadifyRSS is a light, modern, free and opensource project which keeps you inform by fetching your websites/blogs and displaying them in a mobile-optimized way.
 It's based on "spaRSS" which based on "Flym" RSS reader.  
 It DOES NOT synchronize with any online feed reader.
 
 ### Features
-* Browse your favorite feeds from your Home screen launcher.
 * Easily add new feeds thanks to the Google News or search feature.
 * You can subscribe to a new feed from the browser via the "share" feature.
 * Light and Dark themes.
@@ -24,10 +23,10 @@ It DOES NOT synchronize with any online feed reader.
 * Search into your articles.
 * Filter your feed by keywords or regular expressions.
 
-Feedly users: you can export your feeds to OPML at this address (http://cloud.feedly.com/#opml) and then import them into HomeRSS
+Feedly users: you can export your feeds to OPML at this address (http://cloud.feedly.com/#opml) and then import them into ReadifyRSS
 
-### Why HomeRSS?
-HomeRSS is a fork of spaRSS which based on "Flym" RSS reader.
+### Why ReadifyRSS?
+ReadifyRSS is a fork of spaRSS which based on "Flym" RSS reader.
 It uses the same license (GPLv3) and has quite the same behavior.
 
 ### Etuldan forked "Flym" he said Why he created this fork:
@@ -39,8 +38,8 @@ Everyone, included FredJul is free to contribute or to use the spaRSS code for h
 So if he decided to re-start on his app, I'll be very happy to help him to push all the modifications included in spaRSS into Flym.
 
 ### Links
-GitHub project: https://github.com/ahmaabdo/HomeRSS  
+GitHub project: https://github.com/ahmaabdo/ReadifyRSS  
 PlayStore: ...  
 F-Droid: ...  
-HomeRSS is a fork of [spaRSS](https://github.com/Etuldan/spaRSS).  
+ReadifyRSS is a fork of [spaRSS](https://github.com/Etuldan/spaRSS).  
 spaRSS is a fork of [Flym](https://github.com/FredJul/Flym)
