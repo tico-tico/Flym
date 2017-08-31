@@ -52,9 +52,9 @@ public class AboutActivity extends BaseActivity {
         PackageManager manager = this.getPackageManager();
         try {
             PackageInfo info = manager.getPackageInfo(this.getPackageName(), 0);
-            title = "HomeRSS version " + info.versionName;
+            title = "Readify RSS version " + info.versionName;
         } catch (NameNotFoundException unused) {
-            title = "HomeRSS";
+            title = "ReadifyRSS";
         }
         TextView titleView = (TextView) findViewById(R.id.about_title);
         titleView.setText(title);

@@ -338,10 +338,6 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
                 return true;
             }
 
-            case R.id.menu_refresh: {
-                startRefresh();
-                return true;
-            }
             case R.id.menu_all_read: {
                 if (mEntriesCursorAdapter != null) {
                     mEntriesCursorAdapter.markAllAsRead(mListDisplayDate);

@@ -10,11 +10,6 @@
         app:showAsAction="always"
         tools:ignore="AlwaysShowAction" />
 
-    <item
-        android:id="@+id/menu_refresh"
-        android:icon="@drawable/refresh"
-        android:title="@string/menu_refresh" />
-
 
     <item
         android:id="@+id/edit_feeds"

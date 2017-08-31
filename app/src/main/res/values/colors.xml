@@ -4,13 +4,15 @@
     <color name="green">@android:color/holo_green_dark</color>
 
 
-    <color name="Indigo_800">#00695C</color>
-    <color name="Indigo_700">#00796B</color>
-    <color name="Indigo_500">#009688</color>
-    <color name="Indigo_400">#26A69A</color>
-    <color name="Indigo_300">#4DB6AC</color>
-    <color name="Indigo_50">#E0F2F1</color>
-    <color name="light_A100">#FF5722</color>
+    <color name="Indigo_800">#1565C0</color>
+    <color name="Indigo_700">#1976D2</color>
+    <color name="Indigo_500">#2196F3</color>
+    <color name="Indigo_400">#42A5F5</color>
+    <color name="Indigo_300">#64B5F6</color>
+
+    <color name="Indigo_50">#E3F2FD</color>
+    <color name="light_A100">#FF9800</color>
+
     <color name="dark_A700">#5C97F5</color>
     <color name="dark_A900">#1976D2</color>
     <color name="dark_A300">#90CAF9</color>
