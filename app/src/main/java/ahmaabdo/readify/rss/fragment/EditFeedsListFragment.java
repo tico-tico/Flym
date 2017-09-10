@@ -596,7 +596,7 @@ public class EditFeedsListFragment extends ListFragment {
                 @Override
                 public void run() {
                     try {
-                        final String filename = Environment.getExternalStorageDirectory().toString() + "/spaRSS_"
+                        final String filename = Environment.getExternalStorageDirectory().toString() + "/Readify_"
                                 + System.currentTimeMillis() + ".opml";
                         OPML.exportToFile(filename);
                         getActivity().runOnUiThread(new Runnable() {

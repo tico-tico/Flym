@@ -71,14 +71,14 @@ import ahmaabdo.readify.rss.provider.FeedData.FilterColumns;
 
 public class OPML {
 
-    public static final String BACKUP_OPML = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/spaRSS_auto_backup.opml";
+    public static final String BACKUP_OPML = Environment.getExternalStorageDirectory() + "/Readify_auto_backup.opml";
 
     private static final String[] FEEDS_PROJECTION = new String[]{FeedColumns._ID, FeedColumns.IS_GROUP, FeedColumns.NAME, FeedColumns.URL,
             FeedColumns.RETRIEVE_FULLTEXT};
     private static final String[] FILTERS_PROJECTION = new String[]{FilterColumns.FILTER_TEXT, FilterColumns.IS_REGEX,
             FilterColumns.IS_APPLIED_TO_TITLE, FilterColumns.IS_ACCEPT_RULE};
 
-    private static final String START = "<?xml version='1.0' encoding='utf-8'?>\n<opml version='1.1'>\n<head>\n<title>spaRSS export</title>\n<dateCreated>";
+    private static final String START = "<?xml version='1.0' encoding='utf-8'?>\n<opml version='1.1'>\n<head>\n<title>Readify export</title>\n<dateCreated>";
     private static final String AFTER_DATE = "</dateCreated>\n</head>\n<body>\n";
     private static final String OUTLINE_TITLE = "\t<outline title='";
     private static final String OUTLINE_XMLURL = "' type='rss' xmlUrl='";
