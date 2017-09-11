@@ -24,11 +24,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.amulyakhare.textdrawable.TextDrawable;
+import com.amulyakhare.textdrawable.util.ColorGenerator;
 
 import ahmaabdo.readify.rss.R;
 import ahmaabdo.readify.rss.provider.FeedData.FeedColumns;
@@ -53,20 +55,24 @@ public class FeedsCursorAdapter extends CursorLoaderExpandableListAdapter {
 
     @Override
     protected void bindChildView(View view, Context context, Cursor cursor) {
-        view.findViewById(R.id.indicator).setVisibility(View.INVISIBLE);
-
+        ImageView mIcon = (ImageView) view.findViewById(R.id.indicator);
         TextView textView = ((TextView) view.findViewById(android.R.id.text1));
+        textView.setText((cursor.isNull(mNamePos) ? cursor.getString(mLinkPos) : cursor.getString(mNamePos)));
 
         final long feedId = cursor.getLong(mIdPos);
         Bitmap bitmap = UiUtils.getFaviconBitmap(feedId, cursor, mIconPos);
 
         if (bitmap != null) {
-            textView.setCompoundDrawablesWithIntrinsicBounds(new BitmapDrawable(context.getResources(), bitmap), null, null, null);
+            mIcon.setVisibility(View.VISIBLE);
+            mIcon.setImageBitmap(bitmap);
         } else {
-            textView.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
-        }
+            mIcon.setVisibility(View.VISIBLE);
+            ColorGenerator generator = ColorGenerator.DEFAULT;
+            int color = generator.getColor(Long.valueOf(feedId));
+            TextDrawable textDrawable = TextDrawable.builder().buildRound(textView.getText().toString().substring(0, 1).toUpperCase(), color);
+            mIcon.setImageDrawable(textDrawable);
 
-        textView.setText((cursor.isNull(mNamePos) ? cursor.getString(mLinkPos) : cursor.getString(mNamePos)));
+        }
     }
 
     @Override
@@ -75,7 +81,6 @@ public class FeedsCursorAdapter extends CursorLoaderExpandableListAdapter {
 
         if (cursor.getInt(mIsGroupPos) == 1) {
             indicatorImage.setVisibility(View.VISIBLE);
-
             TextView textView = ((TextView) view.findViewById(android.R.id.text1));
             textView.setEnabled(true);
             textView.setText(cursor.getString(mNamePos));
@@ -88,7 +93,6 @@ public class FeedsCursorAdapter extends CursorLoaderExpandableListAdapter {
                 indicatorImage.setImageResource(R.drawable.ic_keyboard_arrow_right);
         } else {
             bindChildView(view, context, cursor);
-            indicatorImage.setVisibility(View.GONE);
         }
     }
 

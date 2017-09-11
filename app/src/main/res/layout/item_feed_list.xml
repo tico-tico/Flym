@@ -7,10 +7,10 @@
 
     <ImageView
         android:id="@+id/indicator"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="5dp" />
+        android:layout_marginLeft="10dp" />
 
     <TextView
         android:id="@android:id/text1"
@@ -23,8 +23,8 @@
         android:layout_toRightOf="@id/indicator"
         android:drawablePadding="3dp"
         android:gravity="center_vertical"
-        android:minHeight="30dp"
         android:maxLines="1"
+        android:minHeight="30dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textIsSelectable="false" />
 
