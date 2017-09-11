@@ -32,7 +32,6 @@
     <string name="update">Mise à jour</string>
     <string name="colon">: </string>
     <string name="menu_settings">Paramètres</string>
-    <string name="menu_refresh">Actualiser</string>
     <string name="menu_all_read">Marquer tout comme lu</string>
     <string name="error">Erreur</string>
     <string name="network_error">Pas de connexion disponible</string>
@@ -149,8 +148,6 @@
     <string name="settings_proxy_host">Hôte</string>
     <string name="settings_proxy_port">Port</string>
     <string name="settings_proxy_type">Type</string>
-    <string name="settings_mark_as_read">Afficher le bouton "Marquer tout comme lu"</string>
-    <string name="settings_mark_as_read_description">Affiche/Masque le bouton</string>
 
     <string-array name="settings_intervals">
         <item>1 minute</item>
@@ -205,7 +202,6 @@
     <string name="storage_request_explanation">"        du widget"</string>
     <string name="feed_no_summary">&lt; Aucun résumé disponible. &gt;</string>
     <string name="google_news_custom_topic">Entrer un thème personnalisé</string>
-    <string name="settings_visible_feeds">Flux visibles</string>
     <string name="settings_widget_background">Arrière-plan</string>
     <string name="settings_widget_background_description">Couleur et transparence de l\'arrière-plan</string>
     <string name="green">Vert</string>

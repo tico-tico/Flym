@@ -30,7 +30,6 @@
     <string name="update">更新</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">设置</string>
-    <string name="menu_refresh">刷新</string>
     <string name="menu_all_read">标记全部为已读</string>
     <string name="error">错误</string>
     <string name="network_error">网络不可用</string>
@@ -198,11 +197,8 @@
     <string name="menu_switch_full_original">显示全文</string>
     <string name="settings_font_serif">使用衬线体</string>
     <string name="settings_font_serif_description">使用衬线体显示文章而非黑体</string>
-    <string name="settings_mark_as_read">显示用来标记全部文章为已读的按钮</string>
-    <string name="settings_mark_as_read_description">显示/隐藏按钮</string>
     <string name="storage_request_explanation">为了把订阅导入或导出为文件，必须允许应用访问sd卡。</string>
     <string name="google_news_custom_topic">自定义主题</string>
-    <string name="settings_visible_feeds">可见源</string>
     <string name="settings_widget_background">背景色</string>
     <string name="settings_widget_background_description">挂件的颜色和透明度</string>
     <string name="green">绿色</string>

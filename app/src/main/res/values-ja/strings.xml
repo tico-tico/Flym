@@ -7,7 +7,6 @@
     <string name="update">更新</string>
     <string name="colon">: </string>
     <string name="menu_settings">設定</string>
-    <string name="menu_refresh">更新</string>
     <string name="menu_all_read">すべて既読としてマーク</string>
     <string name="error">エラー</string>
     <string name="network_error">ネットワークが設定されていません</string>
@@ -127,8 +126,6 @@
     <string name="settings_proxy_host">ホスト</string>
     <string name="settings_proxy_port">ポート</string>
     <string name="settings_proxy_type">タイプ</string>
-    <string name="settings_mark_as_read">すべて既読としてマーク ボタンを表示</string>
-    <string name="settings_mark_as_read_description">ボタンを表示/非表示します</string>
 
     <string name="feed_httpAuth">HTTP 認証</string>
     <string name="loginhttpAuth">ログイン</string>

@@ -7,7 +7,6 @@
     <string name="update">Bijwerken</string>
     <string name="colon">: </string>
     <string name="menu_settings">Instellingen</string>
-    <string name="menu_refresh">Verversen</string>
     <string name="menu_all_read">Alles markeren als gelezen</string>
     <string name="error">Fout</string>
     <string name="network_error">Het netwerk is niet ingesteld</string>
@@ -134,7 +133,5 @@
     <string name="settings_proxy_host">Host</string>
     <string name="settings_proxy_port">Poort</string>
     <string name="settings_proxy_type">Type</string>
-    <string name="settings_mark_as_read">Knop Alles markeren als gelezen weergeven</string>
-    <string name="settings_mark_as_read_description">Knop weergeven/verbergen</string>
 
 </resources>

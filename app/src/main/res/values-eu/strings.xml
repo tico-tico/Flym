@@ -32,7 +32,6 @@
     <string name="update">Eguneraketa</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Ezarpenak</string>
-    <string name="menu_refresh">Freskatu</string>
     <string name="menu_all_read">Markatu dena irakurrita bezala</string>
     <string name="error">Akatsa</string>
     <string name="network_error">Sarea ez dago konfiguratuta</string>
@@ -208,15 +207,12 @@
     <string name="menu_switch_full_original">Eduki guztia erakutsi</string>
     <string name="settings_font_serif">Serif letra mota erabili</string>
     <string name="settings_font_serif_description">Serif letra mota erabili artikuluetan Sans-Serif erabili beharrean</string>
-    <string name="settings_mark_as_read">Guztia irakurrita bezala markatzeko botoia erakutsi</string>
-    <string name="settings_mark_as_read_description">Erakutsi / Ezkutatu botoia</string>
     <string name="storage_request_explanation">"        gardentasuna"</string>
     <string name="feed_httpAuth">HTTP autentikazioa</string>
     <string name="loginhttpAuth">Erabiltzailearen izena</string>
     <string name="passwordhttpAuth">Pasahitza</string>
     <string name="filter_help">Iragazkiaren laguntza</string>
     <string name="google_news_custom_topic">Gai pertsonalizatua sartu</string>
-    <string name="settings_visible_feeds">Jarioak ikusgai</string>
     <string name="settings_widget_background">Atzeko planoa</string>
     <string name="settings_widget_background_description">Widgetaren atzeko planoaren kolore eta</string>
     <string name="green">Berdea</string>

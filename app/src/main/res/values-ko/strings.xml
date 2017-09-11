@@ -31,7 +31,6 @@
     <string name="update">업데이트</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">설정</string>
-    <string name="menu_refresh">새로 고침</string>
     <string name="menu_all_read">모두 읽은 것으로 표시</string>
     <string name="error">오류</string>
     <string name="network_error">네트워크가 준비되지 않았습니다</string>
@@ -199,9 +198,6 @@
     <string name="menu_switch_full_original">모든 내용 표시</string>
     <string name="settings_font_serif">세리프 글꼴 사용</string>
     <string name="settings_font_serif_description">내용을 표시할 때 산세리프 대신 세리프 글꼴을 사용합니다</string>
-    <string name="settings_mark_as_read">\'모두 읽음으로 표시\' 버튼 표시</string>
-    <string name="settings_mark_as_read_description">버튼을 표시하거나 숨깁니다</string>
-    <string name="settings_visible_feeds">피드 모양</string>
     <string name="settings_widget_background">배경</string>
     <string name="settings_widget_background_description">위젯 배경의 색 및 투명도</string>
     <string name="green">녹색</string>

@@ -7,7 +7,6 @@
     <string name="update">עדכן</string>
     <string name="colon">: </string>
     <string name="menu_settings">הגדרות</string>
-    <string name="menu_refresh">רענן</string>
     <string name="menu_all_read">סמן את כולן בתור נקראו</string>
     <string name="error">שגיאה</string>
     <string name="network_error">הרשת אינה מוגדרת</string>
@@ -112,8 +111,6 @@
     <string name="settings_proxy_host">מארח</string>
     <string name="settings_proxy_port">פורט</string>
     <string name="settings_proxy_type">טיפוס</string>
-    <string name="settings_mark_as_read">הצג כפתור סמן את כולן בתור נקראו</string>
-    <string name="settings_mark_as_read_description">הצג / הסתר את הכפתור (נדרשת התחלה מחדש)</string>
 
     <string name="select_file">בחר קובץ (SD-שורש)</string>
     <string name="google_news_indicator">בחר נושא או מספר נושאים להוספה. אפשרי כי חלק מהם לא יסופקו על ידי Google בשפתך.</string>

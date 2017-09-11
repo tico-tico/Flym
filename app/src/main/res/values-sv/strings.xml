@@ -29,7 +29,6 @@
     <string name="update">Uppdaterad</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Inställningar</string>
-    <string name="menu_refresh">Uppdatera</string>
     <string name="menu_all_read">Mark som läst</string>
     <string name="error">Fel</string>
     <string name="network_error">Nätverket är inte tillgängligt</string>
@@ -154,8 +153,6 @@
     <string name="settings_proxy_host">Host</string>
     <string name="settings_proxy_port">Port</string>
     <string name="settings_proxy_type">Type</string>
-    <string name="settings_mark_as_read">Visa knappen "Mark som läst"</string>
-    <string name="settings_mark_as_read_description">Visa knappen "Mark som läst"</string>
 
     <string-array name="settings_keep_times_per_feed">
         <item>1 dag</item>
@@ -205,7 +202,6 @@
         <item>Endast via Wi-Fi</item>
         <item>Alltid</item>
     </string-array>
-    <string name="settings_visible_feeds">Synliga feeds</string>
     <string name="settings_widget_background">Bakgrund</string>
     <string name="settings_widget_background_description">Färg och transparens för widgetens bakgrund</string>
     <string name="green">Grön</string>

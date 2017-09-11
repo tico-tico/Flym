@@ -30,7 +30,6 @@
     <string name="update">Aggiornamento</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Impostazioni</string>
-    <string name="menu_refresh">Aggiorna</string>
     <string name="menu_all_read">Segna tutti come letti</string>
     <string name="error">Errore</string>
     <string name="network_error">Nessuna connessione disponibile</string>
@@ -164,8 +163,6 @@
     <string name="settings_proxy_host">Host</string>
     <string name="settings_proxy_port">Porta</string>
     <string name="settings_proxy_type">Tipo</string>
-    <string name="settings_mark_as_read">Mostra bottone "Segna tutti come letti"</string>
-    <string name="settings_mark_as_read_description">Mostra/nascondi il bottone</string>
 
     <string-array name="settings_intervals">
         <item>1 minuto</item>
@@ -215,7 +212,6 @@
         <item>Solo con Wi-Fi</item>
         <item>Sempre</item>
     </string-array>
-    <string name="settings_visible_feeds">Feed visibili</string>
     <string name="settings_widget_background">Sfondo</string>
     <string name="settings_widget_background_description">Colore e trasparenza dello sfondo del widget</string>
     <string name="storage_request_explanation">"    "</string>

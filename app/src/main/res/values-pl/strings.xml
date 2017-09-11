@@ -7,13 +7,11 @@
     <string name="update">Aktualizuj</string>
     <string name="colon">: </string>
     <string name="menu_settings">Ustawienia</string>
-    <string name="menu_refresh">Odśwież</string>
     <string name="menu_all_read">Oznacz wszystko jako przeczytane</string>
     <string name="error">Błąd</string>
     <string name="network_error">Problem z internetem</string>
     <string name="loading">Ładowanie…</string>
     <string name="no_result">Brak wyników</string>
-    <string name="settings_visible_feeds">Widoczne źródła</string>
     <string name="settings_widget_background">Tło</string>
     <string name="settings_widget_background_description">Kolor i przezroczystość tła widżetu</string>
     <string name="green">Zielony</string>

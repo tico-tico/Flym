@@ -30,7 +30,6 @@
     <string name="update">Päivitetty</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Asetukset</string>
-    <string name="menu_refresh">Päivitä</string>
     <string name="menu_all_read">Merkitse kaikki luetuiksi</string>
     <string name="error">Virhe</string>
     <string name="network_error">Ei verkkoyhteyttä</string>
@@ -156,8 +155,6 @@
     <string name="settings_proxy_host">Palvelin</string>
     <string name="settings_proxy_port">Portti</string>
     <string name="settings_proxy_type">Tyyppi</string>
-    <string name="settings_mark_as_read">Näytä "Merkitse luetuksi" -nappi</string>
-    <string name="settings_mark_as_read_description">Näytä "Merkitse luetuksi" -nappi</string>
     <string-array name="settings_keep_times_per_feed">
         <item>1 päivä</item>
         <item>2 päivää</item>
@@ -214,7 +211,6 @@
     <string name="passwordhttpAuth">Salasana</string>
     <string name="filter_help">Suodattimien ohjeet</string>
     <string name="google_news_custom_topic">Syötä oma otsikko</string>
-    <string name="settings_visible_feeds">Näytettävät syötteet</string>
     <string name="settings_widget_background">Tausta</string>
     <string name="settings_widget_background_description">Widgetin taustan väri ja läpinäkyvyys</string>
     <string name="green">Vihreä</string>

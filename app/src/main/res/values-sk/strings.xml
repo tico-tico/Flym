@@ -33,7 +33,6 @@
     <string name="update">Aktualizované</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Nastavenia</string>
-    <string name="menu_refresh">Obnoviť</string>
     <string name="menu_all_read">Označiť všetko ako prečítané</string>
     <string name="error">Chyba</string>
     <string name="network_error">Sieť nie je nastavená</string>
@@ -204,13 +203,10 @@
     <string name="menu_switch_full_original">Zobraziť celý obsah</string>
     <string name="settings_font_serif">Použiť pätkové písmo</string>
     <string name="settings_font_serif_description">Použiť pätkové písmo v článkoch</string>
-    <string name="settings_mark_as_read">Zobraziť tlačidlo „Označiť všetko ako prečítané“</string>
-    <string name="settings_mark_as_read_description">Zobraziť / skryť tlačidlo</string>
     <string name="storage_request_explanation">Pre import a export zdrojov je potrebné povoliť prístup aplikácie k úložnému priestoru.</string>
     <string name="google_news_custom_topic">Vlastná téma</string>
 
     <string name="feed_no_summary">&lt; Popis nie je k dispozícii. &gt;</string>
-    <string name="settings_visible_feeds">Viditeľné zdroje</string>
     <string name="settings_widget_background">Pozadie</string>
     <string name="settings_widget_background_description">Farba a priehľadnosť pozadia widgetu</string>
     <string name="green">Zelená</string>

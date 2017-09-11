@@ -32,7 +32,6 @@
     <string name="update">Atualizar</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Opções</string>
-    <string name="menu_refresh">Atualizar</string>
     <string name="menu_all_read">Marcar todos como lido</string>
     <string name="error">Erro</string>
     <string name="network_error">A rede não está configurada</string>
@@ -155,8 +154,6 @@
     <string name="settings_proxy_host">Servidor</string>
     <string name="settings_proxy_port">Porta</string>
     <string name="settings_proxy_type">Tipo</string>
-    <string name="settings_mark_as_read">Botão "Marcar todos como lido"</string>
-    <string name="settings_mark_as_read_description">Mostrar / Esconder o botão</string>
 
     <string-array name="settings_intervals">
         <item>1 minuto</item>
@@ -216,7 +213,6 @@
     <string name="menu_open_in_browser">Abrir no navegador</string>
     <string name="filter_help">Filtrar Ajuda</string>
     <string name="menu_switch_full_original">Mostrar conteúdo completo</string>
-    <string name="settings_visible_feeds">Feeds visíveis</string>
     <string name="settings_widget_background">Fundo</string>
     <string name="settings_widget_background_description">Cor e transparencia do fundo do widget</string>
     <string name="green">Verde</string>

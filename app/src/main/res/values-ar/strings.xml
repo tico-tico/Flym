@@ -7,7 +7,6 @@
     <string name="update">تحديث</string>
     <string name="colon">: </string>
     <string name="menu_settings">إعدادات</string>
-    <string name="menu_refresh">إعادة التحميل</string>
     <string name="menu_all_read">تم قراءة كل شيء</string>
     <string name="error">خطأ</string>
     <string name="network_error">الشبكة غير معدة</string>
@@ -127,8 +126,6 @@
     <string name="settings_proxy_host">مستقبل (Host)</string>
     <string name="settings_proxy_port">باب (Port)</string>
     <string name="settings_proxy_type">نوع (Type)</string>
-    <string name="settings_mark_as_read">إظهار الزر تعليم الكل كمقروء</string>
-    <string name="settings_mark_as_read_description">إظهار / إخفاء الزر</string>
 
     <string name="storage_request_explanation">لكي تستطيع استيراد أو تصدير المستخلصات من أو إلى ملف، يجب عليك السماح للتطبيق الدخول لوحدة التخزين.</string>
     <string name="feed_no_summary">&lt; ملخص غير متوفر. &gt;</string>
@@ -137,7 +134,6 @@
     <string name="passwordhttpAuth">كلمة المرور</string>
     <string name="filter_help">مساعدة بخصوص الفلتر</string>
     <string name="google_news_custom_topic">أدخل موضوع مخصص</string>
-    <string name="settings_visible_feeds">الخلاصات</string>
     <string name="settings_widget_background">الخلفية</string>
     <string name="settings_widget_background_description">الوان و شفافية خلفية الخلاصات</string>
     <string name="green">أخضر</string>

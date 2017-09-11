@@ -29,7 +29,6 @@
     <string name="update">Actualitza</string>
     <string name="colon">:u00A0</string>
     <string name="menu_settings">Paràmetres</string>
-    <string name="menu_refresh">Refresca</string>
     <string name="menu_all_read">Marca\'ls tots com a llegits</string>
     <string name="error">Error</string>
     <string name="network_error">No hi ha connectivitat</string>
@@ -197,7 +196,6 @@
         <item>Only over Wi-Fi</item>
         <item>Always</item>
     </string-array>
-    <string name="settings_visible_feeds">Canals visibles</string>
     <string name="settings_widget_background">Fons</string>
     <string name="settings_widget_background_description">Color i transparència del fons del giny.</string>
     <string name="storage_request_explanation">"    "</string>

@@ -30,7 +30,6 @@
     <string name="update">Обновление</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Настройки</string>
-    <string name="menu_refresh">Обновить</string>
     <string name="menu_all_read">Пометить все как прочтённые</string>
     <string name="error">Ошибка</string>
     <string name="network_error">Нет подключения к сети</string>
@@ -206,8 +205,6 @@
     <string name="passwordhttpAuth">Пароль</string>
     <string name="settings_font_serif">Шрифт с засечками</string>
     <string name="settings_font_serif_description">Использовать шрифт с засечками для отображения новостей</string>
-    <string name="settings_mark_as_read">Показывать кнопку «Отметить все как прочтённые»</string>
-    <string name="settings_mark_as_read_description">Показать/скрыть кнопку</string>
     <string name="menu_open_in_browser">Открыть в браузере</string>
     <string name="menu_switch_full_original">Показать всё содержимое</string>
     <string name="filter_help">Помощь по фильтрам</string>
@@ -216,7 +213,6 @@
     <string name="google_news_custom_topic">Ввести рубрику вручную</string>
 
     <string name="feed_no_summary">&lt; Нет описания &gt;</string>
-    <string name="settings_visible_feeds">Видимые ленты</string>
     <string name="settings_widget_background">Фон</string>
     <string name="settings_widget_background_description">Цвета и прозрачность фона виджета</string>
     <string name="green">Зеленый</string>

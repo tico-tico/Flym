@@ -30,7 +30,6 @@
     <string name="update">Actualizar</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Configuración</string>
-    <string name="menu_refresh">Actualizar</string>
     <string name="menu_all_read">Marcar todo como leído</string>
     <string name="error">Error</string>
     <string name="network_error">No se ha configurado la red</string>
@@ -191,8 +190,6 @@
     <string name="feed_cookie">Cookie de autenticación</string>
     <string name="tab_advanced_title">"    "</string>
     <string name="menu_open_in_browser">Abrir en el navegador</string>
-    <string name="settings_mark_as_read">Mostrar botón Marcar todo como leído</string>
-    <string name="settings_mark_as_read_description">Mostrar / Ocultar el botón</string>
     <string name="menu_switch_full_original">Mostrar contenido completo</string>
     <string name="cookiename">Nombre</string>
     <string name="cookievalue">Valor</string>
@@ -207,7 +204,6 @@
     <string name="google_news_custom_topic">Añade un tema de tu elección</string>
 
     <string name="feed_no_summary">&lt; No hay resumen disponible. &gt;</string>
-    <string name="settings_visible_feeds">Visibilidad de las fuentes</string>
     <string name="settings_widget_background">Fondo</string>
     <string name="settings_widget_background_description">Color i transparencia del fondo del</string>
     <string name="green">Verde</string>

@@ -33,7 +33,6 @@
     <string name="update">aktualizováno</string>
     <string name="colon">:\u00A0</string>
     <string name="menu_settings">Nastavení</string>
-    <string name="menu_refresh">Obnovit</string>
     <string name="menu_all_read">Označit vše jako přečtené</string>
     <string name="error">Chyba</string>
     <string name="network_error">Síť není nastavena</string>
@@ -203,9 +202,6 @@
     <string name="menu_switch_full_original">Zobrazit celý článek</string>
     <string name="settings_font_serif">Použít písmo Serif</string>
     <string name="settings_font_serif_description">Použít pro text článků písmo Serif místo Sans-Serif</string>
-    <string name="settings_mark_as_read">Zobrazit tlačítko Označit vše jako přečtené</string>
-    <string name="settings_mark_as_read_description">Zobrazit / Skrýt tlačítko</string>
-    <string name="settings_visible_feeds">Viditelné zdroje</string>
     <string name="settings_widget_background">Pozadí</string>
     <string name="settings_widget_background_description">Barva a průhlednost pozadí</string>
     <string name="storage_request_explanation">"        widgetu"</string>
