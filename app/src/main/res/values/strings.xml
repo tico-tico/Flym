@@ -228,7 +228,6 @@
     <string name="all_feeds">All feeds (incl. future)</string>
     <string name="marked_as_read">Marked as read</string>
     <string name="undo">Undo</string>
-    <string name="website_or_feed">(Website or Feed keyword)</string>
-
+    <string name="website_or_feed">(e.g: Hacker News, The Verge…)</string>
 
 </resources>

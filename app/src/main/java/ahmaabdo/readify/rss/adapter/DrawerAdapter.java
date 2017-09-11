@@ -31,6 +31,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.amulyakhare.textdrawable.TextDrawable;
+import com.amulyakhare.textdrawable.util.ColorGenerator;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -133,6 +136,8 @@ public class DrawerAdapter extends BaseAdapter {
                 if (unread != 0) {
                     holder.unreadTxt.setText(String.valueOf(unread));
                 }
+                if (position == 1)
+                    holder.separator.setVisibility(View.VISIBLE);
             }
             if (mFeedsCursor != null && mFeedsCursor.moveToPosition(position - 2)) {
                 holder.titleTxt.setText((mFeedsCursor.isNull(POS_NAME) ? mFeedsCursor.getString(POS_URL) : mFeedsCursor.getString(POS_NAME)));
@@ -178,7 +183,10 @@ public class DrawerAdapter extends BaseAdapter {
                     if (bitmap != null) {
                         holder.iconView.setImageBitmap(bitmap);
                     } else {
-                        holder.iconView.setImageResource(R.mipmap.ic_launcher);
+                        ColorGenerator generator = ColorGenerator.DEFAULT;
+                        int color = generator.getColor(Long.valueOf(feedId));
+                        TextDrawable textDrawable = TextDrawable.builder().buildRound(holder.titleTxt.getText().toString().substring(0, 1).toUpperCase(), color);
+                        holder.iconView.setImageDrawable(textDrawable);
                     }
 
                     int unread = mFeedsCursor.getInt(POS_UNREAD);
