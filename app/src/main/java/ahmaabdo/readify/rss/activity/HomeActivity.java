@@ -118,7 +118,7 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               addNewFeed();
+                addNewFeed();
             }
         });
 
@@ -298,6 +298,15 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
 
         // We reset the current drawer position
         selectDrawerItem(0);
+    }
+
+    public void onBackPressed() {
+        // Before exiting from app the navigation drawer is opened
+        if (mDrawerLayout != null && mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 
     @Override

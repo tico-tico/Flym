@@ -3,13 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/search"
+        android:title="Search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="always" />
+
     <item
         android:id="@+id/menu_unread"
         android:icon="@drawable/nav_unread"
         android:title="@string/context_menu_show_read"
         app:showAsAction="always"
         tools:ignore="AlwaysShowAction" />
-
 
     <item
         android:id="@+id/edit_feeds"

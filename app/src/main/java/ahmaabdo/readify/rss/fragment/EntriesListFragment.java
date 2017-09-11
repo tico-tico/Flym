@@ -37,6 +37,7 @@ import android.provider.BaseColumns;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.SearchView;
 import android.text.TextUtils;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
@@ -72,7 +73,9 @@ import ahmaabdo.readify.rss.utils.UiUtils;
 
 public class EntriesListFragment extends SwipeRefreshListFragment implements ViewTreeObserver.OnScrollChangedListener {
 
+    private static final String STATE_CURRENT_URI = "STATE_CURRENT_URI";
     private static final String STATE_URI = "STATE_URI";
+    private static final String STATE_ORIGINAL_URI = "STATE_ORIGINAL_URI";
     private static final String STATE_SHOW_FEED_INFO = "STATE_SHOW_FEED_INFO";
     private static final String STATE_LIST_DISPLAY_DATE = "STATE_LIST_DISPLAY_DATE";
 
@@ -82,7 +85,7 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
     SwipeRefreshLayout mySwipeRefreshLayout;
     private Cursor mJustMarkedAsReadEntries;
     private Button mRefreshListBtn;
-    private Uri mUri;
+    private Uri mUri, mOriginalUri;
     private boolean mShowFeedInfo = false;
     private EntriesCursorAdapter mEntriesCursorAdapter;
     private ListView mListView;
@@ -162,7 +165,8 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
 
 
         if (savedInstanceState != null) {
-            mUri = savedInstanceState.getParcelable(STATE_URI);
+            mUri = savedInstanceState.getParcelable(STATE_CURRENT_URI);
+            mOriginalUri = savedInstanceState.getParcelable(STATE_ORIGINAL_URI);
             mShowFeedInfo = savedInstanceState.getBoolean(STATE_SHOW_FEED_INFO);
             mListDisplayDate = savedInstanceState.getLong(STATE_LIST_DISPLAY_DATE);
 
@@ -263,10 +267,6 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
             }
         });
 
-        if (savedInstanceState != null) {
-            refreshUI(); // To hide/show the search bar
-        }
-
 
         disableSwipe();
 
@@ -286,7 +286,8 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putParcelable(STATE_URI, mUri);
+        outState.putParcelable(STATE_CURRENT_URI, mUri);
+        outState.putParcelable(STATE_ORIGINAL_URI, mOriginalUri);
         outState.putBoolean(STATE_SHOW_FEED_INFO, mShowFeedInfo);
         outState.putLong(STATE_LIST_DISPLAY_DATE, mListDisplayDate);
         refreshUI();
@@ -312,13 +313,49 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
         menu.clear(); // This is needed to remove a bug on Android 4.0.3
         inflater.inflate(R.menu.entry_list, menu);
 
+        MenuItem searchItem = menu.findItem(R.id.menu_search);
+        final SearchView searchView = (SearchView) searchItem.getActionView();
+        if (EntryColumns.isSearchUri(mUri)) {
+            searchItem.expandActionView();
+            searchView.post(new Runnable() { // Without that, it just does not work
+                @Override
+                public void run() {
+                    searchView.setQuery(mUri.getLastPathSegment(), false);
+                    searchView.clearFocus();
+                }
+            });
+
+        }
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                if (TextUtils.isEmpty(newText)) {
+                    setData(mOriginalUri, true);
+                } else {
+                    setData(EntryColumns.SEARCH_URI(newText), true, true);
+                }
+                return false;
+            }
+        });
+        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                setData(mOriginalUri, true);
+                return false;
+            }
+        });
 
         if (!PrefUtils.getBoolean(PrefUtils.SHOW_READ, true)) {
             menu.findItem(R.id.menu_unread).setIcon(R.drawable.nav_read);
         } else {
             menu.findItem(R.id.menu_unread).setIcon(R.drawable.nav_unread);
         }
-
 
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -421,12 +458,18 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
     }
 
     public Uri getUri() {
-        return mUri;
+        return mOriginalUri;
     }
 
-
     public void setData(Uri uri, boolean showFeedInfo) {
+        setData(uri, showFeedInfo, false);
+    }
+
+    public void setData(Uri uri, boolean showFeedInfo, boolean isSearchUri) {
         mUri = uri;
+        if (!isSearchUri) {
+            mOriginalUri = mUri;
+        }
         mShowFeedInfo = showFeedInfo;
 
         mEntriesCursorAdapter = new EntriesCursorAdapter(getActivity(), mUri, Constants.EMPTY_CURSOR, mShowFeedInfo);
