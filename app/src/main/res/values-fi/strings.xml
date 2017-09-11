@@ -222,5 +222,7 @@
     <string name="blue">Sininen</string>
     <string name="transparency">Läpinäkyvyys</string>
     <string name="all_feeds">Kaikki syötteet (myös tulevat)</string>
+    <string name="marked_as_read">Merkitty luetuksi</string>
+    <string name="undo">Peru</string>
 
 </resources>

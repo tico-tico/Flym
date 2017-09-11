@@ -215,4 +215,5 @@
     <string name="blue">Azul</string>
     <string name="transparency">Transparencia</string>
     <string name="all_feeds">Todas las fuentes (incl. futuras)</string>
+    <string name="marked_as_read">Marked as read</string>
 </resources>

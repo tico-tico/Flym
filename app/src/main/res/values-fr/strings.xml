@@ -213,5 +213,7 @@
     <string name="blue">Bleu</string>
     <string name="transparency">Transparence</string>
     <string name="all_feeds">Tous les flux (y compris ceux à venir)</string>
+    <string name="marked_as_read">Marqués comme lus</string>
+    <string name="undo">Annuler</string>
 
 </resources>

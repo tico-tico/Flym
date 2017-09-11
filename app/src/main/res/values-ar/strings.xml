@@ -145,5 +145,6 @@
     <string name="blue">أزرق</string>
     <string name="transparency">الشفافية</string>
     <string name="all_feeds">جميع الخلاصات</string>
+    <string name="marked_as_read">تم التحديد كمقروء</string>
 
 </resources>

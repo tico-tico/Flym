@@ -224,4 +224,6 @@
     <string name="blue">Azul</string>
     <string name="transparency">Transparência</string>
     <string name="all_feeds">Todos os feeds (incl. futuros)</string>
+    <string name="marked_as_read">Marcado como lido</string>
+    <string name="undo">Desfazer</string>
 </resources>

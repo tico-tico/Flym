@@ -213,5 +213,7 @@
     <string name="blue">Blå</string>
     <string name="transparency">Transparens</string>
     <string name="all_feeds">Alla feeds (inkl. kommande)</string>
+    <string name="marked_as_read">Markerade som läst</string>
+    <string name="undo">Avmarkera</string>
 
 </resources>

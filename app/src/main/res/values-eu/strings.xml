@@ -224,5 +224,6 @@
     <string name="blue">Urdina</string>
     <string name="transparency">Gardentasuna</string>
     <string name="all_feeds">Jario guztiak (etorkizunekoak barne)</string>
+    <string name="marked_as_read">Marked as read</string>
 
 </resources>

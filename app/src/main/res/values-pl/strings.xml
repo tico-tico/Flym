@@ -21,4 +21,6 @@
     <string name="blue">Niebieski</string>
     <string name="transparency">Przezroczystość</string>
     <string name="all_feeds">Wszystkie źródła</string>
+    <string name="marked_as_read">Oznaczono jako przeczytane</string>
+    <string name="undo">Cofnij</string>
 </resources>
