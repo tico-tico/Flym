@@ -202,5 +202,13 @@
     <string name="settings_mark_as_read_description">显示/隐藏按钮</string>
     <string name="storage_request_explanation">为了把订阅导入或导出为文件，必须允许应用访问sd卡。</string>
     <string name="google_news_custom_topic">自定义主题</string>
+    <string name="settings_visible_feeds">可见源</string>
+    <string name="settings_widget_background">背景色</string>
+    <string name="settings_widget_background_description">挂件的颜色和透明度</string>
+    <string name="green">绿色</string>
+    <string name="red">红色</string>
+    <string name="blue">蓝色</string>
+    <string name="transparency">透明</string>
+    <string name="all_feeds">全部订阅（包括未来的）</string>
 
-    </resources>
+</resources>

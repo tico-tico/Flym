@@ -205,5 +205,13 @@
         <item>Endast via Wi-Fi</item>
         <item>Alltid</item>
     </string-array>
+    <string name="settings_visible_feeds">Synliga feeds</string>
+    <string name="settings_widget_background">Bakgrund</string>
+    <string name="settings_widget_background_description">Färg och transparens för widgetens bakgrund</string>
+    <string name="green">Grön</string>
+    <string name="red">Röd</string>
+    <string name="blue">Blå</string>
+    <string name="transparency">Transparens</string>
+    <string name="all_feeds">Alla feeds (inkl. kommande)</string>
 
 </resources>

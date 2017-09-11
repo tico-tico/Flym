@@ -60,4 +60,5 @@
     <string name="feed_search">Hírforrás keresés</string>
     <string name="select_file">Fájl kiválasztása (SD-gyökér)</string>
     <string name="question_delete_feed">Valóban törölni szeretné ezt a hírforrást?</string>
-    </resources>
+    <string name="settings_widget_background"></string>
+</resources>

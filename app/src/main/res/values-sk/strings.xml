@@ -210,4 +210,12 @@
     <string name="google_news_custom_topic">Vlastná téma</string>
 
     <string name="feed_no_summary">&lt; Popis nie je k dispozícii. &gt;</string>
-    </resources>
+    <string name="settings_visible_feeds">Viditeľné zdroje</string>
+    <string name="settings_widget_background">Pozadie</string>
+    <string name="settings_widget_background_description">Farba a priehľadnosť pozadia widgetu</string>
+    <string name="green">Zelená</string>
+    <string name="red">Červená</string>
+    <string name="blue">Modrá</string>
+    <string name="transparency">Priehľadnosť</string>
+    <string name="all_feeds">Všetky zdroje (vrátane budúcich)</string>
+</resources>

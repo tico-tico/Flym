@@ -192,7 +192,7 @@
     <string name="cookiename">Nom</string>
     <string name="cookievalue">Valeur</string>
     <string name="feed_cookie">Cookie d’authentification</string>
-    <string name="tab_advanced_title">Avancé</string>
+    <string name="tab_advanced_title">"    "</string>
 
     <string name="menu_open_in_browser">Ouvrir dans le navigateur</string>
     <string name="menu_switch_full_original">Afficher le contenu complet</string>
@@ -202,8 +202,16 @@
     <string name="loginhttpAuth">Identifiant</string>
     <string name="passwordhttpAuth">Mot de passe</string>
     <string name="filter_help">Aide à propos des filtres</string>
-    <string name="storage_request_explanation">Pour pouvoir importer ou exporter les flux depuis ou vers un fichier, vous devez autoriser l\'application à accéder au stockage interne.</string>
+    <string name="storage_request_explanation">"        du widget"</string>
     <string name="feed_no_summary">&lt; Aucun résumé disponible. &gt;</string>
     <string name="google_news_custom_topic">Entrer un thème personnalisé</string>
+    <string name="settings_visible_feeds">Flux visibles</string>
+    <string name="settings_widget_background">Arrière-plan</string>
+    <string name="settings_widget_background_description">Couleur et transparence de l\'arrière-plan</string>
+    <string name="green">Vert</string>
+    <string name="red">Rouge</string>
+    <string name="blue">Bleu</string>
+    <string name="transparency">Transparence</string>
+    <string name="all_feeds">Tous les flux (y compris ceux à venir)</string>
 
-    </resources>
+</resources>

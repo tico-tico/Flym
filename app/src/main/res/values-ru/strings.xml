@@ -216,4 +216,12 @@
     <string name="google_news_custom_topic">Ввести рубрику вручную</string>
 
     <string name="feed_no_summary">&lt; Нет описания &gt;</string>
-    </resources>
+    <string name="settings_visible_feeds">Видимые ленты</string>
+    <string name="settings_widget_background">Фон</string>
+    <string name="settings_widget_background_description">Цвета и прозрачность фона виджета</string>
+    <string name="green">Зеленый</string>
+    <string name="red">Красный</string>
+    <string name="blue">Синий</string>
+    <string name="transparency">Прозрачный</string>
+    <string name="all_feeds">Все ленты (включая будущие)</string>
+</resources>

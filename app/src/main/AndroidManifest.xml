@@ -70,6 +70,11 @@
             android:name=".activity.GeneralPrefsActivity"
             android:label="@string/menu_settings"
             android:launchMode="singleTask" />
+        <activity android:name=".widget.WidgetConfigActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".activity.EditFeedActivity"
@@ -141,6 +146,32 @@
                 <data android:scheme="rss" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".widget.WidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widgetinfo"/>
+        </receiver>
+
+        <receiver android:name=".widget.TickerWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/tickerwidgetinfo"/>
+        </receiver>
+
+        <service
+            android:name=".widget.WidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+
+        <service android:name=".widget.TickerWidgetService"/>
 
 
         <receiver android:name=".receiver.BootCompletedBroadcastReceiver">

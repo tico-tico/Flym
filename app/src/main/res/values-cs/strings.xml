@@ -195,7 +195,7 @@
         <item>Vždy</item>
     </string-array>
 
-    <string name="tab_advanced_title">Pokročilé</string>
+    <string name="tab_advanced_title">"    "</string>
     <string name="menu_open_in_browser">Otevřít v prohlížeči</string>
     <string name="feed_cookie">Ověřovací cookie</string>
     <string name="cookiename">Jméno</string>
@@ -205,5 +205,14 @@
     <string name="settings_font_serif_description">Použít pro text článků písmo Serif místo Sans-Serif</string>
     <string name="settings_mark_as_read">Zobrazit tlačítko Označit vše jako přečtené</string>
     <string name="settings_mark_as_read_description">Zobrazit / Skrýt tlačítko</string>
+    <string name="settings_visible_feeds">Viditelné zdroje</string>
+    <string name="settings_widget_background">Pozadí</string>
+    <string name="settings_widget_background_description">Barva a průhlednost pozadí</string>
+    <string name="storage_request_explanation">"        widgetu"</string>
+    <string name="green">Zelená</string>
+    <string name="red">Červená</string>
+    <string name="blue">Modrá</string>
+    <string name="transparency">Průhlednost</string>
+    <string name="all_feeds">Všechny zdroje (včetně budoucích)</string>
 
 </resources>

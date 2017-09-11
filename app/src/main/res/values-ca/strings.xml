@@ -197,4 +197,13 @@
         <item>Only over Wi-Fi</item>
         <item>Always</item>
     </string-array>
+    <string name="settings_visible_feeds">Canals visibles</string>
+    <string name="settings_widget_background">Fons</string>
+    <string name="settings_widget_background_description">Color i transparència del fons del giny.</string>
+    <string name="storage_request_explanation">"    "</string>
+    <string name="green">Verd</string>
+    <string name="red">Vermell</string>
+    <string name="blue">Blau</string>
+    <string name="transparency">Transparència</string>
+    <string name="all_feeds">Tots els canals (futurs inclosos)</string>
 </resources>

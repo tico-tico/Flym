@@ -215,5 +215,14 @@
         <item>Solo con Wi-Fi</item>
         <item>Sempre</item>
     </string-array>
+    <string name="settings_visible_feeds">Feed visibili</string>
+    <string name="settings_widget_background">Sfondo</string>
+    <string name="settings_widget_background_description">Colore e trasparenza dello sfondo del widget</string>
+    <string name="storage_request_explanation">"    "</string>
+    <string name="green">Verde</string>
+    <string name="red">Rosso</string>
+    <string name="blue">Blu</string>
+    <string name="transparency">Trasparenza</string>
+    <string name="all_feeds">Tutti i feed (inclusi futuri)</string>
 
 </resources>

@@ -215,4 +215,12 @@
     <string name="google_news_custom_topic">Eigenes Thema</string>
 <string name="storage_request_explanation">Um Feeds aus einer Datei importieren oder in eine Datei exportieren zu können, benötigt die App Zugriffsrechte auf die SD-Karte.</string>
     <string name="feed_no_summary">&lt;Keine Zusammenfassung verfügbar&gt;</string>
-    </resources>
+    <string name="settings_visible_feeds">Sichtbare Feeds</string>
+    <string name="settings_widget_background">Hintergrund</string>
+    <string name="settings_widget_background_description">Farbe und Transparenz des Widget-Hintergrundes</string>
+    <string name="green">Grün</string>
+    <string name="red">Rot</string>
+    <string name="blue">Blau</string>
+    <string name="transparency">Transparenz</string>
+    <string name="all_feeds">Alle Feeds (auch zukünftige)</string>
+</resources>

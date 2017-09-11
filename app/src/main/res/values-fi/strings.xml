@@ -207,12 +207,20 @@
         <item>Aina</item>
     </string-array>
 
-    <string name="storage_request_explanation">Jotta voit tuoda tai viedä syötteitä tiedostosta tai tiedostoon, sinun pitää antaa sovellukselle lupa hallita tallennustilaa.</string>
+    <string name="storage_request_explanation">"    "</string>
     <string name="feed_no_summary">&lt; Ei yhteenvetoa saatavilla. &gt;</string>
     <string name="feed_httpAuth">HTTP-todennus</string>
     <string name="loginhttpAuth">Käyttäjänimi</string>
     <string name="passwordhttpAuth">Salasana</string>
     <string name="filter_help">Suodattimien ohjeet</string>
     <string name="google_news_custom_topic">Syötä oma otsikko</string>
+    <string name="settings_visible_feeds">Näytettävät syötteet</string>
+    <string name="settings_widget_background">Tausta</string>
+    <string name="settings_widget_background_description">Widgetin taustan väri ja läpinäkyvyys</string>
+    <string name="green">Vihreä</string>
+    <string name="red">Punainen</string>
+    <string name="blue">Sininen</string>
+    <string name="transparency">Läpinäkyvyys</string>
+    <string name="all_feeds">Kaikki syötteet (myös tulevat)</string>
 
 </resources>

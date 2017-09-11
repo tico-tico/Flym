@@ -189,7 +189,7 @@
     </string-array>
 
     <string name="feed_cookie">Cookie de autenticación</string>
-    <string name="tab_advanced_title">Avanzado</string>
+    <string name="tab_advanced_title">"    "</string>
     <string name="menu_open_in_browser">Abrir en el navegador</string>
     <string name="settings_mark_as_read">Mostrar botón Marcar todo como leído</string>
     <string name="settings_mark_as_read_description">Mostrar / Ocultar el botón</string>
@@ -203,8 +203,16 @@
     <string name="passwordhttpAuth">Contraseña</string>
     <string name="loginhttpAuth">Nombre de acceso</string>
     <string name="filter_help">Ayuda de filtros</string>
-    <string name="storage_request_explanation">Para poder importar o exportar las fuentes desde o hacia un archivo, debes permitir que la aplicación acceda a la memoria de almacenamiento.</string>
+    <string name="storage_request_explanation">"        widget."</string>
     <string name="google_news_custom_topic">Añade un tema de tu elección</string>
 
     <string name="feed_no_summary">&lt; No hay resumen disponible. &gt;</string>
-    </resources>
+    <string name="settings_visible_feeds">Visibilidad de las fuentes</string>
+    <string name="settings_widget_background">Fondo</string>
+    <string name="settings_widget_background_description">Color i transparencia del fondo del</string>
+    <string name="green">Verde</string>
+    <string name="red">Rojo</string>
+    <string name="blue">Azul</string>
+    <string name="transparency">Transparencia</string>
+    <string name="all_feeds">Todas las fuentes (incl. futuras)</string>
+</resources>

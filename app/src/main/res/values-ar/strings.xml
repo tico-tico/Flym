@@ -137,5 +137,13 @@
     <string name="passwordhttpAuth">كلمة المرور</string>
     <string name="filter_help">مساعدة بخصوص الفلتر</string>
     <string name="google_news_custom_topic">أدخل موضوع مخصص</string>
+    <string name="settings_visible_feeds">الخلاصات</string>
+    <string name="settings_widget_background">الخلفية</string>
+    <string name="settings_widget_background_description">الوان و شفافية خلفية الخلاصات</string>
+    <string name="green">أخضر</string>
+    <string name="red">أحمر</string>
+    <string name="blue">أزرق</string>
+    <string name="transparency">الشفافية</string>
+    <string name="all_feeds">جميع الخلاصات</string>
 
-    </resources>
+</resources>

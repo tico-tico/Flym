@@ -216,4 +216,12 @@
     <string name="menu_open_in_browser">Abrir no navegador</string>
     <string name="filter_help">Filtrar Ajuda</string>
     <string name="menu_switch_full_original">Mostrar conteúdo completo</string>
-    </resources>
+    <string name="settings_visible_feeds">Feeds visíveis</string>
+    <string name="settings_widget_background">Fundo</string>
+    <string name="settings_widget_background_description">Cor e transparencia do fundo do widget</string>
+    <string name="green">Verde</string>
+    <string name="red">Vermelho</string>
+    <string name="blue">Azul</string>
+    <string name="transparency">Transparência</string>
+    <string name="all_feeds">Todos os feeds (incl. futuros)</string>
+</resources>
