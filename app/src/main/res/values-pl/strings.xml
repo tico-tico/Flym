@@ -23,4 +23,5 @@
     <string name="all_feeds">Wszystkie źródła</string>
     <string name="marked_as_read">Oznaczono jako przeczytane</string>
     <string name="undo">Cofnij</string>
+    <string name="website_or_feed">(adres strony lub źródło)</string>
 </resources>

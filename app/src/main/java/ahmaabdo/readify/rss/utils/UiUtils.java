@@ -26,6 +26,9 @@ import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.annotation.NonNull;
+import android.support.annotation.StringRes;
+import android.support.design.widget.Snackbar;
 import android.support.v4.util.LongSparseArray;
 import android.util.TypedValue;
 import android.view.View;
@@ -47,6 +50,7 @@ public class UiUtils {
     static public int dpToPixel(int dp) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, MainApplication.getContext().getResources().getDisplayMetrics());
     }
+
 
     static public Bitmap getFaviconBitmap(long feedId, Cursor cursor, int iconCursorPos) {
         Bitmap bitmap = UiUtils.FAVICON_CACHE.get(feedId);
@@ -84,6 +88,17 @@ public class UiUtils {
         view.setMinimumHeight(dpToPixel(dp));
         view.setClickable(true);
         listView.addFooterView(view);
+    }
+
+    static public void showMessage(@NonNull Activity activity, @StringRes int messageId) {
+        showMessage(activity, activity.getString(messageId));
+    }
+
+    static public void showMessage(@NonNull Activity activity, @NonNull String message) {
+        View coordinatorLayout = activity.findViewById(R.id.coordinator_layout);
+        Snackbar snackbar = Snackbar.make((coordinatorLayout != null ? coordinatorLayout : activity.findViewById(android.R.id.content)), message, Snackbar.LENGTH_SHORT);
+        snackbar.getView().setBackgroundResource(R.color.material_grey_900);
+        snackbar.show();
     }
 
     static public int getAttrResource(Context context, int attrId, int defValue) {

@@ -224,4 +224,5 @@
     <string name="blue">Синий</string>
     <string name="transparency">Прозрачный</string>
     <string name="all_feeds">Все ленты (включая будущие)</string>
+    <string name="website_or_feed">(сайта или ленты новостей)</string>
 </resources>

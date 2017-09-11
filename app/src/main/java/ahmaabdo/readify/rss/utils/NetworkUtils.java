@@ -250,6 +250,10 @@ public class NetworkUtils {
         return setupConnection(url, "", "", "");
     }
 
+    public static HttpURLConnection setupConnection(String url) throws IOException {
+        return setupConnection(new URL(url));
+    }
+
     public static HttpURLConnection setupConnection(String url, String login, String password) throws IOException {
         return setupConnection(new URL(url), "", login, password);
     }

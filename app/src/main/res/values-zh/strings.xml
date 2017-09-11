@@ -212,5 +212,6 @@
     <string name="all_feeds">全部订阅（包括未来的）</string>
     <string name="marked_as_read">标记已读</string>
     <string name="undo">撤销</string>
+    <string name="website_or_feed">（网站或源）</string>
 
 </resources>

@@ -216,5 +216,6 @@
     <string name="all_feeds">Všechny zdroje (včetně budoucích)</string>
     <string name="marked_as_read">Označeno jako přečtené</string>
     <string name="undo">Vrátit</string>
+    <string name="website_or_feed">(webová stránka nebo zdroj)</string>
 
 </resources>

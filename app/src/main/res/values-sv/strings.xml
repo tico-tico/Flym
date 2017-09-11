@@ -215,5 +215,6 @@
     <string name="all_feeds">Alla feeds (inkl. kommande)</string>
     <string name="marked_as_read">Markerade som läst</string>
     <string name="undo">Avmarkera</string>
+    <string name="website_or_feed">(webbplats eller feed)</string>
 
 </resources>

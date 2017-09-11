@@ -215,5 +215,6 @@
     <string name="all_feeds">Tous les flux (y compris ceux à venir)</string>
     <string name="marked_as_read">Marqués comme lus</string>
     <string name="undo">Annuler</string>
+    <string name="website_or_feed">(site web ou flux)</string>
 
 </resources>

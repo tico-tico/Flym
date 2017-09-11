@@ -127,7 +127,31 @@ public class FeedDataContentProvider extends ContentProvider {
     private DatabaseHelper mDatabaseHelper;
 
     public static void addFeed(Context context, String url, String name, boolean retrieveFullText) {
-        addFeed(context, url, name, retrieveFullText, "", "", 0);
+        ContentResolver cr = context.getContentResolver();
+
+        if (!url.startsWith(Constants.HTTP_SCHEME) && !url.startsWith(Constants.HTTPS_SCHEME)) {
+            url = Constants.HTTP_SCHEME + url;
+        }
+
+        Cursor cursor = cr.query(FeedColumns.CONTENT_URI, null, FeedColumns.URL + Constants.DB_ARG,
+                new String[]{url}, null);
+
+        if (cursor.moveToFirst()) {
+            cursor.close();
+            Toast.makeText(context, R.string.error_feed_url_exists, Toast.LENGTH_SHORT).show();
+        } else {
+            cursor.close();
+            ContentValues values = new ContentValues();
+
+            values.put(FeedColumns.URL, url);
+            values.putNull(FeedColumns.ERROR);
+
+            if (name.trim().length() > 0) {
+                values.put(FeedColumns.NAME, name);
+            }
+            values.put(FeedColumns.RETRIEVE_FULLTEXT, retrieveFullText ? 1 : null);
+            cr.insert(FeedColumns.CONTENT_URI, values);
+        }
     }
 
     public static void addFeed(Context context, String url, String name, boolean retrieveFullText, String cookieName, String cookieValue, Integer keepTime) {

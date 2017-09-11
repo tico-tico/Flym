@@ -62,7 +62,6 @@ import android.os.Bundle;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -85,7 +84,6 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -104,8 +102,8 @@ import ahmaabdo.readify.rss.utils.UiUtils;
 public class EditFeedActivity extends BaseActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     String urlOrSearch;
     static final String FEED_SEARCH_TITLE = "title";
-    static final String FEED_SEARCH_URL = "url";
-    static final String FEED_SEARCH_DESC = "contentSnippet";
+    static final String FEED_SEARCH_URL = "feedId";
+    static final String FEED_SEARCH_DESC = "description";
     private static final String STATE_CURRENT_TAB = "STATE_CURRENT_TAB";
     private static final String[] FEED_PROJECTION = new String[]{FeedColumns.NAME, FeedColumns.URL, FeedColumns.RETRIEVE_FULLTEXT, FeedColumns.COOKIE_NAME, FeedColumns.COOKIE_VALUE, FeedColumns.HTTP_AUTH_LOGIN, FeedColumns.HTTP_AUTH_PASSWORD, FeedColumns.KEEP_TIME};
     private final ActionMode.Callback mFilterActionModeCallback = new ActionMode.Callback() {
@@ -286,7 +284,6 @@ public class EditFeedActivity extends BaseActivity implements LoaderManager.Load
 
             tabWidget.setVisibility(View.GONE);
             mNameEditText.setVisibility(View.INVISIBLE);
-            mRetrieveFulltextCb.setVisibility(View.INVISIBLE);
             mNameTextView.setVisibility(View.INVISIBLE);
 
 
@@ -476,24 +473,10 @@ public class EditFeedActivity extends BaseActivity implements LoaderManager.Load
 
     public void onClickOk(View view) {
         // only in insert mode
-
         final String name = mNameEditText.getText().toString().trim();
-        urlOrSearch = "http://" + mUrlEditText.getText().toString().trim();
-        final String cookieName = mCookieNameEditText.getText().toString();
-        final String cookieValue = mCookieValueEditText.getText().toString();
-        final TypedArray selectedValues = getResources().obtainTypedArray(R.array.settings_keep_time_values);
-        final Integer keepTime = selectedValues.getInt(mKeepTime.getSelectedItemPosition(), 0);
-
+        final String urlOrSearch = mUrlEditText.getText().toString().trim();
         if (urlOrSearch.isEmpty()) {
-            Toast.makeText(this, R.string.error_feed_error, Toast.LENGTH_SHORT).show();
-        }
-
-        if (urlOrSearch.contains("http://http://")) {
-            urlOrSearch = urlOrSearch.replace("http://http://", "http://");
-
-        }
-        if (urlOrSearch.contains("http://https://")) {
-            urlOrSearch = urlOrSearch.replace("http://https://", "https://");
+            UiUtils.showMessage(EditFeedActivity.this, R.string.error_feed_error);
         }
 
         if (!urlOrSearch.contains(".") || !urlOrSearch.contains("/") || urlOrSearch.contains(" ")) {
@@ -521,9 +504,9 @@ public class EditFeedActivity extends BaseActivity implements LoaderManager.Load
                     pd.cancel();
 
                     if (data == null) {
-                        Toast.makeText(EditFeedActivity.this, R.string.error, Toast.LENGTH_SHORT).show();
+                        UiUtils.showMessage(EditFeedActivity.this, R.string.error);
                     } else if (data.isEmpty()) {
-                        Toast.makeText(EditFeedActivity.this, R.string.no_result, Toast.LENGTH_SHORT).show();
+                        UiUtils.showMessage(EditFeedActivity.this, R.string.no_result);
                     } else {
                         AlertDialog.Builder builder = new AlertDialog.Builder(EditFeedActivity.this);
                         builder.setTitle(R.string.feed_search);
@@ -538,7 +521,7 @@ public class EditFeedActivity extends BaseActivity implements LoaderManager.Load
                         builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                FeedDataContentProvider.addFeed(EditFeedActivity.this, data.get(which).get(FEED_SEARCH_URL), name.isEmpty() ? data.get(which).get(FEED_SEARCH_TITLE) : name, mRetrieveFulltextCb.isChecked(), cookieName, cookieValue, keepTime);
+                                FeedDataContentProvider.addFeed(EditFeedActivity.this, data.get(which).get(FEED_SEARCH_URL), name.isEmpty() ? data.get(which).get(FEED_SEARCH_TITLE) : name, mRetrieveFulltextCb.isChecked());
 
                                 setResult(RESULT_OK);
                                 finish();
@@ -553,7 +536,7 @@ public class EditFeedActivity extends BaseActivity implements LoaderManager.Load
                 }
             });
         } else {
-            FeedDataContentProvider.addFeed(EditFeedActivity.this, urlOrSearch, name, mRetrieveFulltextCb.isChecked(), cookieName, cookieValue, keepTime);
+            FeedDataContentProvider.addFeed(EditFeedActivity.this, urlOrSearch, name, mRetrieveFulltextCb.isChecked());
 
             setResult(RESULT_OK);
             finish();
@@ -602,18 +585,17 @@ class GetFeedSearchResultsLoader extends BaseLoader<ArrayList<HashMap<String, St
     @Override
     public ArrayList<HashMap<String, String>> loadInBackground() {
         try {
-            HttpURLConnection conn = NetworkUtils.setupConnection(new URL("https://ajax.googleapis.com/ajax/services/feed/find?v=1.0&q=" + mSearchText));
+            HttpURLConnection conn = NetworkUtils.setupConnection("http://cloud.feedly.com/v3/search/feeds?count=20&locale=" + getContext().getResources().getConfiguration().locale.getLanguage() + "&query=" + mSearchText);
             try {
                 String jsonStr = new String(NetworkUtils.getBytes(conn.getInputStream()));
 
                 // Parse results
                 final ArrayList<HashMap<String, String>> results = new ArrayList<>();
-                JSONObject response = new JSONObject(jsonStr).getJSONObject("responseData");
-                JSONArray entries = response.getJSONArray("entries");
+                JSONArray entries = new JSONObject(jsonStr).getJSONArray("results");
                 for (int i = 0; i < entries.length(); i++) {
                     try {
                         JSONObject entry = (JSONObject) entries.get(i);
-                        String url = entry.get(EditFeedActivity.FEED_SEARCH_URL).toString();
+                        String url = entry.get(EditFeedActivity.FEED_SEARCH_URL).toString().replace("feed/", "");
                         if (!url.isEmpty()) {
                             HashMap<String, String> map = new HashMap<>();
                             map.put(EditFeedActivity.FEED_SEARCH_TITLE, Html.fromHtml(entry.get(EditFeedActivity.FEED_SEARCH_TITLE).toString())
@@ -632,7 +614,6 @@ class GetFeedSearchResultsLoader extends BaseLoader<ArrayList<HashMap<String, St
                 conn.disconnect();
             }
         } catch (Exception e) {
-            Log.e(TAG, "Error", e);
             return null;
         }
     }

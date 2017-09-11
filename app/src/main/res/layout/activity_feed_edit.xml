@@ -81,7 +81,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_marginTop="5dp"
-                                android:hint="www.example.com"
+                                android:hint="@string/website_or_feed"
                                 android:inputType="textUri"
                                 android:maxLines="1" />
 

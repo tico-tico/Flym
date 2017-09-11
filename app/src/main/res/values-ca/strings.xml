@@ -207,4 +207,5 @@
     <string name="transparency">Transparència</string>
     <string name="all_feeds">Tots els canals (futurs inclosos)</string>
     <string name="marked_as_read">Marked as read</string>
+    <string name="website_or_feed">(lloc web o canal)</string>
 </resources>

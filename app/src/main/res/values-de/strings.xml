@@ -225,4 +225,5 @@
     <string name="all_feeds">Alle Feeds (auch zukünftige)</string>
     <string name="marked_as_read">Als gelesen markieren</string>
     <string name="undo">Rückgängig</string>
+    <string name="website_or_feed">(Website oder Feed)</string>
 </resources>

@@ -226,5 +226,6 @@
     <string name="all_feeds">Tutti i feed (inclusi futuri)</string>
     <string name="marked_as_read">Contrassegnato come letto</string>
     <string name="undo">Annulla</string>
+    <string name="website_or_feed">(sito web o feed)</string>
 
 </resources>

@@ -218,4 +218,5 @@
     <string name="blue">Modrá</string>
     <string name="transparency">Priehľadnosť</string>
     <string name="all_feeds">Všetky zdroje (vrátane budúcich)</string>
+    <string name="website_or_feed">(webová stránka alebo zdroj)</string>
 </resources>
