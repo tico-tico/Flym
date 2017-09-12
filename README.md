@@ -6,6 +6,8 @@ Table of Contents:
 * [Features](#features)
 * [Links](#links)
 
+<img src="https://raw.githubusercontent.com/ahmaabdo/ReadifyRSS/master/Screens/1.png" width="250"><img src="https://raw.githubusercontent.com/ahmaabdo/ReadifyRSS/master/Screens/2.png" width="250"><img src="https://raw.githubusercontent.com/ahmaabdo/ReadifyRSS/master/Screens/3.png" width="250"><img src="https://raw.githubusercontent.com/ahmaabdo/ReadifyRSS/master/Screens/4.png" width="250"><img src="https://raw.githubusercontent.com/ahmaabdo/ReadifyRSS/master/Screens/5.png" width="250"><img src="https://raw.githubusercontent.com/ahmaabdo/ReadifyRSS/master/Screens/6.png" width="250"><img src="https://raw.githubusercontent.com/ahmaabdo/ReadifyRSS/master/Screens/7.1.png" width="250"><img src="https://raw.githubusercontent.com/ahmaabdo/ReadifyRSS/master/Screens/7.png" width="250"><img src="https://raw.githubusercontent.com/ahmaabdo/ReadifyRSS/master/Screens/8.png" width="250">
+
 ### Summary
 ReadifyRSS is a light, modern, free and opensource project which keeps you inform by fetching your websites/blogs and displaying them in a mobile-optimized way.
 It's based on "spaRSS" which based on "Flym" RSS reader.  
@@ -26,7 +28,6 @@ Feedly users: you can export your feeds to OPML at this address (http://cloud.fe
 
 ### Links
 GitHub project: https://github.com/ahmaabdo/ReadifyRSS  
-PlayStore: ...  
-F-Droid: ...  
+PlayStore: https://play.google.com/store/apps/details?id=ahmaabdo.readify.rss  
 ReadifyRSS is a fork of [spaRSS](https://github.com/Etuldan/spaRSS).  
 spaRSS is a fork of [Flym](https://github.com/FredJul/Flym)
