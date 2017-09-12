@@ -100,7 +100,6 @@ import ahmaabdo.readify.rss.utils.NetworkUtils;
 import ahmaabdo.readify.rss.utils.UiUtils;
 
 public class EditFeedActivity extends BaseActivity implements LoaderManager.LoaderCallbacks<Cursor> {
-    String urlOrSearch;
     static final String FEED_SEARCH_TITLE = "title";
     static final String FEED_SEARCH_URL = "feedId";
     static final String FEED_SEARCH_DESC = "description";
