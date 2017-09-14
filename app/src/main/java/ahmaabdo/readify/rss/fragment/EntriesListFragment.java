@@ -32,7 +32,6 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.provider.BaseColumns;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
@@ -74,7 +73,6 @@ import ahmaabdo.readify.rss.utils.UiUtils;
 public class EntriesListFragment extends SwipeRefreshListFragment implements ViewTreeObserver.OnScrollChangedListener {
 
     private static final String STATE_CURRENT_URI = "STATE_CURRENT_URI";
-    private static final String STATE_URI = "STATE_URI";
     private static final String STATE_ORIGINAL_URI = "STATE_ORIGINAL_URI";
     private static final String STATE_SHOW_FEED_INFO = "STATE_SHOW_FEED_INFO";
     private static final String STATE_LIST_DISPLAY_DATE = "STATE_LIST_DISPLAY_DATE";
@@ -216,14 +214,6 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
                     @Override
                     public void onRefresh() {
                         startRefresh();
-                        if (mySwipeRefreshLayout.isRefreshing())
-                            new Handler().postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    mySwipeRefreshLayout.setRefreshing(false);
-                                }
-                            }, 1505);
-
                     }
                 });
 
@@ -500,8 +490,10 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
     private void refreshSwipeProgress() {
         if (PrefUtils.getBoolean(PrefUtils.IS_REFRESHING, false)) {
             showSwipeProgress();
+            mySwipeRefreshLayout.setRefreshing(true);
         } else {
             hideSwipeProgress();
+            mySwipeRefreshLayout.setRefreshing(false);
         }
     }
 
