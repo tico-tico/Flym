@@ -66,8 +66,8 @@
     <string name="to_group_above">فوق المجموعة</string>
     <string name="to_group_into">في المجموعة</string>
     <string name="add_custom_feed">أضف خلاصة يدويا</string>
-    <string name="google_news_title">مواضيع أخبار قوقل</string>
-    <string name="google_news_indicator">حدد موضوع أو عدة مواضيع لإضافتها. بعضها قد لا تكون مقدمة من قوقل بلغتك.</string>
+    <string name="google_news_title">مواضيع أخبار جوجل</string>
+    <string name="google_news_indicator">حدد موضوع أو عدة مواضيع لإضافتها. بعضها قد لا تكون مقدمة من جوجل بلغتك.</string>
     <string name="google_news_top_stories">أهم الأخبار</string>
     <string name="google_news_world">عالمي</string>
     <string name="google_news_business">الأعمال</string>
