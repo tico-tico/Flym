@@ -493,6 +493,7 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
             mySwipeRefreshLayout.setRefreshing(true);
         } else {
             hideSwipeProgress();
+            //TODO: dirty fix for mySwipeRefreshLayout
             mySwipeRefreshLayout.setRefreshing(false);
         }
     }
