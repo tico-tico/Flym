@@ -143,5 +143,7 @@
     <string name="all_feeds">جميع الخلاصات</string>
     <string name="marked_as_read">تم التحديد كمقروء</string>
     <string name="website_or_feed">عنوان الموقع أو اسمه</string>
+    <string name="art_rtl">دعم محتوى اللغه العربيه</string>
+    <string name="fix_en_ar">تعطيل لإصلاح المحتوى الغير عربي</string>
 
 </resources>

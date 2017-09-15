@@ -135,4 +135,6 @@
     <string name="google_news_custom_topic">Masukkan topik khusus</string>
 
     <string name="feed_no_summary">&lt; Ringkasan tidak tersedia. &gt;</string>
-    </resources>
+    <string name="art_rtl">Support articles Right to Left</string>
+    <string name="fix_en_ar">Disable to fix english articles</string>
+</resources>

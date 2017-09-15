@@ -133,5 +133,7 @@
     <string name="settings_proxy_host">Host</string>
     <string name="settings_proxy_port">Poort</string>
     <string name="settings_proxy_type">Type</string>
+    <string name="art_rtl">Support articles Right to Left</string>
+    <string name="fix_en_ar">Disable to fix english articles</string>
 
 </resources>

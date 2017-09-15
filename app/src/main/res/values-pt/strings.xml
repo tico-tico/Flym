@@ -223,4 +223,6 @@
     <string name="marked_as_read">Marcado como lido</string>
     <string name="undo">Desfazer</string>
     <string name="website_or_feed">(website ou feed)</string>
+    <string name="art_rtl">Support articles Right to Left</string>
+    <string name="fix_en_ar">Disable to fix english articles</string>
 </resources>

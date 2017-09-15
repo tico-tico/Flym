@@ -206,4 +206,6 @@
     <string name="all_feeds">Tots els canals (futurs inclosos)</string>
     <string name="marked_as_read">Marked as read</string>
     <string name="website_or_feed">(lloc web o canal)</string>
+    <string name="art_rtl">Support articles Right to Left</string>
+    <string name="fix_en_ar">Disable to fix english articles</string>
 </resources>

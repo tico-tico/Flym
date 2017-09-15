@@ -222,4 +222,6 @@
     <string name="marked_as_read">Als gelesen markieren</string>
     <string name="undo">Rückgängig</string>
     <string name="website_or_feed">(Website oder Feed)</string>
+    <string name="art_rtl">Support articles Right to Left</string>
+    <string name="fix_en_ar">Disable to fix english articles</string>
 </resources>

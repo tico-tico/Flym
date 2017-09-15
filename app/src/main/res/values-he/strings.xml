@@ -128,4 +128,6 @@
     <string name="loginhttpAuth">התחבר</string>
     <string name="passwordhttpAuth">סיסמה</string>
     <string name="settings_category_content_presentation">הצגת תוכן</string>
+    <string name="art_rtl">Support articles Right to Left</string>
+    <string name="fix_en_ar">Disable to fix english articles</string>
 </resources>

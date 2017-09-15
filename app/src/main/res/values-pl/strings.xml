@@ -22,4 +22,6 @@
     <string name="marked_as_read">Oznaczono jako przeczytane</string>
     <string name="undo">Cofnij</string>
     <string name="website_or_feed">(adres strony lub źródło)</string>
+    <string name="art_rtl">Support articles Right to Left</string>
+    <string name="fix_en_ar">Disable to fix english articles</string>
 </resources>

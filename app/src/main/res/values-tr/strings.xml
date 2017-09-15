@@ -22,4 +22,6 @@
     <string name="google_news_health">Sağlık</string>
     <string name="menu_full_screen">Tam ekran</string>
     <string name="settings_proxy_wifi_only">Sadece Wi-Fi</string>
+    <string name="art_rtl">Support articles Right to Left</string>
+    <string name="fix_en_ar">Disable to fix english articles</string>
 </resources>

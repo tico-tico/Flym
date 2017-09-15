@@ -60,4 +60,6 @@
     <string name="select_file">Fájl kiválasztása (SD-gyökér)</string>
     <string name="question_delete_feed">Valóban törölni szeretné ezt a hírforrást?</string>
     <string name="settings_widget_background"></string>
+    <string name="art_rtl">Support articles Right to Left</string>
+    <string name="fix_en_ar">Disable to fix english articles</string>
 </resources>

@@ -122,6 +122,14 @@
             android:summary="@string/settings_display_entries_fullscreen_description"
             android:title="@string/settings_display_entries_fullscreen" />
 
+        <CheckBoxPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="direction_rtl"
+            android:summary="@string/fix_en_ar"
+            android:title="@string/art_rtl" />
+
 
     </PreferenceCategory>
 

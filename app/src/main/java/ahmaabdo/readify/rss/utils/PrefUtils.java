@@ -55,6 +55,8 @@ public class PrefUtils {
 
     public static final String KEEP_TIME = "keeptime";
 
+    public static final String DIRECTION = "direction_rtl";
+
     public static final String FONT_SIZE = "fontsize";
     public static final String FONT_SERIF = "font_serif";
 

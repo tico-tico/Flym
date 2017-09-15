@@ -206,4 +206,6 @@
     <string name="transparency">투명도</string>
     <string name="all_feeds">모든 피드(앞으로의 피드 포함)</string>
     <string name="website_or_feed">(웹페이지 또는 피드)</string>
+    <string name="art_rtl">Support articles Right to Left</string>
+    <string name="fix_en_ar">Disable to fix english articles</string>
 </resources>
