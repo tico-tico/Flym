@@ -1,15 +1,15 @@
 [![API](https://img.shields.io/badge/API-14%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=14)
 [![Releases](https://img.shields.io/badge/release-stable--1.2.1-brightgreen.svg)](https://github.com/ahmaabdo/ReadifyRSS/releases/latest)
 
-# ReadifyRSS
+# Readify
 RSS reader with all articles content in app.
 
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" 
       alt="Download from Google Play" 
-      height="120">](https://play.google.com/store/apps/details?id=ahmaabdo.readify.rss)
+      height="100">](https://play.google.com/store/apps/details?id=ahmaabdo.readify.rss)
 [<img src="https://gitlab.com/fdroid/artwork/raw/master/badge/get-it-on.png"
       alt="Get it on F-Droid"
-      height="120">](https://f-droid.org)
+      height="100">](https://f-droid.org)
 
 Table of Contents:
 * [Summary](#summary)
