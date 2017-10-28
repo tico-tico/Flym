@@ -1,5 +1,6 @@
 [![API](https://img.shields.io/badge/API-14%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=14)
 [![Releases](https://img.shields.io/badge/release-stable--1.2.1-brightgreen.svg)](https://github.com/ahmaabdo/ReadifyRSS/releases/latest)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-red.svg)](https://www.paypal.me/ahmaabdo)
 
 # Readify
 RSS reader with all articles content in app.
