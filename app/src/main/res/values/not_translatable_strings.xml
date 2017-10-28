@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="about_us_copyright" translatable="false">Copyright 2017 Ahmad Abdo</string>
     <string name="about_us_content" translatable="false"><![CDATA[
-    Project Website:<br/>https://github.com/ahmaabdo/HomeRSS <br /><br />
-
-    <b>Home Developer</b><br/>
+   <b>Readify Developer</b><br/>
     • Ahmad Abdo<br/><br/>
 
     <b>Developers</b><br/>

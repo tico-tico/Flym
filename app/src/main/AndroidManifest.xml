@@ -42,8 +42,9 @@
             android:launchMode="singleTask"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".activity.AboutActivity"
+            android:name=".activity.AboutApp"
             android:label="@string/about_spaRSS"
+            android:theme="@style/AppTheme.MaterialAboutActivity"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="about_activity_intent" />
