@@ -40,8 +40,8 @@
     <string name="drawer_close">Close navigation drawer</string>
 
     <plurals name="number_of_new_entries">
-        <item quantity="one">One new entry</item>
-        <item quantity="other">%d new entries</item>
+        <item quantity="one">One New Entry</item>
+        <item quantity="other">%d New Entries</item>
     </plurals>
     <!-- FEEDS -->
     <string name="feeds">Feeds</string>

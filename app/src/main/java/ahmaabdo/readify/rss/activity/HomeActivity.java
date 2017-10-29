@@ -118,9 +118,8 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         fab2 = (FloatingActionMenu) findViewById(R.id.fab);
-        fab2.setMenuButtonColorNormalResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A100 : R.color.dark_A900);
-        fab2.setMenuButtonColorPressedResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A300 : R.color.dark_A700);
-        fab2.setMenuButtonColorRippleResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A500 : R.color.dark_A300);
+        fab2.setMenuButtonColorNormalResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A100 : R.color.dark_A700);
+        fab2.setMenuButtonColorPressedResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A300 : R.color.dark_A900);
 
         fab = (FloatingActionButton) findViewById(R.id.fab_google);
         fab.setColorNormalResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A100 : R.color.dark_A900);

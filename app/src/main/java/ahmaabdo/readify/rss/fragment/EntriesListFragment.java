@@ -54,6 +54,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -81,6 +84,17 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
     private static final int NEW_ENTRIES_NUMBER_LOADER_ID = 2;
 
     SwipeRefreshLayout mySwipeRefreshLayout;
+    private final OnSharedPreferenceChangeListener mPrefListener = new OnSharedPreferenceChangeListener() {
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            if (PrefUtils.SHOW_READ.equals(key)) {
+                getLoaderManager().restartLoader(ENTRIES_LOADER_ID, null, mEntriesLoader);
+            } else if (PrefUtils.IS_REFRESHING.equals(key)) {
+                refreshSwipeProgress();
+            }
+        }
+    };
+    private YoYo.YoYoString yoyo;
     private Cursor mJustMarkedAsReadEntries;
     private Button mRefreshListBtn;
     private Uri mUri, mOriginalUri;
@@ -88,8 +102,6 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
     private EntriesCursorAdapter mEntriesCursorAdapter;
     private ListView mListView;
     private long mListDisplayDate = new Date().getTime();
-    private Menu menu;
-
     private final LoaderManager.LoaderCallbacks<Cursor> mEntriesLoader = new LoaderManager.LoaderCallbacks<Cursor>() {
         @Override
         public Loader<Cursor> onCreateLoader(int id, Bundle args) {
@@ -113,17 +125,7 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
             mEntriesCursorAdapter.swapCursor(Constants.EMPTY_CURSOR);
         }
     };
-
-    private final OnSharedPreferenceChangeListener mPrefListener = new OnSharedPreferenceChangeListener() {
-        @Override
-        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-            if (PrefUtils.SHOW_READ.equals(key)) {
-                getLoaderManager().restartLoader(ENTRIES_LOADER_ID, null, mEntriesLoader);
-            } else if (PrefUtils.IS_REFRESHING.equals(key)) {
-                refreshSwipeProgress();
-            }
-        }
-    };
+    private Menu menu;
     private int mNewEntriesNumber, mOldUnreadEntriesNumber = -1;
     private boolean mAutoRefreshDisplayDate = false;
     private final LoaderManager.LoaderCallbacks<Cursor> mEntriesNumberLoader = new LoaderManager.LoaderCallbacks<Cursor>() {
@@ -249,7 +251,6 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
             public void onClick(View view) {
                 mNewEntriesNumber = 0;
                 mListDisplayDate = new Date().getTime();
-
                 refreshUI();
                 if (mUri != null) {
                     restartLoaders();
@@ -480,6 +481,8 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
 
     private void refreshUI() {
         if (mNewEntriesNumber > 0) {
+            if (mRefreshListBtn.getVisibility() == View.GONE)
+                YoYo.with(Techniques.BounceInDown).duration(500).playOn(mRefreshListBtn);
             mRefreshListBtn.setText(getResources().getQuantityString(R.plurals.number_of_new_entries, mNewEntriesNumber, mNewEntriesNumber));
             mRefreshListBtn.setVisibility(View.VISIBLE);
         } else {
