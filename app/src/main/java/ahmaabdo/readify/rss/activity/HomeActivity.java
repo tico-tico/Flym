@@ -35,7 +35,6 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
@@ -46,6 +45,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 
 import java.io.File;
 
@@ -77,13 +79,6 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
 
     private static final int LOADER_ID = 0;
     private static final int PERMISSIONS_REQUEST_IMPORT_FROM_OPML = 1;
-
-    private EntriesListFragment mEntriesFragment;
-    private DrawerLayout mDrawerLayout;
-    private View mLeftDrawer;
-    private ListView mDrawerList;
-    private DrawerAdapter mDrawerAdapter;
-    private ActionBarDrawerToggle mDrawerToggle;
     private final SharedPreferences.OnSharedPreferenceChangeListener mShowReadListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
@@ -93,11 +88,19 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
             }
         }
     };
+    Uri newUri;
+    boolean showFeedInfo = true;
+    FloatingActionButton fab;
+    FloatingActionMenu fab2;
+    private EntriesListFragment mEntriesFragment;
+    private DrawerLayout mDrawerLayout;
+    private View mLeftDrawer;
+    private ListView mDrawerList;
+    private DrawerAdapter mDrawerAdapter;
+    private ActionBarDrawerToggle mDrawerToggle;
     private CharSequence mTitle;
     private BitmapDrawable mIcon;
     private int mCurrentDrawerPos;
-    Uri newUri;
-    boolean showFeedInfo = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,13 +117,34 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab2 = (FloatingActionMenu) findViewById(R.id.fab);
+        fab2.setMenuButtonColorNormalResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A100 : R.color.dark_A900);
+        fab2.setMenuButtonColorPressedResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A300 : R.color.dark_A700);
+        fab2.setMenuButtonColorRippleResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A500 : R.color.dark_A300);
+
+        fab = (FloatingActionButton) findViewById(R.id.fab_google);
+        fab.setColorNormalResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A100 : R.color.dark_A900);
+        fab.setColorPressedResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A300 : R.color.dark_A700);
+        fab.setColorRippleResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A500 : R.color.dark_A300);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                addNewFeed();
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, AddGoogleNewsActivity.class));
             }
         });
+
+
+        fab = (FloatingActionButton) findViewById(R.id.fab_feed);
+        fab.setColorNormalResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A100 : R.color.dark_A900);
+        fab.setColorPressedResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A300 : R.color.dark_A700);
+        fab.setColorRippleResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A500 : R.color.dark_A300);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_INSERT).setData(FeedData.FeedColumns.CONTENT_URI));
+            }
+        });
+
 
         mLeftDrawer = findViewById(R.id.left_drawer);
         mDrawerList = (ListView) findViewById(R.id.drawer_list);
@@ -416,18 +440,4 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
         }
     }
 
-    public void addNewFeed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.menu_add_feed)
-                .setItems(new CharSequence[]{getString(R.string.add_custom_feed), getString(R.string.google_news_title)}, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (which == 0) {
-                            startActivity(new Intent(Intent.ACTION_INSERT).setData(FeedData.FeedColumns.CONTENT_URI));
-                        } else {
-                            startActivity(new Intent(HomeActivity.this, AddGoogleNewsActivity.class));
-                        }
-                    }
-                });
-        builder.show();
-    }
 }

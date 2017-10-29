@@ -11,6 +11,8 @@
 
     <color name="Indigo_50">#E3F2FD</color>
     <color name="light_A100">#FF9800</color>
+    <color name="light_A300">#FFA726</color>
+    <color name="light_A500">#FFCC80</color>
 
     <color name="dark_A700">#5C97F5</color>
     <color name="dark_A900">#1976D2</color>
