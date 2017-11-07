@@ -41,6 +41,7 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
@@ -91,9 +92,9 @@ public class EntryFragment extends SwipeRefreshFragment implements
     private ViewPager mEntryPager;
     private EntryPagerAdapter mEntryPagerAdapter;
     private ViewPagerIndicator mViewPagerIndicator;
+    private FloatingActionButton floatingActionButton;
 
     private View mCancelFullscreenBtn;
-    private MenuItem mShowFullContentItem;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -108,6 +109,60 @@ public class EntryFragment extends SwipeRefreshFragment implements
     public View inflateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_entry, container, true);
 
+        final Activity activity = getActivity();
+        floatingActionButton = rootView.findViewById(R.id.fab_show_full_content);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mPreferFullText) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mPreferFullText = false;
+                            if (!mPreferFullText)
+                                Log.d(TAG, "run: manual call of displayEntry(), fullText=false");
+                            mEntryPagerAdapter.displayEntry(mCurrentPagerPos, null, true);
+                        }
+                    });
+                } else {
+                    Cursor cursor = mEntryPagerAdapter.getCursor(mCurrentPagerPos);
+                    final boolean alreadyMobilized = !cursor.isNull(mMobilizedHtmlPos);
+
+                    if (alreadyMobilized) {
+                        Log.d(TAG, "onOptionsItemSelected: alreadyMobilized");
+                        mPreferFullText = true;
+                        activity.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Log.d(TAG, "run: manual call of displayEntry(), fullText=true");
+                                mEntryPagerAdapter.displayEntry(mCurrentPagerPos, null, true);
+                            }
+                        });
+                    } else if (!isRefreshing()) {
+                        Log.d(TAG, "onOptionsItemSelected: about to load article...");
+                        mPreferFullText = false;
+                        ConnectivityManager connectivityManager = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
+                        final NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+                        // since we have acquired the networkInfo, we use it for basic checks
+                        if (networkInfo != null && networkInfo.getState() == NetworkInfo.State.CONNECTED) {
+                            FetcherService.addEntriesToMobilize(new long[]{mEntriesIds[mCurrentPagerPos]});
+                            activity.startService(new Intent(activity, FetcherService.class).setAction(FetcherService.ACTION_MOBILIZE_FEEDS));
+                        } else {
+                            activity.runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(activity, R.string.network_error, Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                            Log.d(TAG, "onOptionsItemSelected: cannot load article. no internet connection.");
+                        }
+                    } else {
+                        Log.d(TAG, "onOptionsItemSelected: refreshing already in progress");
+                    }
+                }
+            }
+        });
         mCancelFullscreenBtn = rootView.findViewById(R.id.cancelFullscreenBtn);
         mCancelFullscreenBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -206,8 +261,6 @@ public class EntryFragment extends SwipeRefreshFragment implements
             MenuItem item = menu.findItem(R.id.menu_star);
             item.setTitle(R.string.menu_unstar).setIcon(R.drawable.ic_star);
         }
-        mShowFullContentItem = menu.findItem(R.id.menu_switch_full_original);
-        mShowFullContentItem.setChecked(mPreferFullText);
 
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -294,56 +347,6 @@ public class EntryFragment extends SwipeRefreshFragment implements
                             startActivity(browserIntent);
                         }
                     }
-                    break;
-                }
-                case R.id.menu_switch_full_original: {
-                    if (mPreferFullText) {
-                        getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                mPreferFullText = false;
-                                Log.d(TAG, "run: manual call of displayEntry(), fullText=false");
-                                mEntryPagerAdapter.displayEntry(mCurrentPagerPos, null, true);
-                            }
-                        });
-                    } else {
-                        Cursor cursor = mEntryPagerAdapter.getCursor(mCurrentPagerPos);
-                        final boolean alreadyMobilized = !cursor.isNull(mMobilizedHtmlPos);
-
-                        if (alreadyMobilized) {
-                            Log.d(TAG, "onOptionsItemSelected: alreadyMobilized");
-                            mPreferFullText = true;
-                            activity.runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Log.d(TAG, "run: manual call of displayEntry(), fullText=true");
-                                    mEntryPagerAdapter.displayEntry(mCurrentPagerPos, null, true);
-                                }
-                            });
-                        } else if (!isRefreshing()) {
-                            Log.d(TAG, "onOptionsItemSelected: about to load article...");
-                            mPreferFullText = false;
-                            ConnectivityManager connectivityManager = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
-                            final NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-
-                            // since we have acquired the networkInfo, we use it for basic checks
-                            if (networkInfo != null && networkInfo.getState() == NetworkInfo.State.CONNECTED) {
-                                FetcherService.addEntriesToMobilize(new long[]{mEntriesIds[mCurrentPagerPos]});
-                                activity.startService(new Intent(activity, FetcherService.class).setAction(FetcherService.ACTION_MOBILIZE_FEEDS));
-                            } else {
-                                activity.runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        Toast.makeText(activity, R.string.network_error, Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-                                Log.d(TAG, "onOptionsItemSelected: cannot load article. no internet connection.");
-                            }
-                        } else {
-                            Log.d(TAG, "onOptionsItemSelected: refreshing already in progress");
-                        }
-                    }
-                    mShowFullContentItem.setChecked(mPreferFullText);
                     break;
                 }
                 default:
@@ -641,11 +644,6 @@ public class EntryFragment extends SwipeRefreshFragment implements
                     if (pagerPos == mCurrentPagerPos) {
                         refreshUI(newCursor);
                     }
-                }
-                if (mShowFullContentItem != null) {
-                    mShowFullContentItem.setChecked(mPreferFullText);
-                } else {
-                    Log.e(TAG, "displayEntry: mShowFullContentItem == null");
                 }
             }
         }

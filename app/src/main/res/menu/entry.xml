@@ -32,8 +32,4 @@
         android:id="@+id/menu_open_in_browser"
         android:icon="@drawable/ic_open_in_browser"
         android:title="@string/menu_open_in_browser" />
-    <item
-        android:id="@+id/menu_switch_full_original"
-        android:checkable="true"
-        android:title="@string/menu_switch_full_original" />
 </menu>

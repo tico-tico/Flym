@@ -20,6 +20,7 @@
             android:visibility="gone"
             app:selectedDotColor="#FFFFFF"
             app:unselectedDotColor="#808080" />
+
     </android.support.v4.view.ViewPager>
 
 
@@ -40,5 +41,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/fap_margin"
+        app:srcCompat="@drawable/content_show"
+        android:id="@+id/fab_show_full_content"
+        app:layout_anchorGravity="bottom|right|end" />
+
 
 </RelativeLayout>
