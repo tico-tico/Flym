@@ -114,7 +114,9 @@ public class EntryFragment extends SwipeRefreshFragment implements
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Start onClick Action
                 if (mPreferFullText) {
+                    floatingActionButton.setImageResource(R.drawable.content_min);
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -125,6 +127,7 @@ public class EntryFragment extends SwipeRefreshFragment implements
                         }
                     });
                 } else {
+                    floatingActionButton.setImageResource(R.drawable.content_full);
                     Cursor cursor = mEntryPagerAdapter.getCursor(mCurrentPagerPos);
                     final boolean alreadyMobilized = !cursor.isNull(mMobilizedHtmlPos);
 
@@ -161,6 +164,7 @@ public class EntryFragment extends SwipeRefreshFragment implements
                         Log.d(TAG, "onOptionsItemSelected: refreshing already in progress");
                     }
                 }
+                //End onClick Action
             }
         });
         mCancelFullscreenBtn = rootView.findViewById(R.id.cancelFullscreenBtn);
@@ -261,6 +265,10 @@ public class EntryFragment extends SwipeRefreshFragment implements
             MenuItem item = menu.findItem(R.id.menu_star);
             item.setTitle(R.string.menu_unstar).setIcon(R.drawable.ic_star);
         }
+        if (mPreferFullText)
+            floatingActionButton.setImageResource(R.drawable.content_min);
+        else
+            floatingActionButton.setImageResource(R.drawable.content_full);
 
         super.onCreateOptionsMenu(menu, inflater);
     }
