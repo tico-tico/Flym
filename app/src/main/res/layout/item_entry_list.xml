@@ -60,8 +60,20 @@
 
     <ImageView
         android:id="@+id/favorite_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true" />
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:padding="10dp" />
+
+    <ImageView
+        android:id="@+id/read_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/favorite_icon"
+        android:padding="13dp"
+        android:src="@drawable/ic_check"
+        android:visibility="gone" />
 
 </RelativeLayout>

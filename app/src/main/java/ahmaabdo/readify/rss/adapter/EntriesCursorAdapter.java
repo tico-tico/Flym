@@ -89,14 +89,15 @@ public class EntriesCursorAdapter extends ResourceCursorAdapter {
     }
 
     @Override
-    public void bindView(View view, final Context context, Cursor cursor) {
+    public void bindView(final View view, final Context context, Cursor cursor) {
         if (view.getTag(R.id.holder) == null) {
             ViewHolder holder = new ViewHolder();
-            holder.titleTextView = (TextView) view.findViewById(android.R.id.text1);
-            holder.dateTextView = (TextView) view.findViewById(android.R.id.text2);
-            holder.authorTextView = (TextView) view.findViewById(R.id.author);
-            holder.mainImgView = (ImageView) view.findViewById(R.id.main_icon);
-            holder.starImgView = (ImageView) view.findViewById(R.id.favorite_icon);
+            holder.titleTextView = view.findViewById(android.R.id.text1);
+            holder.dateTextView = view.findViewById(android.R.id.text2);
+            holder.authorTextView = view.findViewById(R.id.author);
+            holder.mainImgView = view.findViewById(R.id.main_icon);
+            holder.starImgView = view.findViewById(R.id.favorite_icon);
+            holder.readImgView = view.findViewById(R.id.read_icon);
             view.setTag(R.id.holder, holder);
         }
 
@@ -113,11 +114,13 @@ public class EntriesCursorAdapter extends ResourceCursorAdapter {
             holder.authorTextView.setVisibility(View.VISIBLE);
         }
 
+        final long entryID = cursor.getLong(mIdPos);
         final long feedId = cursor.getLong(mFeedIdPos);
         String feedName = cursor.getString(mFeedNamePos);
 
+        holder.entryID = entryID;
         String mainImgUrl = cursor.getString(mMainImgPos);
-        mainImgUrl = TextUtils.isEmpty(mainImgUrl) ? null : NetworkUtils.getDownloadedOrDistantImageUrl(cursor.getLong(mIdPos), mainImgUrl);
+        mainImgUrl = TextUtils.isEmpty(mainImgUrl) ? null : NetworkUtils.getDownloadedOrDistantImageUrl(entryID, mainImgUrl);
 
         ColorGenerator generator = ColorGenerator.DEFAULT;
         int color = generator.getColor(Long.valueOf(feedId)); // The color is specific to the feedId (which shouldn't change)
@@ -130,9 +133,19 @@ public class EntriesCursorAdapter extends ResourceCursorAdapter {
         }
 
         holder.isFavorite = cursor.getInt(mFavoritePos) == 1;
-
-        holder.starImgView.setVisibility(holder.isFavorite ? View.VISIBLE : View.INVISIBLE);
-        holder.starImgView.setImageResource(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.drawable.favorite_light : R.drawable.favorite_dark);
+        UpdateStarImgView(holder);
+        holder.starImgView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleFavoriteState(entryID, view);
+            }
+        });
+        holder.readImgView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleReadState(entryID, view);
+            }
+        });
 
         if (mShowFeedInfo && mFeedNamePos > -1) {
             if (feedName != null) {
@@ -155,6 +168,12 @@ public class EntriesCursorAdapter extends ResourceCursorAdapter {
             holder.authorTextView.setEnabled(false);
             holder.isRead = true;
         }
+    }
+
+    private void UpdateStarImgView(ViewHolder holder) {
+        int starred = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, false) ? R.drawable.favorite_light : R.drawable.favorite_dark;
+        int notStarred = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, false) ? R.drawable.unstar_light : R.drawable.unstar_dark;
+        holder.starImgView.setImageResource(holder.isFavorite ? starred : notStarred);
     }
 
     public void toggleReadState(final long id, View view) {
@@ -187,12 +206,6 @@ public class EntriesCursorAdapter extends ResourceCursorAdapter {
 
         if (holder != null) { // should not happen, but I had a crash with this on PlayStore...
             holder.isFavorite = !holder.isFavorite;
-
-            if (holder.isFavorite) {
-                holder.starImgView.setVisibility(View.VISIBLE);
-            } else {
-                holder.starImgView.setVisibility(View.INVISIBLE);
-            }
 
             new Thread() {
                 @Override
@@ -249,11 +262,9 @@ public class EntriesCursorAdapter extends ResourceCursorAdapter {
     }
 
     private static class ViewHolder {
-        public TextView titleTextView;
-        public TextView dateTextView;
-        public TextView authorTextView;
-        public ImageView mainImgView;
-        public ImageView starImgView;
+        public TextView authorTextView, dateTextView, titleTextView;
+        public ImageView mainImgView, starImgView, readImgView;
         public boolean isRead, isFavorite;
+        public long entryID = -1;
     }
 }
