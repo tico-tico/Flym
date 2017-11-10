@@ -64,7 +64,7 @@
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:padding="10dp" />
+        android:padding="12dp" />
 
     <ImageView
         android:id="@+id/read_icon"
