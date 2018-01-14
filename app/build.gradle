@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.droidtitan.lintcleaner'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "ahmaabdo.readify.rss"
         minSdkVersion 14
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 6
         versionName "1.4.1"
         vectorDrawables.useSupportLibrary = true
@@ -29,7 +29,7 @@ android {
         disable 'MissingTranslation'
     }
 }
-version = "26.1.0"
+version = "27.0.2"
 
 repositories {
     maven { url 'http://dl.bintray.com/amulyakhare/maven' }
@@ -46,7 +46,7 @@ dependencies {
     compile 'org.jsoup:jsoup:1.10.3'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
-    compile 'com.github.daniel-stoneuk:material-about-library:2.2.3-support26.1.0'
+    compile "com.github.daniel-stoneuk:material-about-library:2.2.3-support$version"
     compile 'com.github.clans:fab:1.6.4'
     compile 'com.daimajia.easing:library:2.0@aar'
     compile 'com.daimajia.androidanimations:library:2.3@aar'
