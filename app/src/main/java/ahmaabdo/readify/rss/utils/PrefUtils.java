@@ -32,36 +32,25 @@ public class PrefUtils {
 
     public static final String FIRST_OPEN = "FIRST_OPEN";
     public static final String DISPLAY_TIP = "DISPLAY_TIP";
-
     public static final String IS_REFRESHING = "IS_REFRESHING";
-
     public static final String REFRESH_INTERVAL = "refresh.interval";
     public static final String REFRESH_ENABLED = "refresh.enabled";
     public static final String REFRESH_ON_OPEN_ENABLED = "refreshonopen.enabled";
     public static final String REFRESH_WIFI_ONLY = "refreshwifionly.enabled";
-
-
     public static final String LIGHT_THEME = "lighttheme";
     public static final String DISPLAY_IMAGES = "display_images";
     public static final String PRELOAD_IMAGE_MODE = "preload_image_mode";
     public static final String DISPLAY_OLDEST_FIRST = "display_oldest_first";
     public static final String DISPLAY_ENTRIES_FULLSCREEN = "display_entries_fullscreen";
-
     public static final String PROXY_ENABLED = "proxy.enabled";
     public static final String PROXY_PORT = "proxy.port";
     public static final String PROXY_HOST = "proxy.host";
     public static final String PROXY_WIFI_ONLY = "proxy.wifionly";
     public static final String PROXY_TYPE = "proxy.type";
-
     public static final String KEEP_TIME = "keeptime";
-
-    public static final String DIRECTION = "direction_rtl";
-
     public static final String FONT_SIZE = "fontsize";
     public static final String FONT_SERIF = "font_serif";
-
     public static final String LAST_SCHEDULED_REFRESH = "lastscheduledrefresh";
-
     public static final String SHOW_READ = "show_read";
 
     public static boolean getBoolean(String key, boolean defValue) {

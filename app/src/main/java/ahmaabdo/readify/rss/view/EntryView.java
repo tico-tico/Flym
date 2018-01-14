@@ -77,22 +77,21 @@ public class EntryView extends WebView {
     private static final String FONT_SANS_SERIF = "font-family: sans-serif;";
     private static final String FONT_SERIF = "font-family: serif;";
     private static final String HTML_IMG_REGEX = "(?i)<[/]?[ ]?img(.|\n)*?>";
-    private static final String BACKGROUND_COLOR = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? "#f6f6f6" : "#000000";
+    private static final String BACKGROUND_COLOR = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? "#f6f6f6" : "#131B1D";
     private static final String QUOTE_BACKGROUND_COLOR = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? "#e6e6e6" : "#383b3f";
     private static final String QUOTE_LEFT_COLOR = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? "#a6a6a6" : "#686b6f";
     private static final String TEXT_COLOR = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? "#000000" : "#C0C0C0";
-    private static final String DIRECTION = PrefUtils.getBoolean(PrefUtils.DIRECTION, true) ? "rtl" : "ltr";
     private static final String BUTTON_COLOR = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? "#52A7DF" : "#1A5A81";
     private static final String SUBTITLE_COLOR = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? "#666666" : "#8c8c8c";
     private static final String SUBTITLE_BORDER_COLOR = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? "solid #ddd" : "solid #303030";
     private static final String CSS = "<head><style type='text/css'> "
-            + "body {direction: "+ DIRECTION +"; max-width: 100%; margin: 0.3cm; " + FONT_SANS_SERIF + " color: " + TEXT_COLOR + "; background-color:" + BACKGROUND_COLOR + "; line-height: 150%} "
+            + "body {max-width: 100%; margin: 0.3cm; " + FONT_SANS_SERIF + " color: " + TEXT_COLOR + "; background-color:" + BACKGROUND_COLOR + "; line-height: 150%} "
             + "* {max-width: 100%; word-break: break-word}"
             + "h1, h2 {font-weight: normal; line-height: 130%} "
             + "h1 {font-size: 140%; margin-bottom: 0.1em} "
             + "h2 {font-size: 120%} "
-            + "a {color: #0099CC}"
-            + "h1 a {color: inherit; text-decoration: none}"
+            + "a {color: #2196F3; text-decoration: none} "
+            + "h1 a {color: inherit; text-decoration: none} "
             + "img {height: auto} "
             + "pre {white-space: pre-wrap;} "
             + "blockquote {border-left: thick solid " + QUOTE_LEFT_COLOR + "; background-color:" + QUOTE_BACKGROUND_COLOR + "; margin: 0.5em 0 0.5em 0em; padding: 0.5em} "
@@ -105,7 +104,7 @@ public class EntryView extends WebView {
             + ".button-section p.marginfix {margin: 0.5cm 0 0.5cm 0}"
             + ".button-section input, .button-section a {font-family: sans-serif-light; font-size: 100%; color: #FFFFFF; background-color: " + BUTTON_COLOR + "; text-decoration: none; border: none; border-radius:0.2cm; padding: 0.3cm} "
             + "</style><meta name='viewport' content='width=device-width'/></head>";
-    private static final String BODY_START = "<body>";
+    private static final String BODY_START = "<body dir=\"auto\">";
     private static final String BODY_END = "</body>";
     private static final String TITLE_START = "<h1><a href='";
     private static final String TITLE_MIDDLE = "'>";

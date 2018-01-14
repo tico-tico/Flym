@@ -132,9 +132,11 @@ public class FetcherService extends IntentService {
         Cursor cursor = MainApplication.getContext().getContentResolver().query(TaskColumns.CONTENT_URI, TaskColumns.PROJECTION_ID,
                 TaskColumns.ENTRY_ID + '=' + entryId + Constants.DB_AND + TaskColumns.IMG_URL_TO_DL + Constants.DB_IS_NULL, null, null);
 
-        boolean result = cursor.getCount() > 0;
-        cursor.close();
-
+        boolean result = false;
+        if (cursor != null) {
+            result = cursor.getCount() > 0;
+            cursor.close();
+        }
         return result;
     }
 

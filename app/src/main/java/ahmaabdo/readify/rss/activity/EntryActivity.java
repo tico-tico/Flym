@@ -66,11 +66,10 @@ public class EntryActivity extends BaseActivity {
                 onBackPressed();
             }
         });
-        toolbar.setBackgroundColor(Color.BLACK);
+        toolbar.setBackgroundColor(getResources().getColor(R.color.dark_background));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(Color.BLACK);
+            getWindow().setStatusBarColor(getResources().getColor(R.color.dark_background));
         }
-
         if (PrefUtils.getBoolean(PrefUtils.DISPLAY_ENTRIES_FULLSCREEN, false)) {
             setImmersiveFullScreen(true);
         }

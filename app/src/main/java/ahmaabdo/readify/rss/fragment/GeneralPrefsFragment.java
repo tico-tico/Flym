@@ -97,20 +97,6 @@ public class GeneralPrefsFragment extends PreferenceFragment {
                 return true;
             }
         });
-        preference = findPreference(PrefUtils.DIRECTION);
-        preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object newValue) {
-                PrefUtils.putBoolean(PrefUtils.DIRECTION, Boolean.TRUE.equals(newValue));
-
-                PreferenceManager.getDefaultSharedPreferences(MainApplication.getContext()).edit().commit(); // to be sure all prefs are written
-
-                android.os.Process.killProcess(android.os.Process.myPid()); // Restart the app
-
-                // this return statement will never be reached
-                return true;
-            }
-        });
 
     }
 

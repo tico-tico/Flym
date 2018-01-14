@@ -4,7 +4,7 @@
     <color name="green">@android:color/holo_green_dark</color>
 
 
-    <color name="Indigo_800">#1565C0</color>
+    <color name="Indigo_800">#1976D3</color>
     <color name="Indigo_700">#1976D2</color>
     <color name="Indigo_500">#2196F3</color>
     <color name="Indigo_300">#64B5F6</color>

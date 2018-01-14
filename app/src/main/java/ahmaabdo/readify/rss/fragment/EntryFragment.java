@@ -111,6 +111,9 @@ public class EntryFragment extends SwipeRefreshFragment implements
 
         final Activity activity = getActivity();
         floatingActionButton = rootView.findViewById(R.id.fab_show_full_content);
+        if (mPreferFullText) {
+            floatingActionButton.setVisibility(View.GONE);
+        }
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -446,7 +449,9 @@ public class EntryFragment extends SwipeRefreshFragment implements
 
                         // Update the cursor
                         Cursor updatedCursor = cr.query(uri, null, null, null, null);
-                        updatedCursor.moveToFirst();
+                        if (updatedCursor != null) {
+                            updatedCursor.moveToFirst();
+                        }
                         mEntryPagerAdapter.setUpdatedCursor(mCurrentPagerPos, updatedCursor);
                     }
                 }).start();
