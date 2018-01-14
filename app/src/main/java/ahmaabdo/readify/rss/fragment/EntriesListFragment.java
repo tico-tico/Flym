@@ -53,6 +53,7 @@ import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -295,6 +296,7 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
     public void onListItemClick(ListView listView, View view, int position, long id) {
         if (id >= 0) { // should not happen, but I had a crash with this on PlayStore...
             startActivity(new Intent(Intent.ACTION_VIEW, ContentUris.withAppendedId(mUri, id)));
+
         }
     }
 

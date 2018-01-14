@@ -26,6 +26,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import ahmaabdo.readify.rss.Constants;
 import ahmaabdo.readify.rss.R;
@@ -43,6 +44,7 @@ public class EntryActivity extends BaseActivity {
         UiUtils.setPreferenceTheme(this);
         super.onCreate(savedInstanceState);
 
+        overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         setContentView(R.layout.activity_entry);
 
         mEntryFragment = (EntryFragment) getFragmentManager().findFragmentById(R.id.entry_fragment);
@@ -50,11 +52,20 @@ public class EntryActivity extends BaseActivity {
             mEntryFragment.setData(getIntent().getData());
         }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.entry_toolbar);
+        Toolbar toolbar = findViewById(R.id.entry_toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //SupportActionBar may produce a null pointer
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         getSupportActionBar().setTitle("");
-        toolbar.setNavigationIcon(R.drawable.ic_clear);
+        //Called onBackPressed at OnClickListener to apply overridePendingTransition
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         toolbar.setBackgroundColor(Color.BLACK);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(Color.BLACK);
@@ -80,11 +91,15 @@ public class EntryActivity extends BaseActivity {
         return false;
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
+    }
 
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-
         mEntryFragment.setData(intent.getData());
     }
 }
