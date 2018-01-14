@@ -57,7 +57,7 @@ public class BootCompletedBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         PrefUtils.putLong(PrefUtils.LAST_SCHEDULED_REFRESH, 0);
-        //Fixing Runtime exception at Android Oreo with BOOT_COMPLETED
+        //Fixing IllegalStateException exception at Android Oreo with BOOT_COMPLETED
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             if (PrefUtils.getBoolean(PrefUtils.REFRESH_ENABLED, true)) {
                 context.startForegroundService(new Intent(context, RefreshService.class));
