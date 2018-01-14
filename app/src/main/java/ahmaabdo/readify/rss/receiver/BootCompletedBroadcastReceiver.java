@@ -48,6 +48,7 @@ package ahmaabdo.readify.rss.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 
 import ahmaabdo.readify.rss.service.RefreshService;
 import ahmaabdo.readify.rss.utils.PrefUtils;
@@ -56,8 +57,15 @@ public class BootCompletedBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         PrefUtils.putLong(PrefUtils.LAST_SCHEDULED_REFRESH, 0);
-        if (PrefUtils.getBoolean(PrefUtils.REFRESH_ENABLED, true)) {
-            context.startService(new Intent(context, RefreshService.class));
+        //Fixing Runtime exception at Android Oreo with BOOT_COMPLETED
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (PrefUtils.getBoolean(PrefUtils.REFRESH_ENABLED, true)) {
+                context.startForegroundService(new Intent(context, RefreshService.class));
+            }
+        } else {
+            if (PrefUtils.getBoolean(PrefUtils.REFRESH_ENABLED, true)) {
+                context.startService(new Intent(context, RefreshService.class));
+            }
         }
     }
 

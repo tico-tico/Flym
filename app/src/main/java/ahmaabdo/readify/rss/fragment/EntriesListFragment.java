@@ -95,7 +95,6 @@ public class EntriesListFragment extends SwipeRefreshListFragment implements Vie
             }
         }
     };
-    private YoYo.YoYoString yoyo;
     private Cursor mJustMarkedAsReadEntries;
     private Button mRefreshListBtn;
     private Uri mUri, mOriginalUri;
