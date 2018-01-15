@@ -44,7 +44,7 @@ public class EntryActivity extends BaseActivity {
         UiUtils.setPreferenceTheme(this);
         super.onCreate(savedInstanceState);
 
-        overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+        overridePendingTransition(R.anim.pull_in_right, R.anim.holder);
         setContentView(R.layout.activity_entry);
 
         mEntryFragment = (EntryFragment) getFragmentManager().findFragmentById(R.id.entry_fragment);
@@ -93,7 +93,7 @@ public class EntryActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
+        overridePendingTransition(R.anim.holder, R.anim.pull_in_left);
     }
 
     @Override
