@@ -15,7 +15,7 @@
             android:id="@+id/view_pager_indicator"
             android:layout_width="match_parent"
             android:layout_height="12dp"
-            android:background="#000000"
+            android:background="@color/dark_background"
             android:gravity="center_vertical"
             android:visibility="gone"
             app:selectedDotColor="#FFFFFF"

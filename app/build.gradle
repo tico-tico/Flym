@@ -9,8 +9,8 @@ android {
         applicationId "ahmaabdo.readify.rss"
         minSdkVersion 14
         targetSdkVersion 27
-        versionCode 6
-        versionName "1.4.1"
+        versionCode 7
+        versionName "1.4.6"
         vectorDrawables.useSupportLibrary = true
     }
 
