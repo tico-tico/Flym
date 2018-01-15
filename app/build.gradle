@@ -50,5 +50,5 @@ dependencies {
     compile 'com.github.clans:fab:1.6.4'
     compile 'com.daimajia.easing:library:2.0@aar'
     compile 'com.daimajia.androidanimations:library:2.3@aar'
-    compile "com.daimajia.swipelayout:library:1.2.0@aar"
+    compile 'com.r0adkll:slidableactivity:2.0.6'
 }

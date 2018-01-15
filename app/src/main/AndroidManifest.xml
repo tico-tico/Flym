@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ahmaabdo.readify.rss" android:installLocation="auto">
+    package="ahmaabdo.readify.rss"
+    android:installLocation="auto">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -44,8 +45,8 @@
         <activity
             android:name=".activity.AboutApp"
             android:label="@string/about_spaRSS"
-            android:theme="@style/AppTheme.MaterialAboutActivity"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.MaterialAboutActivity">
             <intent-filter>
                 <action android:name="about_activity_intent" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -59,7 +60,8 @@
         <activity
             android:name=".activity.EntryActivity"
             android:configChanges="orientation|screenSize"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.Slidr.Light">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -73,7 +75,7 @@
             android:launchMode="singleTask" />
         <activity android:name=".widget.WidgetConfigActivity">
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
 
@@ -150,29 +152,29 @@
 
         <receiver android:name=".widget.WidgetProvider">
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/widgetinfo"/>
+                android:resource="@xml/widgetinfo" />
         </receiver>
 
         <receiver android:name=".widget.TickerWidgetProvider">
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/tickerwidgetinfo"/>
+                android:resource="@xml/tickerwidgetinfo" />
         </receiver>
 
         <service
             android:name=".widget.WidgetService"
-            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
 
-        <service android:name=".widget.TickerWidgetService"/>
+        <service android:name=".widget.TickerWidgetService" />
 
 
         <receiver android:name=".receiver.BootCompletedBroadcastReceiver">

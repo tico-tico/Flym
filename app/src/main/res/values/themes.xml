@@ -38,4 +38,14 @@
         <item name="colorAccent">@color/light_accent_color</item>
     </style>
 
+    <style name="Theme.Slidr.Light" parent="Theme.Light">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="Theme.Slidr.Dark" parent="Theme.Dark">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
 </resources>

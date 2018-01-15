@@ -28,11 +28,22 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrConfig;
+import com.r0adkll.slidr.model.SlidrListener;
+import com.r0adkll.slidr.model.SlidrPosition;
+
 import ahmaabdo.readify.rss.Constants;
 import ahmaabdo.readify.rss.R;
 import ahmaabdo.readify.rss.fragment.EntryFragment;
 import ahmaabdo.readify.rss.utils.PrefUtils;
 import ahmaabdo.readify.rss.utils.UiUtils;
+
+import static android.view.Gravity.BOTTOM;
+import static android.view.Gravity.RIGHT;
+import static android.view.Gravity.TOP;
+import static android.widget.LinearLayout.HORIZONTAL;
+import static android.widget.LinearLayout.VERTICAL;
 
 public class EntryActivity extends BaseActivity {
 
@@ -41,11 +52,26 @@ public class EntryActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        UiUtils.setPreferenceTheme(this);
+        if (!PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true))
+            setTheme(R.style.Theme_Slidr_Dark);
         super.onCreate(savedInstanceState);
 
         overridePendingTransition(R.anim.pull_in_right, R.anim.holder);
+
         setContentView(R.layout.activity_entry);
+        SlidrConfig config = new SlidrConfig.Builder()
+                .position(SlidrPosition.LEFT)
+                .sensitivity(1f)
+                .scrimColor(Color.BLACK)
+                .scrimStartAlpha(0.8f)
+                .scrimEndAlpha(0f)
+                .velocityThreshold(2400)
+                .distanceThreshold(0.25f)
+                .edge(true)
+                .edgeSize(0.8f)
+                .build();
+
+        Slidr.attach(this, config);
 
         mEntryFragment = (EntryFragment) getFragmentManager().findFragmentById(R.id.entry_fragment);
         if (savedInstanceState == null) { // Put the data only the first time (the fragment will save its state)
