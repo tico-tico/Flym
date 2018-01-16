@@ -9,8 +9,8 @@ android {
         applicationId "ahmaabdo.readify.rss"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 7
-        versionName "1.4.6"
+        versionCode 8
+        versionName "1.5.2"
         vectorDrawables.useSupportLibrary = true
     }
 
@@ -51,5 +51,4 @@ dependencies {
     compile 'com.daimajia.androidanimations:library:2.3@aar'
     compile 'com.r0adkll:slidableactivity:2.0.6'
     compile 'com.ryanjeffreybrooks:indefinitepagerindicator:1.0.3'
-    compile "com.daimajia.swipelayout:library:1.2.0@aar"
 }
