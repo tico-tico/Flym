@@ -109,9 +109,6 @@ public class EntryFragment extends SwipeRefreshFragment implements
 
         final Activity activity = getActivity();
         floatingActionButton = rootView.findViewById(R.id.fab_show_full_content);
-        if (mPreferFullText) {
-            floatingActionButton.setVisibility(View.GONE);
-        }
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

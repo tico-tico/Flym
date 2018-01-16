@@ -107,14 +107,14 @@ public class EntryView extends WebView {
             + "</style><meta name='viewport' content='width=device-width'/></head>";
     private static final String BODY_START = "<body dir='auto'>";
     private static final String BODY_END = "</body>";
-    private static final String TITLE_START = "<h1><a href='";
+    private static final String TITLE_START = "<h1 dir='auto'><a href='";
     private static final String TITLE_MIDDLE = "'>";
     private static final String TITLE_END = "</a></h1>";
-    private static final String SUBTITLE_START = "<p class='subtitle'>";
+    private static final String SUBTITLE_START = "<p class='subtitle' dir='auto'>";
     private static final String SUBTITLE_END = "</p>";
     private static final String BUTTON_SECTION_START = "<div class='button-section'>";
     private static final String BUTTON_SECTION_END = "</div>";
-    private static final String BUTTON_START = "<p><input type='button' value='";
+    private static final String BUTTON_START = "<p dir='auto'><input type='button' value='";
     private static final String BUTTON_MIDDLE = "' onclick='";
     private static final String BUTTON_END = "'/></p>";
     // the separate 'marginfix' selector in the following is only needed because the CSS box model treats <input> and <a> elements differently
