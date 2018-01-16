@@ -79,7 +79,6 @@ public class EntryView extends WebView {
     private static final String HTML_IMG_REGEX = "(?i)<[/]?[ ]?img(.|\n)*?>";
     private static final String BACKGROUND_COLOR = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? "#f6f6f6" : "#131B1D";
     private static final String QUOTE_BACKGROUND_COLOR = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? "#e6e6e6" : "#383b3f";
-    private static final String QUOTE_LEFT_COLOR = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? "#a6a6a6" : "#686b6f";
     private static final String TEXT_COLOR = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? "#000000" : "#C0C0C0";
     private static final String H1_COLOR = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? "#000000" : "#FFFFFF";
     private static final String BUTTON_COLOR = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? "#52A7DF" : "#1A5A81";
@@ -95,7 +94,7 @@ public class EntryView extends WebView {
             + "h1 a {color: inherit; text-decoration: none} "
             + "img {height: auto;} "
             + "pre {white-space: pre-wrap;} "
-            + "blockquote {border-left: thick solid " + QUOTE_LEFT_COLOR + "; background-color:" + QUOTE_BACKGROUND_COLOR + "; margin: 0.5em 0 0.5em 0em; padding: 0.5em} "
+            + "blockquote {border-left: thick solid #2196F3; background-color:" + QUOTE_BACKGROUND_COLOR + "; margin: 0.5em 0 0.5em 0em; padding: 0.5em} "
             + "p {margin: 0.8em 0 0.8em 0} "
             + "p.subtitle {color: " + SUBTITLE_COLOR + "; font-size: 70%; border-top:1px border-bottom:1px " + SUBTITLE_BORDER_COLOR + "; padding-top:2px; padding-bottom:2px; } "
             + "ul, ol {margin: 0 0 0.8em 0.6em; padding: 0 0 0 1em} "
@@ -290,6 +289,8 @@ public class EntryView extends WebView {
                 } catch (ActivityNotFoundException e) {
                     Toast.makeText(context, R.string.cant_open_link, Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 return true;
