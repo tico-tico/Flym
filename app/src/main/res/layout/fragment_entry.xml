@@ -5,24 +5,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:id="@+id/tabs_parent"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:background="@color/dark_background">
+
+        <com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:dotColor="#666666"
+            app:dotRadius="3.5dp"
+            app:fadingDotCount="2"
+            app:selectedDotRadius="3.5dp" />
+
+    </RelativeLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <com.itsronald.widget.ViewPagerIndicator
-            android:id="@+id/view_pager_indicator"
-            android:layout_width="match_parent"
-            android:layout_height="12dp"
-            android:background="@color/dark_background"
-            android:gravity="center_vertical"
-            android:visibility="gone"
-            app:selectedDotColor="#FFFFFF"
-            app:unselectedDotColor="#808080" />
-
-    </android.support.v4.view.ViewPager>
-
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabs_parent" />
 
     <ImageView
         android:id="@+id/cancelFullscreenBtn"
@@ -43,14 +48,13 @@
         android:visibility="gone" />
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_show_full_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_margin="@dimen/fap_margin"
-        app:srcCompat="@drawable/content_show"
-        android:id="@+id/fab_show_full_content"
-        app:layout_anchorGravity="bottom|right|end" />
-
+        app:layout_anchorGravity="bottom|right|end"
+        app:srcCompat="@drawable/content_show" />
 
 </RelativeLayout>

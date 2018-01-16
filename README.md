@@ -1,4 +1,4 @@
-[![API](https://img.shields.io/badge/API-14%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=14)
+[![API](https://img.shields.io/badge/API-16%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=16)
 [![Releases](https://img.shields.io/badge/release-stable--1.4.6-brightgreen.svg)](https://github.com/ahmaabdo/ReadifyRSS/releases/latest)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-red.svg)](https://www.paypal.me/ahmaabdo)
 

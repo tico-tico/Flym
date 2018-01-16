@@ -56,7 +56,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.itsronald.widget.ViewPagerIndicator;
+import com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator;
 
 import ahmaabdo.readify.rss.Constants;
 import ahmaabdo.readify.rss.MainApplication;
@@ -88,10 +88,9 @@ public class EntryFragment extends SwipeRefreshFragment implements
     private long[] mEntriesIds;
 
     private boolean mFavorite, mPreferFullText = true;
-
     private ViewPager mEntryPager;
+    private IndefinitePagerIndicator mIndicator;
     private EntryPagerAdapter mEntryPagerAdapter;
-    private ViewPagerIndicator mViewPagerIndicator;
     private FloatingActionButton floatingActionButton;
 
     private View mCancelFullscreenBtn;
@@ -99,11 +98,10 @@ public class EntryFragment extends SwipeRefreshFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setHasOptionsMenu(true);
-
         mEntryPagerAdapter = new EntryPagerAdapter();
-
         super.onCreate(savedInstanceState);
     }
+
 
     @Override
     public View inflateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -178,10 +176,12 @@ public class EntryFragment extends SwipeRefreshFragment implements
             }
         });
 
-        mEntryPager = (ViewPager) rootView.findViewById(R.id.pager);
-        mViewPagerIndicator = (ViewPagerIndicator) rootView.findViewById(R.id.view_pager_indicator);
+        mEntryPager = rootView.findViewById(R.id.pager);
         //mEntryPager.setPageTransformer(true, new DepthPageTransformer());
         mEntryPager.setAdapter(mEntryPagerAdapter);
+        //Init ViewPager dots
+        mIndicator = rootView.findViewById(R.id.indicator);
+        mIndicator.attachToViewPager(mEntryPager);
 
         if (savedInstanceState != null) {
             mBaseUri = savedInstanceState.getParcelable(STATE_BASE_URI);
@@ -408,9 +408,6 @@ public class EntryFragment extends SwipeRefreshFragment implements
         }
 
         mEntryPagerAdapter.notifyDataSetChanged();
-        if (mEntryPager.getAdapter().getCount() < 15) {
-            mViewPagerIndicator.setVisibility(View.VISIBLE);
-        }
         //mEntryPager.invalidateBullets();
         if (mCurrentPagerPos != -1) {
             mEntryPager.setCurrentItem(mCurrentPagerPos);
