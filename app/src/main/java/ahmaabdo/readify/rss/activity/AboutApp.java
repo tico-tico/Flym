@@ -16,6 +16,7 @@ import com.danielstone.materialaboutlibrary.model.MaterialAboutCard;
 import com.danielstone.materialaboutlibrary.model.MaterialAboutList;
 
 import ahmaabdo.readify.rss.R;
+import ahmaabdo.readify.rss.utils.PrefUtils;
 
 /**
  * Created by Ahmad on Oct 28, 2017.
@@ -25,11 +26,14 @@ public class AboutApp extends MaterialAboutActivity {
 
     @Override
     protected MaterialAboutList getMaterialAboutList(final Context context) {
+        if (!PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true))
+            setTheme(R.style.AppTheme_DarkMaterialAboutActivity);
+
         MaterialAboutCard.Builder appCardBuilder = new MaterialAboutCard.Builder();
 
         appCardBuilder.addItem(new MaterialAboutTitleItem.Builder()
                 .text("Readify RSS")
-                .desc("© 2017 Ahmad Abdo")
+                .desc("© 2018 Ahmad Abdo")
                 .icon(R.mipmap.ic_launcher)
                 .build());
 
@@ -42,7 +46,7 @@ public class AboutApp extends MaterialAboutActivity {
         } catch (PackageManager.NameNotFoundException e) {
             appCardBuilder.addItem(new MaterialAboutActionItem.Builder()
                     .text("Version")
-                    .subText("1.2.1")
+                    .subText("1.5")
                     .icon(R.drawable.ic_about_info)
                     .build());
         }
@@ -76,7 +80,6 @@ public class AboutApp extends MaterialAboutActivity {
 
         authorCardBuilder.addItem(new MaterialAboutActionItem.Builder()
                 .text("Ahmad Abdo")
-                .subText("Egypt")
                 .icon(R.drawable.ic_account_box)
                 .build());
 
@@ -116,7 +119,7 @@ public class AboutApp extends MaterialAboutActivity {
                 .text("Send an email")
                 .subText("a7maabdo@gmail.com")
                 .icon(R.drawable.ic_email)
-                .setOnClickAction(ConvenienceBuilder.createEmailOnClickAction(context, "a7maabdo@gmail.com", "ReadifyRSS is a great app :D"))
+                .setOnClickAction(ConvenienceBuilder.createEmailOnClickAction(context, "a7maabdo@gmail.com", "ReadifyRSS feedback"))
                 .build());
 
         convenienceCardBuilder.addItem(new MaterialAboutActionItem.Builder()
