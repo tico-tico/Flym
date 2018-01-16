@@ -51,4 +51,5 @@ dependencies {
     compile 'com.daimajia.androidanimations:library:2.3@aar'
     compile 'com.r0adkll:slidableactivity:2.0.6'
     compile 'com.ryanjeffreybrooks:indefinitepagerindicator:1.0.3'
+    compile "com.daimajia.swipelayout:library:1.2.0@aar"
 }

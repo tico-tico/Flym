@@ -95,158 +95,6 @@ public class EditFeedsListFragment extends ListFragment {
     private static final int PERMISSIONS_REQUEST_IMPORT_FROM_OPML = 1;
     private static final int PERMISSIONS_REQUEST_EXPORT_TO_OPML = 2;
 
-    private final ActionMode.Callback mFeedActionModeCallback = new ActionMode.Callback() {
-
-        // Called when the action mode is created; startActionMode() was called
-        @Override
-        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-            // Inflate a menu resource providing context menu items
-            MenuInflater inflater = mode.getMenuInflater();
-            inflater.inflate(R.menu.feed_context_menu, menu);
-            return true;
-        }
-
-        // Called each time the action mode is shown. Always called after onCreateActionMode, but
-        // may be called multiple times if the mode is invalidated.
-        @Override
-        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-            return false; // Return false if nothing is done
-        }
-
-        // Called when the user selects a contextual menu item
-        @Override
-        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            @SuppressWarnings("unchecked")
-            Pair<Long, String> tag = (Pair<Long, String>) mode.getTag();
-            final long feedId = tag.first;
-            final String title = tag.second;
-
-            switch (item.getItemId()) {
-                case R.id.menu_edit:
-                    startActivity(new Intent(Intent.ACTION_EDIT).setData(FeedColumns.CONTENT_URI(feedId)));
-
-                    mode.finish(); // Action picked, so close the CAB
-                    return true;
-                case R.id.menu_delete:
-                    new AlertDialog.Builder(getActivity()) //
-                            .setIcon(android.R.drawable.ic_dialog_alert) //
-                            .setTitle(title) //
-                            .setMessage(R.string.question_delete_feed) //
-                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    new Thread() {
-                                        @Override
-                                        public void run() {
-                                            ContentResolver cr = getActivity().getContentResolver();
-                                            cr.delete(FeedColumns.CONTENT_URI(feedId), null, null);
-                                        }
-                                    }.start();
-                                }
-                            }).setNegativeButton(android.R.string.no, null).show();
-
-                    mode.finish(); // Action picked, so close the CAB
-                    return true;
-                default:
-                    return false;
-            }
-        }
-
-        // Called when the user exits the action mode
-        @Override
-        public void onDestroyActionMode(ActionMode mode) {
-            for (int i = 0; i < mListView.getCount(); i++) {
-                mListView.setItemChecked(i, false);
-            }
-        }
-    };
-    private final ActionMode.Callback mGroupActionModeCallback = new ActionMode.Callback() {
-
-        // Called when the action mode is created; startActionMode() was called
-        @Override
-        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-            // Inflate a menu resource providing context menu items
-            MenuInflater inflater = mode.getMenuInflater();
-            inflater.inflate(R.menu.edit_context_menu, menu);
-            return true;
-        }
-
-        // Called each time the action mode is shown. Always called after onCreateActionMode, but
-        // may be called multiple times if the mode is invalidated.
-        @Override
-        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-            return false; // Return false if nothing is done
-        }
-
-        // Called when the user selects a contextual menu item
-        @Override
-        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            @SuppressWarnings("unchecked")
-            Pair<Long, String> tag = (Pair<Long, String>) mode.getTag();
-            final long groupId = tag.first;
-            final String title = tag.second;
-
-            switch (item.getItemId()) {
-                case R.id.menu_edit:
-                    final EditText input = new EditText(getActivity());
-                    input.setSingleLine(true);
-                    input.setText(title);
-                    new AlertDialog.Builder(getActivity()) //
-                            .setTitle(R.string.edit_group_title) //
-                            .setView(input) //
-                            .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    new Thread() {
-                                        @Override
-                                        public void run() {
-                                            String groupName = input.getText().toString();
-                                            if (!groupName.isEmpty()) {
-                                                ContentResolver cr = getActivity().getContentResolver();
-                                                ContentValues values = new ContentValues();
-                                                values.put(FeedColumns.NAME, groupName);
-                                                cr.update(FeedColumns.CONTENT_URI(groupId), values, null, null);
-                                            }
-                                        }
-                                    }.start();
-                                }
-                            }).setNegativeButton(android.R.string.cancel, null).show();
-
-                    mode.finish(); // Action picked, so close the CAB
-                    return true;
-                case R.id.menu_delete:
-                    new AlertDialog.Builder(getActivity()) //
-                            .setIcon(android.R.drawable.ic_dialog_alert) //
-                            .setTitle(title) //
-                            .setMessage(R.string.question_delete_group) //
-                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    new Thread() {
-                                        @Override
-                                        public void run() {
-                                            ContentResolver cr = getActivity().getContentResolver();
-                                            cr.delete(FeedColumns.GROUPS_CONTENT_URI(groupId), null, null);
-                                        }
-                                    }.start();
-                                }
-                            }).setNegativeButton(android.R.string.no, null).show();
-
-                    mode.finish(); // Action picked, so close the CAB
-                    return true;
-                default:
-                    return false;
-            }
-        }
-
-        // Called when the user exits the action mode
-        @Override
-        public void onDestroyActionMode(ActionMode mode) {
-            for (int i = 0; i < mListView.getCount(); i++) {
-                mListView.setItemChecked(i, false);
-            }
-        }
-    };
     private DragNDropExpandableListView mListView;
 
     @Override
@@ -259,7 +107,7 @@ public class EditFeedsListFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_edit_feed_list, container, false);
 
-        mListView = (DragNDropExpandableListView) rootView.findViewById(android.R.id.list);
+        mListView = rootView.findViewById(android.R.id.list);
         mListView.setFastScrollEnabled(true);
         mListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         mListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
@@ -282,25 +130,23 @@ public class EditFeedsListFragment extends ListFragment {
         mListView.setOnItemLongClickListener(new OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                AppCompatActivity activity = (AppCompatActivity) getActivity();
-                if (activity != null) {
-                    String title = ((TextView) view.findViewById(android.R.id.text1)).getText().toString();
-                    Matcher m = Pattern.compile("(.*) \\([0-9]+\\)$").matcher(title);
-                    if (m.matches()) {
-                        title = m.group(1);
-                    }
+                final long feedId = mListView.getItemIdAtPosition(position);
+                new AlertDialog.Builder(getActivity())
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setMessage(R.string.question_delete_feed)
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                new Thread() {
+                                    @Override
+                                    public void run() {
+                                        ContentResolver cr = getActivity().getContentResolver();
+                                        cr.delete(FeedColumns.CONTENT_URI(feedId), null, null);
+                                    }
+                                }.start();
+                            }
+                        }).setNegativeButton(android.R.string.no, null).show();
 
-                    long feedId = mListView.getItemIdAtPosition(position);
-                    ActionMode actionMode;
-                    if (view.findViewById(R.id.indicator).getVisibility() == View.VISIBLE) { // This is a group
-                        actionMode = activity.startSupportActionMode(mGroupActionModeCallback);
-                    } else { // This is a feed
-                        actionMode = activity.startSupportActionMode(mFeedActionModeCallback);
-                    }
-                    actionMode.setTag(new Pair<>(feedId, title));
-
-                    mListView.setItemChecked(position, true);
-                }
                 return true;
             }
         });

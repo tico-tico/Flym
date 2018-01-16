@@ -12,6 +12,7 @@
         android:scaleType="centerCrop" />
 
     <LinearLayout
+        android:id="@+id/txt_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -42,9 +43,9 @@
             android:alpha="0.7"
             android:drawablePadding="3dp"
             android:maxLines="1"
-            android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="?attr/colorReadState"
-            android:textIsSelectable="false" />
+            android:textIsSelectable="false"
+            android:textSize="13sp" />
 
         <TextView
             android:id="@+id/author"
@@ -53,9 +54,8 @@
             android:alpha="0.7"
             android:drawablePadding="3dp"
             android:maxLines="1"
-            android:text="placeholder feed item author"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textIsSelectable="false" />
+            android:textIsSelectable="false"
+            android:textSize="13sp" />
 
     </LinearLayout>
 
@@ -70,11 +70,9 @@
 
     <ImageView
         android:id="@+id/read_icon"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_alignParentBottom="true"
-        android:padding="13dp"
-        android:src="@drawable/ic_check"
-        android:visibility="gone" />
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_toLeftOf="@+id/txt_layout"
+        android:layout_toStartOf="@+id/txt_layout" />
 
 </RelativeLayout>
