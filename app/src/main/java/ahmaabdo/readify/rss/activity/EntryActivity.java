@@ -30,20 +30,12 @@ import android.view.View;
 
 import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrConfig;
-import com.r0adkll.slidr.model.SlidrListener;
 import com.r0adkll.slidr.model.SlidrPosition;
 
 import ahmaabdo.readify.rss.Constants;
 import ahmaabdo.readify.rss.R;
 import ahmaabdo.readify.rss.fragment.EntryFragment;
 import ahmaabdo.readify.rss.utils.PrefUtils;
-import ahmaabdo.readify.rss.utils.UiUtils;
-
-import static android.view.Gravity.BOTTOM;
-import static android.view.Gravity.RIGHT;
-import static android.view.Gravity.TOP;
-import static android.widget.LinearLayout.HORIZONTAL;
-import static android.widget.LinearLayout.VERTICAL;
 
 public class EntryActivity extends BaseActivity {
 

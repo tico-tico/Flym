@@ -172,8 +172,7 @@ public class EntriesCursorAdapter extends ResourceCursorAdapter {
 
     private void UpdateStarImgView(ViewHolder holder) {
         int starred = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, false) ? R.drawable.favorite_light : R.drawable.favorite_dark;
-        int notStarred = PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, false) ? R.drawable.unstar_light : R.drawable.unstar_dark;
-        holder.starImgView.setImageResource(holder.isFavorite ? starred : notStarred);
+        holder.starImgView.setImageResource(holder.isFavorite ? starred : R.drawable.unstar_light);
     }
 
     public void toggleReadState(final long id, View view) {
@@ -203,7 +202,6 @@ public class EntriesCursorAdapter extends ResourceCursorAdapter {
 
     public void toggleFavoriteState(final long id, View view) {
         final ViewHolder holder = (ViewHolder) view.getTag(R.id.holder);
-
         if (holder != null) { // should not happen, but I had a crash with this on PlayStore...
             holder.isFavorite = !holder.isFavorite;
 
