@@ -20,9 +20,12 @@
 
 package ahmaabdo.readify.rss.adapter;
 
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -55,6 +58,9 @@ public class DrawerAdapter extends BaseAdapter {
     private static final int POS_LAST_UPDATE = 5;
     private static final int POS_ERROR = 6;
     private static final int POS_UNREAD = 7;
+    private static final int POS_IS_GROUP_EXPANDED = 8;
+
+    private static final int GROUP_TEXT_COLOR = Color.parseColor("#BBBBBB");
 
     private static final String COLON = MainApplication.getContext().getString(R.string.colon);
 
@@ -90,19 +96,18 @@ public class DrawerAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.item_drawer_list, parent, false);
 
             ViewHolder holder = new ViewHolder();
-            holder.iconView = (ImageView) convertView.findViewById(android.R.id.icon);
-            holder.titleTxt = (TextView) convertView.findViewById(android.R.id.text1);
-            holder.stateTxt = (TextView) convertView.findViewById(android.R.id.text2);
-            holder.unreadTxt = (TextView) convertView.findViewById(R.id.unread_count);
+            holder.iconView = convertView.findViewById(android.R.id.icon);
+            holder.titleTxt = convertView.findViewById(android.R.id.text1);
+            holder.stateTxt = convertView.findViewById(android.R.id.text2);
+            holder.unreadTxt = convertView.findViewById(R.id.unread_count);
             holder.separator = convertView.findViewById(R.id.separator);
-            holder.separator.setBackgroundColor(ContextCompat.getColor(mContext, PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_dividers : R.color.dark_dividers));
+            holder.separatorGroup = convertView.findViewById(R.id.separator_group);
             convertView.setTag(R.id.holder, holder);
         }
         ViewHolder holder = (ViewHolder) convertView.getTag(R.id.holder);
@@ -122,6 +127,7 @@ public class DrawerAdapter extends BaseAdapter {
             holder.unreadTxt.setText("");
             convertView.setPadding(0, 0, 0, 0);
             holder.separator.setVisibility(View.GONE);
+            holder.separatorGroup.setVisibility(View.GONE);
 
             if (position == 0 || position == 1) {
                 holder.titleTxt.setText(position == 0 ? R.string.all : R.string.favorites);
@@ -144,13 +150,20 @@ public class DrawerAdapter extends BaseAdapter {
 
                 if (mFeedsCursor.getInt(POS_IS_GROUP) == 1) {
                     holder.titleTxt.setAllCaps(true);
-                    holder.separator.setVisibility(View.VISIBLE);
-                    holder.iconView.setImageResource(R.drawable.ic_folder);
-                    if (position == mSelectedItem) {
-                        holder.iconView.setColorFilter(ContextCompat.getColor(mContext, PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_primary_color : R.color.dark_accent_color));
-                    } else {
-                        holder.iconView.setColorFilter(ContextCompat.getColor(mContext, PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_base_text : R.color.dark_base_text));
-                    }
+                    holder.separatorGroup.setVisibility(View.VISIBLE);
+                    holder.iconView.setImageResource(isGroupExpanded(position) ? R.drawable.group_expanded : R.drawable.group_collapsed);
+                    holder.iconView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            ContentResolver cr = MainApplication.getContext().getContentResolver();
+                            ContentValues values = new ContentValues();
+                            values.put(FeedData.FeedColumns.IS_GROUP_EXPANDED, isGroupExpanded(position) ? null : 1);
+                            cr.update(FeedData.FeedColumns.CONTENT_URI(getItemId(position)), values, null, null);
+                        }
+                    });
+                    holder.titleTxt.setTextColor(GROUP_TEXT_COLOR);
+                    holder.titleTxt.setAllCaps(false);
+                    holder.separatorGroup.setVisibility(View.VISIBLE);
                 } else {
                     holder.stateTxt.setVisibility(View.VISIBLE);
 
@@ -247,6 +260,10 @@ public class DrawerAdapter extends BaseAdapter {
 
     }
 
+    private boolean isGroupExpanded(int position) {
+        return mFeedsCursor != null && mFeedsCursor.moveToPosition(position - 2) && mFeedsCursor.getInt(POS_IS_GROUP_EXPANDED) == 1;
+    }
+
     private void updateNumbers() {
         mAllUnreadNumber = mFavoritesNumber = 0;
 
@@ -266,6 +283,6 @@ public class DrawerAdapter extends BaseAdapter {
         public TextView titleTxt;
         public TextView stateTxt;
         public TextView unreadTxt;
-        public View separator;
+        public View separator, separatorGroup;
     }
 }

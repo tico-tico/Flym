@@ -7,10 +7,10 @@
     <!-- icon -->
     <ImageView
         android:id="@android:id/icon"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_centerVertical="true"
-        android:layout_margin="10dp" />
+        android:padding="15dp" />
 
     <!-- text -->
     <LinearLayout
@@ -18,8 +18,9 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="5dp"
         android:layout_toLeftOf="@+id/unread_count"
         android:layout_toRightOf="@android:id/icon"
         android:gravity="center_vertical"
@@ -48,8 +49,10 @@
         android:id="@+id/unread_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
+        android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
         android:gravity="center_vertical"
         android:minHeight="?android:attr/listPreferredItemHeightSmall"
@@ -58,7 +61,18 @@
     <View
         android:id="@+id/separator"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/light_dividers" />
+        android:background="?android:attr/dividerVertical"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/separator_group"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/unread_count"
+        android:layout_toRightOf="@android:id/icon"
+        android:background="?android:attr/dividerVertical"
+        android:visibility="gone" />
 </RelativeLayout>

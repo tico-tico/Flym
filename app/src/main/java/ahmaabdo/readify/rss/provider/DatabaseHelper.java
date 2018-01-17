@@ -64,7 +64,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG = "DatabaseHelper";
 
     private static final String DATABASE_NAME = "FeedEx.db";
-    private static final int DATABASE_VERSION = 11;
+    private static final int DATABASE_VERSION = 12;
 
     private static final String ALTER_TABLE = "ALTER TABLE ";
     private static final String ADD = " ADD ";
@@ -171,6 +171,9 @@ class DatabaseHelper extends SQLiteOpenHelper {
         if (oldVersion < 11) {
             executeCatchedSQL(database, ALTER_TABLE + FeedColumns.TABLE_NAME + ADD + FeedColumns.HTTP_AUTH_LOGIN + ' ' + FeedData.TYPE_TEXT);
             executeCatchedSQL(database, ALTER_TABLE + FeedColumns.TABLE_NAME + ADD + FeedColumns.HTTP_AUTH_PASSWORD + ' ' + FeedData.TYPE_TEXT);
+        }
+        if (oldVersion < 12) {
+            executeCatchedSQL(database, ALTER_TABLE + FeedColumns.TABLE_NAME + ADD + FeedColumns.IS_GROUP_EXPANDED + ' ' + FeedData.TYPE_BOOLEAN);
         }
     }
 

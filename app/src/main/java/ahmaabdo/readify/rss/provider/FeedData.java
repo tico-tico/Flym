@@ -107,6 +107,7 @@ public class FeedData {
         public static final String ERROR = "error";
         public static final String PRIORITY = "priority";
         public static final String FETCH_MODE = "fetchmode";
+        public static final String IS_GROUP_EXPANDED = "is_group_expanded";
         public static final String[] PROJECTION_ID = new String[]{FeedColumns._ID};
         public static final String[] PROJECTION_GROUP_ID = new String[]{FeedColumns.GROUP_ID};
         public static final String[] PROJECTION_PRIORITY = new String[]{FeedColumns.PRIORITY};
@@ -121,7 +122,7 @@ public class FeedData {
 
         public static final String[][] COLUMNS = new String[][]{{_ID, TYPE_PRIMARY_KEY}, {URL, TYPE_TEXT_UNIQUE}, {NAME, TYPE_TEXT}, {COOKIE_NAME, TYPE_TEXT}, {COOKIE_VALUE, TYPE_TEXT}, {HTTP_AUTH_LOGIN, TYPE_TEXT}, {HTTP_AUTH_PASSWORD, TYPE_TEXT}, {KEEP_TIME, TYPE_DATE_TIME}, {IS_GROUP, TYPE_BOOLEAN},
                 {GROUP_ID, TYPE_EXTERNAL_ID}, {LAST_UPDATE, TYPE_DATE_TIME}, {REAL_LAST_UPDATE, TYPE_DATE_TIME}, {RETRIEVE_FULLTEXT, TYPE_BOOLEAN},
-                {ICON, "BLOB"}, {ERROR, TYPE_TEXT}, {PRIORITY, TYPE_INT}, {FETCH_MODE, TYPE_INT}};
+                {ICON, "BLOB"}, {ERROR, TYPE_TEXT}, {PRIORITY, TYPE_INT}, {FETCH_MODE, TYPE_INT}, {IS_GROUP_EXPANDED, TYPE_BOOLEAN}};
 
         public static Uri GROUPS_CONTENT_URI(String groupId) {
             return Uri.parse(CONTENT_AUTHORITY + "/groups/" + groupId);

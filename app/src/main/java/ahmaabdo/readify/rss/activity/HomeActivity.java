@@ -96,11 +96,12 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
     private DrawerLayout mDrawerLayout;
     private View mLeftDrawer;
     private ListView mDrawerList;
-    private DrawerAdapter mDrawerAdapter;
+    private DrawerAdapter mDrawerAdapter = null;
     private ActionBarDrawerToggle mDrawerToggle;
     private CharSequence mTitle;
     private BitmapDrawable mIcon;
     private int mCurrentDrawerPos;
+    public static Boolean mFeedSetupChanged = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -172,6 +173,7 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
                 return false;
             }
         });
+
 
         mLeftDrawer.setBackgroundColor((ContextCompat.getColor(getApplicationContext(), PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_primary_color : R.color.dark_background)));
         mDrawerList.setBackgroundColor((ContextCompat.getColor(getApplicationContext(), PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_background : R.color.dark_primary_color_dark)));
@@ -368,11 +370,22 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
         }
     }
 
+
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
-        CursorLoader cursorLoader = new CursorLoader(this, FeedColumns.GROUPED_FEEDS_CONTENT_URI, new String[]{FeedColumns._ID, FeedColumns.URL, FeedColumns.NAME,
-                FeedColumns.IS_GROUP, FeedColumns.ICON, FeedColumns.LAST_UPDATE, FeedColumns.ERROR, FEED_UNREAD_NUMBER},
-                PrefUtils.getBoolean(PrefUtils.SHOW_READ, true) ? "" : WHERE_UNREAD_ONLY, null, null
+        CursorLoader cursorLoader = new CursorLoader(this,
+                FeedColumns.GROUPED_FEEDS_CONTENT_URI,
+                new String[]{FeedColumns._ID, FeedColumns.URL, FeedColumns.NAME,
+                        FeedColumns.IS_GROUP, FeedColumns.ICON, FeedColumns.LAST_UPDATE,
+                        FeedColumns.ERROR, FEED_UNREAD_NUMBER,
+                        FeedColumns.IS_GROUP_EXPANDED},
+                FeedColumns.IS_GROUP + Constants.DB_IS_TRUE + Constants.DB_OR +
+                        FeedColumns.GROUP_ID + Constants.DB_IS_NULL + Constants.DB_OR +
+                        FeedColumns.GROUP_ID + " IN (SELECT " + FeedColumns._ID +
+                        " FROM " + FeedColumns.TABLE_NAME +
+                        " WHERE " + FeedColumns.IS_GROUP_EXPANDED + Constants.DB_IS_TRUE + ")",
+                null,
+                null
         );
         cursorLoader.setUpdateThrottle(Constants.UPDATE_THROTTLE_DELAY);
         return cursorLoader;
