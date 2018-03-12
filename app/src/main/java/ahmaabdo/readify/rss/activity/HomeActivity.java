@@ -101,7 +101,6 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
     private CharSequence mTitle;
     private BitmapDrawable mIcon;
     private int mCurrentDrawerPos;
-    public static Boolean mFeedSetupChanged = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,15 +113,15 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
 
         mTitle = getTitle();
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        fab2 = (FloatingActionMenu) findViewById(R.id.fab);
+        fab2 = findViewById(R.id.fab);
         fab2.setMenuButtonColorNormalResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A100 : R.color.dark_A700);
         fab2.setMenuButtonColorPressedResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A300 : R.color.dark_A900);
 
-        fab = (FloatingActionButton) findViewById(R.id.fab_google);
+        fab = findViewById(R.id.fab_google);
         fab.setColorNormalResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A100 : R.color.dark_A900);
         fab.setColorPressedResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A300 : R.color.dark_A700);
         fab.setColorRippleResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A500 : R.color.dark_A300);
@@ -134,7 +133,7 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
         });
 
 
-        fab = (FloatingActionButton) findViewById(R.id.fab_feed);
+        fab = findViewById(R.id.fab_feed);
         fab.setColorNormalResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A100 : R.color.dark_A900);
         fab.setColorPressedResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A300 : R.color.dark_A700);
         fab.setColorRippleResId(PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_A500 : R.color.dark_A300);
@@ -147,7 +146,7 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
 
 
         mLeftDrawer = findViewById(R.id.left_drawer);
-        mDrawerList = (ListView) findViewById(R.id.drawer_list);
+        mDrawerList = findViewById(R.id.drawer_list);
         mDrawerList.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         mDrawerList.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
@@ -177,7 +176,7 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
 
         mLeftDrawer.setBackgroundColor((ContextCompat.getColor(getApplicationContext(), PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_primary_color : R.color.dark_background)));
         mDrawerList.setBackgroundColor((ContextCompat.getColor(getApplicationContext(), PrefUtils.getBoolean(PrefUtils.LIGHT_THEME, true) ? R.color.light_background : R.color.dark_primary_color_dark)));
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
         if (mDrawerLayout != null) {
             mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
             mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.drawer_open, R.string.drawer_close) {
@@ -323,8 +322,6 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
             }
         }
         super.finish();
-        return;
-
     }
 
     @Override
@@ -346,11 +343,7 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (mDrawerToggle != null && mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+        return mDrawerToggle != null && mDrawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -445,6 +438,7 @@ public class HomeActivity extends BaseActivity implements LoaderManager.LoaderCa
                                 // Perform automated import of the backup
                                 OPML.importFromFile(OPML.BACKUP_OPML);
                             } catch (Exception ig) {
+                                ig.printStackTrace();
                             }
                         }
                     }).start();

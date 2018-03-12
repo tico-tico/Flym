@@ -92,7 +92,7 @@ public class EntryView extends WebView {
             + "h2 {font-size: 120%} "
             + "a {color: #2196F3; text-decoration: none} "
             + "h1 a {color: inherit; text-decoration: none} "
-            + "img {height: auto;} "
+            + "img {width: 100%; height: auto;} "
             + "pre {white-space: pre-wrap;} "
             + "blockquote {border-left: thick solid #2196F3; background-color:" + QUOTE_BACKGROUND_COLOR + "; margin: 0.5em 0 0.5em 0em; padding: 0.5em} "
             + "p {margin: 0.8em 0 0.8em 0} "

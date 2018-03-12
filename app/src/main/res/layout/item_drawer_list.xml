@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?android:attr/activatedBackgroundIndicator">
@@ -10,7 +11,9 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_centerVertical="true"
-        android:padding="15dp" />
+        android:contentDescription="@string/app_name"
+        android:padding="15dp"
+        tools:src="@mipmap/ic_launcher" />
 
     <!-- text -->
     <LinearLayout
@@ -21,8 +24,10 @@
         android:layout_marginLeft="14dp"
         android:layout_marginStart="14dp"
         android:layout_marginTop="5dp"
+        android:layout_toEndOf="@android:id/icon"
         android:layout_toLeftOf="@+id/unread_count"
         android:layout_toRightOf="@android:id/icon"
+        android:layout_toStartOf="@+id/unread_count"
         android:gravity="center_vertical"
         android:minHeight="?android:attr/listPreferredItemHeightSmall"
         android:orientation="vertical">
@@ -33,7 +38,8 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:textAppearance="?android:attr/textAppearanceListItemSmall"
-            android:textIsSelectable="false" />
+            android:textIsSelectable="false"
+            tools:text="Website name" />
 
         <TextView
             android:id="@android:id/text2"
@@ -41,7 +47,8 @@
             android:layout_height="wrap_content"
             android:alpha="0.5"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textIsSelectable="false" />
+            android:textIsSelectable="false"
+            tools:text="Update: 10:30" />
     </LinearLayout>
 
     <!-- unread counter -->
@@ -56,7 +63,8 @@
         android:layout_marginRight="12dp"
         android:gravity="center_vertical"
         android:minHeight="?android:attr/listPreferredItemHeightSmall"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall" />
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        tools:text="55" />
 
     <View
         android:id="@+id/separator"
@@ -71,8 +79,10 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@android:id/icon"
         android:layout_toLeftOf="@+id/unread_count"
         android:layout_toRightOf="@android:id/icon"
+        android:layout_toStartOf="@+id/unread_count"
         android:background="?android:attr/dividerVertical"
         android:visibility="gone" />
 </RelativeLayout>

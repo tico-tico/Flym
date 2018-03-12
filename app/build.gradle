@@ -3,8 +3,6 @@ apply plugin: 'com.droidtitan.lintcleaner'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
-
     defaultConfig {
         applicationId "ahmaabdo.readify.rss"
         minSdkVersion 16
@@ -29,7 +27,7 @@ android {
         disable 'MissingTranslation'
     }
 }
-version = "27.0.2"
+version = "27.1.0"
 
 repositories {
     maven { url 'http://dl.bintray.com/amulyakhare/maven' }
@@ -38,17 +36,19 @@ repositories {
 }
 
 dependencies {
-    compile "com.android.support:appcompat-v7:$version"
-    compile "com.android.support:support-v4:$version"
-    compile "com.android.support:design:$version"
-    compile "com.android.support:support-vector-drawable:$version"
-    compile 'org.jsoup:jsoup:1.10.3'
-    compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
-    compile "com.github.daniel-stoneuk:material-about-library:2.2.3-support$version"
-    compile 'com.github.clans:fab:1.6.4'
-    compile 'com.daimajia.easing:library:2.0@aar'
-    compile 'com.daimajia.androidanimations:library:2.3@aar'
-    compile 'com.r0adkll:slidableactivity:2.0.6'
-    compile 'com.ryanjeffreybrooks:indefinitepagerindicator:1.0.3'
+    //Android Support libraries
+    implementation "com.android.support:appcompat-v7:$version"
+    implementation "com.android.support:support-v4:$version"
+    implementation "com.android.support:design:$version"
+    implementation "com.android.support:support-vector-drawable:$version"
+
+    implementation "com.github.daniel-stoneuk:material-about-library:2.2.4"
+    implementation 'org.jsoup:jsoup:1.10.3'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+    implementation 'com.github.clans:fab:1.6.4'
+    implementation 'com.daimajia.easing:library:2.0@aar'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+    implementation 'com.r0adkll:slidableactivity:2.0.6'
+    implementation 'com.ryanjeffreybrooks:indefinitepagerindicator:1.0.3'
 }

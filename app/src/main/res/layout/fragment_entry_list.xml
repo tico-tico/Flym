@@ -23,7 +23,8 @@
                 android:drawableRight="@drawable/ic_arrow_upward"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:drawableEnd="@drawable/ic_arrow_upward" />
 
             <TextView
                 android:id="@android:id/empty"
