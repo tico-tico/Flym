@@ -74,8 +74,8 @@
     <string name="filter_is_regex">это регулярное выражение</string>
     <string name="filter_apply_to_title">Применить к заголовкам или адресам</string>
     <string name="filter_apply_to_content">Применить к содержанию</string>
-    <string name="accept">ACCEPT</string>
-    <string name="reject">REJECT</string>
+    <string name="accept">РАЗРЕШИТЬ</string>
+    <string name="reject">ЗАПРЕТИТЬ</string>
     <string name="feed_search">Поиск лент</string>
     <string name="select_file">Выбрать файл (корень SD-карты)</string>
     <string name="question_delete_feed">Вы действительно хотите удалить эту ленту?</string>
@@ -93,9 +93,9 @@
     <string name="to_group_above">Над группой</string>
     <string name="to_group_into">Внутрь группы</string>
     <string name="add_custom_feed">Добавить ленту по адресу или по названию</string>
-    <string name="google_news_title">Google News topics</string>
+    <string name="google_news_title">Темы Google News</string>
     <string name="google_news_indicator">Выберите одну или несколько категорий.</string>
-    <string name="google_news_top_stories">Top Stories</string>
+    <string name="google_news_top_stories">Главное</string>
     <string name="google_news_world">Мир</string>
     <string name="google_news_business">Бизнес</string>
     <string name="google_news_technology">Технологии</string>
@@ -160,7 +160,7 @@
     <string name="settings_notifications_enabled_description">Включить уведомления о новых записях
     </string>
     <string name="settings_notifications_ringtone">Звук</string>
-    <string name="settings_notifications_ringtone_none">None</string>
+    <string name="settings_notifications_ringtone_none">Нет</string>
     <string name="settings_notifications_vibrate">Вибрация</string>
     <string name="settings_notifications_vibrate_description">Включить вибрацию при новых записях
     </string>
