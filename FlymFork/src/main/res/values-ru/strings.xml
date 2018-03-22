@@ -98,7 +98,7 @@
     <string name="google_news_top_stories">Top Stories</string>
     <string name="google_news_world">Мир</string>
     <string name="google_news_business">Бизнес</string>
-    <string name="google_news_technology">Технолгии</string>
+    <string name="google_news_technology">Технологии</string>
     <string name="google_news_entertainment">Развлечения</string>
     <string name="google_news_sports">Спорт</string>
     <string name="google_news_science">Наука</string>
@@ -170,7 +170,7 @@
     <string name="settings_light_theme">Светлая тема</string>
     <string name="settings_light_theme_description">Использовать светлую тему</string>
     <string name="settings_keep_time">Время хранения новостей</string>
-    <string name="settings_display_images">Отображать кратинки</string>
+    <string name="settings_display_images">Отображать картинки</string>
     <string name="settings_display_images_description">в тексте статей</string>
     <string name="settings_preload_image_mode">Предзагрузка картинок</string>
     <string name="settings_font_size">Размер текста</string>
@@ -353,7 +353,7 @@
     <string name="settings_show_tap_zones">Зоны нажатий видимы</string>
     <string name="settings_show_tap_zone_description">полупрозрачные квадратики в окне чтения статьи</string>
     <string name="settings_max_image_download_size_kb">Макс. размер изображения</string>
-    <string name="settings_max_image_download_size_kb_summary">(в kb). Не загружать автоматически изображения, имеющие больший размер</string>
+    <string name="settings_max_image_download_size_kb_summary">(в KB). Не загружать автоматически изображения, имеющие больший размер</string>
     <string name="fontsize_entrylist">Размер текста в списке статей</string>
     <string name="settings_volume_buttons_action">Действие кнопок громкости</string>
     <string name="behaviour">Поведение</string>

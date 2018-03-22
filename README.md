@@ -7,7 +7,7 @@ This is a separate branch of the Flym RSS reader application
 
 Main functions:
 - RSS feeds of articles
-- search for a tape by keyword when adding
+- search for a feed by keyword when adding
 - Download offline full-text versions of articles with images
 - import / export of the channel list from OPML
 - filter articles by keywords or regular expressions
